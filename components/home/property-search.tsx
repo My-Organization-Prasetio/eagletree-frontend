@@ -15,7 +15,7 @@ export function PropertySearch({ locale }: PropertySearchProps) {
   return (
     <div className="w-full max-w-4xl flex flex-col items-center">
       {/* Transaction Switcher Tabs */}
-      <div className="flex items-center gap-1.5 p-1 bg-brand-950/70 backdrop-blur-md rounded-2xl border border-white/15 mb-3 shadow-lg">
+      <div className="flex items-center gap-1.5 p-1 bg-brand-950/50 backdrop-blur-lg rounded-2xl border border-white/20 mb-3 shadow-lg">
         <button
           type="button"
           onClick={() => setListingType("buy")}
@@ -42,7 +42,7 @@ export function PropertySearch({ locale }: PropertySearchProps) {
 
       {/* Floating Glassmorphic Search Form */}
       <form
-        className="w-full bg-white/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-3 sm:p-4 shadow-[0_20px_50px_rgba(16,45,38,0.28)] border border-white/80 flex flex-col md:flex-row items-stretch gap-2.5 text-foreground"
+        className="w-full bg-white backdrop-blur-xl rounded-2xl sm:rounded-3xl p-3 sm:p-4 shadow-[0_16px_48px_rgba(201,154,85,0.15),_0_8px_24px_rgba(16,45,38,0.12)] border border-neutral-200/80 flex flex-col md:flex-row items-stretch gap-2.5 text-foreground"
         action="/properties"
         method="get"
       >

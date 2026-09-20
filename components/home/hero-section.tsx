@@ -14,39 +14,42 @@ export function HeroSection({ locale }: HeroSectionProps) {
 
   return (
     <section
-      className="relative min-h-[580px] sm:min-h-[660px] lg:min-h-[720px] flex items-center justify-center overflow-hidden bg-brand-900 py-16 sm:py-24 text-white"
+      className="relative min-h-[580px] sm:min-h-[660px] lg:min-h-[720px] flex items-center justify-center overflow-hidden bg-brand-800 py-16 sm:py-24 text-white"
       aria-labelledby="home-hero-title"
     >
-      {/* High-resolution Architectural Hero Background */}
+      {/* High-resolution Architectural Hero Background — brighter opacity */}
       <Image
-        className="object-cover object-center opacity-75 transition-transform duration-1000 scale-100 hover:scale-105"
-        src="/property-mangrove-house.jpg"
+        className="object-cover object-center opacity-90 transition-transform duration-1000 scale-100 hover:scale-105"
+        src="/property-senja-residence.jpg"
         alt={content.imageAlt}
         fill
         priority
         sizes="100vw"
       />
 
-      {/* Brighter, Cheerful Luxury Gradient Veil */}
-      <div className="absolute inset-0 bg-gradient-to-b from-brand-900/50 via-brand-900/10 to-brand-900/80 pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_30%,_rgba(16,45,38,0.4)_100%)] pointer-events-none" />
+      {/* Light, Warm Gradient Veil — much less dark, golden warm tint */}
+      <div className="absolute inset-0 bg-gradient-to-b from-brand-900/30 via-transparent to-brand-950/60 pointer-events-none" />
+      {/* Warm golden ambient glow from top-right */}
+      <div className="absolute -top-20 -right-20 w-[600px] h-[600px] bg-accent-500/15 rounded-full blur-3xl pointer-events-none" />
+      {/* Soft brand glow from bottom-left */}
+      <div className="absolute -bottom-20 -left-20 w-[500px] h-[500px] bg-brand-700/15 rounded-full blur-3xl pointer-events-none" />
 
       <PageContainer className="relative z-10 flex flex-col items-center text-center gap-8 sm:gap-10">
         {/* Headline and Copy */}
         <div className="max-w-3xl flex flex-col items-center gap-4">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-accent-300 text-xs font-semibold tracking-wider uppercase shadow-sm">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-500/20 backdrop-blur-md border border-accent-400/30 text-accent-100 text-xs font-semibold tracking-wider uppercase shadow-sm">
             <Sparkles size={13} className="text-accent-300" />
             <span>{content.eyebrow}</span>
           </span>
 
           <h1
             id="home-hero-title"
-            className="text-3xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-white leading-[1.14] drop-shadow-lg"
+            className="text-3xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-white leading-[1.14] drop-shadow-[0_2px_12px_rgba(0,0,0,0.25)]"
           >
             {content.title}
           </h1>
 
-          <p className="text-base sm:text-lg text-white/95 leading-relaxed max-w-2xl font-medium drop-shadow-md">
+          <p className="text-base sm:text-lg text-white/95 leading-relaxed max-w-2xl font-medium drop-shadow-[0_1px_6px_rgba(0,0,0,0.2)]">
             {content.description}
           </p>
         </div>
@@ -54,7 +57,7 @@ export function HeroSection({ locale }: HeroSectionProps) {
         {/* Floating Search Bar */}
         <PropertySearch locale={locale} />
 
-        {/* Trust Signals / Value Badges */}
+        {/* Trust Signals / Value Badges — warm gold-tinted glass */}
         <div
           className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-2 w-full max-w-3xl"
           aria-label={content.highlightsLabel}
@@ -64,9 +67,9 @@ export function HeroSection({ locale }: HeroSectionProps) {
             return (
               <div
                 key={highlight}
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-white/90 text-xs font-medium shadow-xs"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white text-xs font-medium shadow-sm"
               >
-                <Icon size={14} className="text-accent-400 shrink-0" aria-hidden="true" />
+                <Icon size={14} className="text-accent-300 shrink-0" aria-hidden="true" />
                 <span>{highlight}</span>
               </div>
             );
@@ -76,3 +79,4 @@ export function HeroSection({ locale }: HeroSectionProps) {
     </section>
   );
 }
+
