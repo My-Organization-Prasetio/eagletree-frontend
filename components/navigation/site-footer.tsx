@@ -21,7 +21,7 @@ export function SiteFooter() {
           </p>
         </div>
 
-        <nav className="md:col-span-4 flex flex-col gap-3" aria-label={content.explore}>
+        <nav className="md:col-span-3 flex flex-col gap-3" aria-label={content.explore}>
           <p className="text-brand-950 font-bold text-base tracking-wide">{content.explore}</p>
           <ul className="flex flex-col gap-2.5 text-sm">
             <li>
@@ -47,7 +47,33 @@ export function SiteFooter() {
           </ul>
         </nav>
 
-        <div className="md:col-span-3 flex flex-col gap-3">
+        <nav className="md:col-span-2 flex flex-col gap-3" aria-label="Perusahaan">
+          <p className="text-brand-950 font-bold text-base tracking-wide">Perusahaan</p>
+          <ul className="flex flex-col gap-2.5 text-sm">
+            <li>
+              <Link href="/about" className="text-neutral-600 hover:text-accent-700 transition-colors">
+                Tentang Kami
+              </Link>
+            </li>
+            <li>
+              <Link href="/services" className="text-neutral-600 hover:text-accent-700 transition-colors">
+                Layanan
+              </Link>
+            </li>
+            <li>
+              <Link href="/articles" className="text-neutral-600 hover:text-accent-700 transition-colors">
+                Artikel
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="text-neutral-600 hover:text-accent-700 transition-colors">
+                Hubungi Kami
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
+        <div className="md:col-span-2 flex flex-col gap-3">
           <p className="text-brand-950 font-bold text-base tracking-wide">{content.enquiries}</p>
           <p className="text-sm text-neutral-600 leading-relaxed whitespace-pre-line">
             {content.contact}
@@ -56,7 +82,13 @@ export function SiteFooter() {
       </div>
 
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
-        <p>© {new Date().getFullYear()} Eagletree. {content.copyright}</p>
+        <div className="flex flex-col sm:flex-row items-center gap-4">
+          <p>© {new Date().getFullYear()} Eagletree. {content.copyright}</p>
+          <div className="flex items-center gap-4">
+            <Link href="/terms" className="hover:text-accent-700 transition-colors">Syarat & Ketentuan</Link>
+            <Link href="/privacy" className="hover:text-accent-700 transition-colors">Kebijakan Privasi</Link>
+          </div>
+        </div>
         <p className="text-accent-700 font-semibold">{content.tagline}</p>
       </div>
     </footer>

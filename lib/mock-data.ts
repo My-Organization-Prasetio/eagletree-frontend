@@ -1,4 +1,5 @@
 import type { AgentProfile } from "@/types/agent";
+import type { ArticleItem, ArticleCategory } from "@/types/article";
 import type { PropertyDetail, PropertyFilters } from "@/types/property";
 import type { ProjectItem } from "@/types/project";
 
@@ -952,4 +953,148 @@ export function getAgentBySlug(slug: string): AgentProfile | undefined {
   return mockAgents.find(
     (a) => a.id.toLowerCase() === decoded || a.name.toLowerCase().replace(/\s+/g, '-') === decoded,
   );
+}
+
+export const mockArticles: ArticleItem[] = [
+  {
+    id: "memilih-kawasan-hunian",
+    slug: "memilih-kawasan-hunian",
+    title: "Menentukan Kawasan yang Tepat untuk Babak Hidup Berikutnya",
+    description: "Hal-hal penting yang perlu dipertimbangkan sebelum memilih lokasi hunian, dari infrastruktur hingga potensi nilai jangka panjang.",
+    content: [
+      "Memilih kawasan hunian bukan sekadar soal harga per meter persegi. Ada banyak faktor yang seringkali luput dari pertimbangan, mulai dari akses transportasi publik, ketersediaan fasilitas kesehatan, hingga rencana pengembangan infrastruktur pemerintah yang bisa meningkatkan nilai properti secara signifikan.",
+      "Langkah pertama adalah menentukan prioritas gaya hidup. Apakah Anda membutuhkan kedekatan dengan pusat bisnis? Atau justru mencari ketenangan dengan udara bersih di kawasan sub-urban? Memahami kebutuhan ini akan mempersempit pilihan dan membuat proses pencarian jauh lebih efisien.",
+      "Perhatikan juga pola pengembangan kawasan. Daerah yang sedang dalam tahap pembangunan infrastruktur besar — seperti jalur MRT baru, jalan tol, atau pusat komersial — biasanya menawarkan harga masuk yang relatif terjangkau dengan potensi kenaikan nilai yang menarik.",
+      "Jangan lupa mengevaluasi lingkungan sosial dan keamanan. Kunjungi kawasan di waktu yang berbeda: pagi hari kerja, sore saat jam pulang, dan malam hari di akhir pekan. Anda akan mendapatkan gambaran nyata tentang ritme kehidupan di sana.",
+      "Terakhir, bicara dengan penduduk lokal dan agen properti yang beroperasi di kawasan tersebut. Mereka memiliki wawasan berharga tentang dinamika lingkungan yang tidak bisa Anda temukan di internet.",
+    ],
+    category: "Panduan",
+    image: { src: "/property-senja-residence.jpg", alt: "Perumahan modern di kawasan hijau" },
+    author: { name: "Maya Pradana", role: "Senior Property Consultant", initials: "MP" },
+    publishedAt: "2026-09-12",
+    readingTimeMinutes: 6,
+  },
+  {
+    id: "ruang-yang-baik",
+    slug: "ruang-yang-baik",
+    title: "Ruang yang Baik Dimulai dari Cara Hidup yang Anda Jalani",
+    description: "Membaca kembali kebutuhan rumah di tengah rutinitas yang terus berubah dan cara baru kita bekerja.",
+    content: [
+      "Cara kita menghuni ruang telah berubah secara mendasar dalam beberapa tahun terakhir. Ruang kerja bercampur dengan ruang keluarga, dapur menjadi area multifungsi, dan balkon berubah menjadi tempat pelarian singkat dari layar monitor.",
+      "Saat mencari hunian baru, penting untuk memulai dari pertanyaan: bagaimana hari-hari Anda sesungguhnya berjalan? Bukan tentang berapa kamar tidur yang Anda inginkan, melainkan tentang aktivitas apa yang terjadi di setiap ruang.",
+      "Jika Anda bekerja dari rumah tiga hari dalam seminggu, sebuah sudut kerja yang mendapatkan cahaya alami bisa jauh lebih berharga daripada satu kamar tidur ekstra. Jika Anda sering memasak bersama keluarga, dapur terbuka yang terhubung ke ruang makan menjadi elemen krusial.",
+      "Konsep 'cukup luas' juga perlu didefinisikan ulang. Rumah yang lebih kecil namun tertata dengan baik — dengan sirkulasi udara yang baik, penyimpanan yang cerdas, dan pencahayaan alami yang optimal — seringkali memberikan kualitas hidup yang lebih tinggi dibandingkan ruang yang besar namun gelap dan pengap.",
+      "Pada akhirnya, rumah yang baik adalah rumah yang mendukung ritme hidup penghuninya tanpa menuntut kompromi berlebihan. Dan untuk menemukan ruang seperti itu, langkah pertama adalah memahami dengan jujur bagaimana Anda sebenarnya hidup.",
+    ],
+    category: "Gaya Hidup",
+    image: { src: "/property-kayu-apartment.jpg", alt: "Interior apartemen modern yang terang" },
+    author: { name: "Redaksi Eagletree", role: "Tim Editorial", initials: "RE" },
+    publishedAt: "2026-09-05",
+    readingTimeMinutes: 5,
+  },
+  {
+    id: "peluang-pasar-properti",
+    slug: "peluang-pasar-properti",
+    title: "Melihat Peluang dari Sudut Pandang yang Lebih Luas",
+    description: "Catatan singkat untuk membantu Anda memahami pasar properti Indonesia di kuartal ketiga 2026.",
+    content: [
+      "Pasar properti Indonesia menunjukkan sinyal pemulihan yang konsisten sepanjang 2026. Indeks Harga Properti Residensial (IHPR) Bank Indonesia mencatat kenaikan moderat di hampir seluruh kota besar, dengan pertumbuhan tertinggi terjadi di koridor-koridor yang dilayani transportasi massal baru.",
+      "Segmen menengah-atas — khususnya rumah tapak di kisaran Rp 2-5 miliar — tetap menjadi motor utama penjualan. Pembeli di segmen ini cenderung sudah memiliki properti pertama dan sedang mencari hunian kedua yang lebih sesuai dengan tahap kehidupan mereka saat ini.",
+      "Sementara itu, apartemen di koridor Sudirman-Thamrin dan kawasan transit-oriented development (TOD) mulai menunjukkan pemulihan harga setelah koreksi yang terjadi pada tahun-tahun sebelumnya. Ini membuka jendela peluang bagi investor jangka menengah.",
+      "Yang menarik, permintaan untuk properti sewa premium di Bali terus meningkat. Vila-vila dengan desain kontemporer dan fasilitas kerja jarak jauh menjadi incaran para digital nomad dan ekspatriat yang berencana menetap lebih lama.",
+      "Untuk pembeli yang sedang mempertimbangkan langkah pertama, ini adalah saat yang baik untuk memulai riset serius. Suku bunga KPR masih kompetitif, dan banyak pengembang menawarkan skema pembayaran yang lebih fleksibel dibandingkan tahun-tahun sebelumnya.",
+    ],
+    category: "Wawasan",
+    image: { src: "/property-bukit-villa.jpg", alt: "Pemandangan kawasan properti dari ketinggian" },
+    author: { name: "Raka Wijaya", role: "Senior Property Consultant", initials: "RW" },
+    publishedAt: "2026-08-28",
+    readingTimeMinutes: 7,
+  },
+  {
+    id: "nilai-jangka-panjang-lokasi",
+    slug: "nilai-jangka-panjang-lokasi",
+    title: "Mengenali Nilai Jangka Panjang dari Sebuah Lokasi",
+    description: "Cara membaca potensi kawasan sebelum mengambil keputusan investasi properti.",
+    content: [
+      "Dalam investasi properti, lokasi bukan sekadar titik koordinat di peta. Lokasi adalah kumpulan faktor yang saling berinteraksi: aksesibilitas, kepadatan penduduk, kualitas infrastruktur, dan — yang seringkali diabaikan — arah kebijakan tata kota.",
+      "Salah satu indikator kuat potensi kawasan adalah rencana detail tata ruang (RDTR) yang diterbitkan pemerintah daerah. Dokumen ini memetakan zona pengembangan komersial, residensial, dan hijau dalam kurun waktu 10-20 tahun ke depan. Kawasan yang dialokasikan untuk pengembangan campuran (mixed-use) biasanya memiliki potensi apresiasi yang lebih tinggi.",
+      "Perhatikan juga fenomena 'efek riak' dari proyek infrastruktur besar. Pembangunan stasiun MRT atau LRT baru tidak hanya meningkatkan nilai properti di radius 500 meter, tetapi juga mendorong pertumbuhan ekonomi mikro di area yang lebih luas melalui efek multiplier.",
+      "Dari sisi praktis, bandingkan harga tanah per meter persegi di kawasan target dengan kawasan sejenis yang sudah lebih berkembang. Selisih harga ini — yang disebut gap pricing — bisa menjadi indikator upside potential yang reasonable.",
+      "Penting juga untuk berpikir tentang likuiditas. Kawasan dengan permintaan sewa yang kuat dan akses mudah ke pusat kegiatan akan lebih mudah dijual kembali ketika saatnya tiba. Ini adalah asuransi terbaik dalam investasi properti.",
+    ],
+    category: "Investasi",
+    image: { src: "/property-arsana-house.jpg", alt: "Kawasan perumahan modern dengan infrastruktur baru" },
+    author: { name: "Hendra Kusuma", role: "Commercial & Land Advisor", initials: "HK" },
+    publishedAt: "2026-08-20",
+    readingTimeMinutes: 8,
+  },
+  {
+    id: "rumah-dan-ritme-hidup",
+    slug: "rumah-dan-ritme-hidup",
+    title: "Ketika Rumah Menjadi Bagian dari Ritme yang Lebih Baik",
+    description: "Cerita tentang ruang, cahaya, dan kehidupan sehari-hari yang dimulai dari memilih tempat tinggal dengan lebih sadar.",
+    content: [
+      "Ada momen ketika Anda berhenti sejenak di ambang pintu, menikmati cahaya pagi yang masuk dari jendela timur, dan menyadari bahwa rumah ini bukan hanya tempat Anda tidur. Rumah ini adalah bagian dari ritme yang Anda ciptakan.",
+      "Nadia dan Reza merasakan hal itu ketika mereka pindah ke rumah baru mereka di Bintaro. Setelah bertahun-tahun menyewa apartemen di pusat kota, mereka memutuskan bahwa anak-anak mereka membutuhkan halaman, dan mereka sendiri membutuhkan ruang untuk bernapas.",
+      "Proses pencariannya tidak instan. Mereka menghabiskan empat bulan menjelajahi berbagai kawasan, berbicara dengan konsultan properti Eagletree, dan mempersempit pilihan mereka dari belasan menjadi tiga. Yang menarik, rumah yang akhirnya mereka pilih bukan yang paling besar atau paling mahal.",
+      "\"Yang membuat kami jatuh hati adalah cara cahaya masuk ke ruang keluarga di sore hari,\" kenang Nadia. \"Dan ketika kami membuka jendela dapur, angin dari taman belakang langsung masuk. Rasanya seperti rumah ini bernapas bersama kami.\"",
+      "Cerita mereka mengingatkan kita bahwa memilih rumah pada akhirnya adalah memilih bagaimana Anda ingin menjalani hari-hari Anda. Bukan soal luas bangunan atau jumlah kamar, melainkan soal bagaimana sebuah ruang membuat Anda merasa di tempat yang tepat.",
+    ],
+    category: "Inspirasi",
+    image: { src: "/property-mangrove-house.jpg", alt: "Rumah dengan taman hijau di pagi hari" },
+    author: { name: "Redaksi Eagletree", role: "Tim Editorial", initials: "RE" },
+    publishedAt: "2026-08-14",
+    readingTimeMinutes: 5,
+  },
+  {
+    id: "tips-negosiasi-harga-properti",
+    slug: "tips-negosiasi-harga-properti",
+    title: "5 Strategi Negosiasi Harga Properti yang Profesional dan Efektif",
+    description: "Panduan langkah demi langkah agar Anda mendapatkan harga terbaik tanpa merusak hubungan dengan penjual.",
+    content: [
+      "Negosiasi harga adalah bagian natural dari transaksi properti. Namun, banyak pembeli merasa canggung atau tidak percaya diri saat bernegosiasi. Kunci utamanya adalah mempersiapkan diri dengan data dan menjalankan prosesnya dengan sikap yang profesional.",
+      "Strategi pertama: riset harga pasar secara menyeluruh. Bandingkan harga properti serupa di kawasan yang sama dalam 6-12 bulan terakhir. Ini memberikan Anda fondasi argumen yang kuat dan menunjukkan kepada penjual bahwa Anda adalah pembeli serius yang sudah memahami pasar.",
+      "Strategi kedua: kenali motivasi penjual. Apakah mereka sedang terburu-buru menjual? Atau mereka fleksibel soal waktu? Penjual yang membutuhkan likuiditas cepat cenderung lebih terbuka terhadap negosiasi harga, sementara penjual yang tidak terburu-buru mungkin lebih responsif terhadap negosiasi terms — seperti jadwal serah terima atau kelengkapan furnitur.",
+      "Strategi ketiga: gunakan temuan inspeksi sebagai leverage yang adil. Jika dari hasil pemeriksaan fisik ditemukan hal-hal yang perlu diperbaiki — atap bocor, instalasi listrik lama, atau dinding retak — ini menjadi dasar yang wajar untuk meminta penyesuaian harga.",
+      "Strategi keempat: jangan pernah memberikan penawaran tanpa batas atas. Tentukan budget maksimum Anda sebelum memulai dan bersikaplah tegas. Terkadang, kesediaan untuk walk away justru membawa Anda mendapatkan penawaran terbaik.",
+    ],
+    category: "Panduan",
+    image: { src: "/property-senja-residence.jpg", alt: "Properti yang sedang dalam proses negosiasi" },
+    author: { name: "Sari Utama", role: "Luxury Villa Specialist", initials: "SU" },
+    publishedAt: "2026-08-07",
+    readingTimeMinutes: 6,
+  },
+];
+
+export const articleCategories: ArticleCategory[] = [
+  "Panduan",
+  "Gaya Hidup",
+  "Wawasan",
+  "Investasi",
+  "Inspirasi",
+];
+
+export function getArticleBySlug(slug: string): ArticleItem | undefined {
+  const decoded = decodeURIComponent(slug).toLowerCase();
+  return mockArticles.find(
+    (a) => a.slug.toLowerCase() === decoded || a.id.toLowerCase() === decoded,
+  );
+}
+
+export function getRelatedArticles(currentId: string, limit: number = 3): ArticleItem[] {
+  const current = mockArticles.find((a) => a.id === currentId);
+  if (!current) return mockArticles.slice(0, limit);
+
+  const sameCategory = mockArticles.filter(
+    (a) => a.id !== currentId && a.category === current.category,
+  );
+  const others = mockArticles.filter(
+    (a) => a.id !== currentId && a.category !== current.category,
+  );
+  return [...sameCategory, ...others].slice(0, limit);
+}
+
+export function filterArticles(category?: ArticleCategory | "all"): ArticleItem[] {
+  if (!category || category === "all") return mockArticles;
+  return mockArticles.filter((a) => a.category === category);
 }

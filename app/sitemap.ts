@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { mockProperties } from "@/lib/mock-data";
+import { mockProperties, mockArticles } from "@/lib/mock-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://eagletree.id";
@@ -30,6 +30,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/articles`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/about`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/services`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/mortgage-calculator`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -37,6 +61,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/login`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/terms`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/privacy`,
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.3,
@@ -50,5 +86,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: prop.status === "Featured" ? 0.9 : 0.8,
   }));
 
-  return [...staticRoutes, ...propertyRoutes];
+  const articleRoutes: MetadataRoute.Sitemap = mockArticles.map((article) => ({
+    url: `${baseUrl}/articles/${article.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  return [...staticRoutes, ...propertyRoutes, ...articleRoutes];
 }
