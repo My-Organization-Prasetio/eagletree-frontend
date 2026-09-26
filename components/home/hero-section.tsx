@@ -35,21 +35,21 @@ export function HeroSection({ locale }: HeroSectionProps) {
       <div className="absolute -bottom-20 -left-20 w-[500px] h-[500px] bg-brand-700/15 rounded-full blur-3xl pointer-events-none" />
 
       <PageContainer className="relative z-10 flex flex-col items-center text-center gap-8 sm:gap-10">
-        {/* Headline and Copy */}
-        <div className="max-w-3xl flex flex-col items-center gap-4">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-500/20 backdrop-blur-md border border-accent-400/30 text-accent-100 text-xs font-semibold tracking-wider uppercase shadow-sm">
+        {/* Headline and Copy — frosted panel for guaranteed readability */}
+        <div className="max-w-3xl flex flex-col items-center gap-5 bg-brand-950/35 backdrop-blur-sm rounded-3xl px-8 py-10 sm:px-12 sm:py-14 border border-white/10">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-500/25 backdrop-blur-md border border-accent-400/30 text-accent-100 text-xs font-semibold tracking-wider uppercase shadow-sm">
             <Sparkles size={13} className="text-accent-300" />
             <span>{content.eyebrow}</span>
           </span>
 
           <h1
             id="home-hero-title"
-            className="text-3xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-white leading-[1.14] drop-shadow-[0_2px_12px_rgba(0,0,0,0.25)]"
+            className="text-3xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-white leading-[1.14] [text-shadow:_0_2px_16px_rgba(0,0,0,0.4),_0_1px_3px_rgba(0,0,0,0.3)]"
           >
             {content.title}
           </h1>
 
-          <p className="text-base sm:text-lg text-white/95 leading-relaxed max-w-2xl font-medium drop-shadow-[0_1px_6px_rgba(0,0,0,0.2)]">
+          <p className="text-base sm:text-lg text-white/95 leading-relaxed max-w-2xl font-medium [text-shadow:_0_1px_8px_rgba(0,0,0,0.3)]">
             {content.description}
           </p>
         </div>
