@@ -13,6 +13,7 @@ import {
   Star,
 } from "lucide-react";
 import { PageContainer } from "@/components/layout/page-container";
+import { CertificateGallery } from "@/components/prestasi/certificate-gallery";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -168,6 +169,9 @@ export default function PrestasiPage() {
             <p className="text-xs text-neutral-500 mt-1 font-medium">Pengalaman & Kepercayaan</p>
           </div>
         </div>
+
+        {/* Certificate Photo Gallery */}
+        <CertificateGallery />
 
         {/* Awards by Year Timeline */}
         <div className="mb-20">
