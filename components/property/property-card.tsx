@@ -86,7 +86,7 @@ export function PropertyCard({
   );
 
   return (
-    <article className="group bg-surface-raised rounded-2xl sm:rounded-3xl overflow-hidden border border-border-subtle hover:border-brand-800/40 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col">
+    <article className="group bg-white rounded-xl overflow-hidden border border-neutral-200/80 hover:border-neutral-300 shadow-2xs hover:shadow-sm transition-all duration-200 flex flex-col">
       {/* Media Wrap with Zoom Effect */}
       <div className="relative aspect-[16/11] w-full overflow-hidden bg-neutral-100">
         <Link
@@ -95,7 +95,7 @@ export function PropertyCard({
           aria-label={`${content.view}: ${propertyTitle}`}
         >
           <Image
-            className="object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
+            className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
             src={property.image.src}
             alt={propertyAlt}
             fill
@@ -104,7 +104,7 @@ export function PropertyCard({
         </Link>
 
         {/* Status Badge */}
-        <span className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-brand-950/85 backdrop-blur-md text-white border border-white/15 shadow-sm flex items-center gap-1.5">
+        <span className="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wider uppercase bg-brand-950 text-white shadow-xs flex items-center gap-1.5">
           {(property.status === "Featured" || property.status === "New listing") && (
             <span className="w-1.5 h-1.5 rounded-full bg-accent-400" aria-hidden="true" />
           )}
@@ -113,17 +113,17 @@ export function PropertyCard({
 
         {/* Favorite Button */}
         <button
-          className={`absolute top-3.5 right-3.5 w-9 h-9 rounded-full flex items-center justify-center transition-all shadow-md backdrop-blur-md cursor-pointer ${
+          className={`absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center transition-colors shadow-xs cursor-pointer ${
             isFavorite
-              ? "bg-white text-red-500 scale-105"
-              : "bg-white/90 text-neutral-600 hover:text-red-500 hover:bg-white hover:scale-105"
+              ? "bg-white text-red-500"
+              : "bg-white/90 text-neutral-600 hover:text-red-500 hover:bg-white"
           }`}
           type="button"
           aria-label={isFavorite ? content.favoriteRemove : content.favoriteAdd}
           aria-pressed={isFavorite}
           onClick={handleFavoriteToggle}
         >
-          <Heart size={17} fill={isFavorite ? "currentColor" : "none"} />
+          <Heart size={15} fill={isFavorite ? "currentColor" : "none"} />
         </button>
       </div>
 
@@ -145,11 +145,11 @@ export function PropertyCard({
 
         {/* Specifications Minimalist Box */}
         {specifications && (
-          <dl className="grid grid-cols-3 gap-2 py-2.5 px-3 rounded-xl bg-neutral-50 border border-border-subtle/70 text-xs">
+          <dl className="grid grid-cols-3 gap-2 py-2 px-3 rounded-lg bg-neutral-50/80 border border-neutral-200/60 text-xs">
             {specifications.bedrooms !== undefined && (
               <div className="flex flex-col gap-0.5">
                 <dt className="flex items-center gap-1 text-[11px] text-neutral-500 font-medium">
-                  <BedDouble size={13} className="text-neutral-400 shrink-0" aria-hidden="true" />
+                  <BedDouble size={12} className="text-neutral-400 shrink-0" aria-hidden="true" />
                   <span>{content.bedrooms}</span>
                 </dt>
                 <dd className="font-bold text-brand-950">{specifications.bedrooms} KT</dd>
@@ -158,7 +158,7 @@ export function PropertyCard({
             {specifications.bathrooms !== undefined && (
               <div className="flex flex-col gap-0.5">
                 <dt className="flex items-center gap-1 text-[11px] text-neutral-500 font-medium">
-                  <Bath size={13} className="text-neutral-400 shrink-0" aria-hidden="true" />
+                  <Bath size={12} className="text-neutral-400 shrink-0" aria-hidden="true" />
                   <span>{content.bathrooms}</span>
                 </dt>
                 <dd className="font-bold text-brand-950">{specifications.bathrooms} KM</dd>
@@ -167,7 +167,7 @@ export function PropertyCard({
             {specifications.buildingAreaSqm !== undefined && (
               <div className="flex flex-col gap-0.5">
                 <dt className="flex items-center gap-1 text-[11px] text-neutral-500 font-medium">
-                  <Ruler size={13} className="text-neutral-400 shrink-0" aria-hidden="true" />
+                  <Ruler size={12} className="text-neutral-400 shrink-0" aria-hidden="true" />
                   <span>{content.building}</span>
                 </dt>
                 <dd className="font-bold text-brand-950 truncate">{formatArea(specifications.buildingAreaSqm)}</dd>
@@ -191,7 +191,7 @@ export function PropertyCard({
           </div>
 
           <Link
-            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold text-accent-700 bg-accent-50 hover:bg-accent-100 transition-colors shadow-xs"
+            className="inline-flex items-center gap-1 text-xs font-semibold text-brand-950 hover:text-accent-700 transition-colors py-1"
             href={propertyHref}
           >
             <span>{content.view}</span>

@@ -4,68 +4,58 @@ import { useState } from "react";
 import Link from "next/link";
 import {
   ChevronRight,
-  TrendingUp,
-  GraduationCap,
-  Building,
-  Laptop,
-  Trophy,
-  Plane,
   CheckCircle2,
   Send,
-  Sparkles,
-  PhoneCall,
-  Users,
-  Briefcase,
 } from "lucide-react";
 import { PageContainer } from "@/components/layout/page-container";
 
 const benefits = [
   {
-    icon: TrendingUp,
+    code: "01 / PENGHASILAN",
     title: "Skema Komisi Progresif Hingga 80%",
-    description: "Nikmati bagi hasil komisi tertinggi di industri dengan sistem pencairan transparan, cepat, dan tanpa potongan tersembunyi.",
+    description: "Sistem bagi hasil transparan dengan jadwal pencairan terjadwal dan tanpa potongan tersembunyi.",
   },
   {
-    icon: GraduationCap,
+    code: "02 / PEMBELAJARAN",
     title: "Eagletree Academy & Mentorship",
-    description: "Program akselerasi komprehensif mulai dari pemula hingga menjadi Top Producer, dibimbing langsung oleh mentor berpengalaman puluhan tahun.",
+    description: "Program kurikulum terstruktur dan pendampingan lapangan langsung oleh advisor berkinerja tinggi.",
   },
   {
-    icon: Building,
+    code: "03 / INVENTARIS",
     title: "Akses Proyek Primer Eksklusif",
-    description: "Kemitraan strategis resmi dengan developer terkemuka (Ciputra, Sinar Mas Land, Pakuwon, dll) memberikan Anda ribuan stok unit siap jual.",
+    description: "Kemitraan resmi dengan pengembang papan atas (Ciputra, Sinar Mas Land, Pakuwon) menjamin inventaris siap transaksi.",
   },
   {
-    icon: Laptop,
-    title: "Dukungan Platform & Digital Leads",
-    description: "Dilengkapi aplikasi CRM canggih, web portofolio agen personal, dan distribusi leads pembeli potensial harian dari tim marketing pusat.",
+    code: "04 / TEKNOLOGI",
+    title: "Infrastruktur CRM & Manajemen Klien",
+    description: "Alat bantu digital untuk memantau siklus transaksi, katalog portofolio web personal, dan aliran prospek.",
   },
   {
-    icon: Trophy,
-    title: "Jenjang Karir & Kepemimpinan",
-    description: "Peluang membangun tim bisnis Anda sendiri hingga memimpin kantor cabang mandiri dengan pasif income yang berkelanjutan.",
+    code: "05 / KEPEMIMPINAN",
+    title: "Jalur Kepemimpinan & Kemitraan Tim",
+    description: "Peluang membangun unit konsultan Anda sendiri dengan struktur imbalan manajerial yang berkelanjutan.",
   },
   {
-    icon: Plane,
-    title: "Reward Internasional & Rekognisi",
-    description: "Penghargaan tahunan bergengsi, bonus pencapaian, serta perjalanan wisata eksklusif ke berbagai destinasi impian dunia.",
+    code: "06 / PENGAKUAN",
+    title: "Program Penghargaan Tahunan",
+    description: "Pengakuan capaian profesional melalui sertifikasi industri, bonus prestasi, dan konferensi internasional.",
   },
 ];
 
 const agentStories = [
   {
     name: "Raka Wijaya",
-    role: "Principal Associate / Top Producer 2025",
+    role: "Principal Associate / Top Producer",
     experience: "3 Tahun di Eagletree",
-    quote: "Bergabung dengan Eagletree mengubah jalan hidup saya. Dari yang awalnya tidak paham istilah properti, dalam tahun kedua saya berhasil meraih penghargaan Top Producer dan membeli rumah impian saya sendiri.",
-    avatar: "RW",
+    quote: "Di Eagletree, integritas dan pemahaman pasar diletakkan di atas teknik penjualan agresif. Pendekatan ini membuat klien mempercayakan transaksi bernilai besar secara konsisten.",
+    initials: "RW",
   },
   {
     name: "Maya Pradana",
     role: "Senior Property Consultant",
     experience: "4 Tahun di Eagletree",
-    quote: "Kultur di sini sangat suportif dan profesional. Tidak ada persaingan toxic, melainkan saling berbagi tips closing dan sinergi proyek. Akses listing eksklusifnya benar-benar membuka pintu ke klien high-net-worth.",
-    avatar: "MP",
+    quote: "Kultur kerja yang transparan dan tersedianya inventaris listing eksklusif memungkinkan saya fokus memberikan advis terbaik kepada klien tanpa hambatan operasional.",
+    initials: "MP",
   },
 ];
 
@@ -92,94 +82,91 @@ export default function JoinEagletreePage() {
   };
 
   return (
-    <main className="min-h-screen pt-24 pb-20 bg-neutral-50">
+    <main className="min-h-screen pt-24 pb-20 bg-neutral-50/60">
       <PageContainer>
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-sm text-neutral-500 mb-8" aria-label="Breadcrumb">
+        <nav className="flex items-center gap-2 text-xs text-neutral-500 mb-6" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-brand-700 transition-colors">
             Beranda
           </Link>
-          <ChevronRight size={14} />
-          <span className="text-brand-950 font-medium">Karir & Kemitraan</span>
+          <ChevronRight size={13} className="text-neutral-400" />
+          <span className="text-neutral-800 font-medium">Karir & Kemitraan</span>
         </nav>
 
         {/* Hero Section */}
-        <div className="relative overflow-hidden rounded-3xl bg-brand-950 text-white p-8 sm:p-12 lg:p-16 mb-16 shadow-xl border border-brand-800/40">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="relative z-10 max-w-2xl">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-500/20 text-accent-400 text-xs font-bold uppercase tracking-wider mb-4 border border-accent-500/30">
-              <Sparkles size={13} />
-              Peluang Karir Bergengsi
-            </span>
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-4">
-              Bangun Karir & Wujudkan Potensi Finansial Tanpa Batas di Eagletree.
+        <div className="bg-brand-950 text-white p-8 sm:p-12 lg:p-14 mb-12 rounded-2xl border border-brand-900 shadow-xs relative overflow-hidden">
+          <div className="max-w-3xl relative z-10">
+            <p className="text-[11px] uppercase tracking-widest text-accent-400 font-semibold mb-3">
+              Kemitraan Profesional
+            </p>
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight leading-tight text-white mb-4">
+              Bangun Praktik Konsultasi Properti Bersama Eagletree.
             </h1>
-            <p className="text-base sm:text-lg text-neutral-300 leading-relaxed mb-6">
-              Industri properti menawarkan akselerasi finansial terbesar bagi Anda yang berdedikasi tinggi. Bergabunglah bersama konsultan properti elit kami dan dapatkan ekosistem pendukung terbaik.
+            <p className="text-sm sm:text-base text-neutral-300 leading-relaxed max-w-2xl font-light mb-6">
+              Industri properti membutuhkan penasihat dengan etika dan wawasan pasar yang tajam. Bergabunglah dengan lingkungan kerja yang mendukung pertumbuhan karir jangka panjang.
             </p>
             <a
               href="#form-join"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-accent-500 hover:bg-accent-600 text-brand-950 font-bold text-sm shadow-md transition-all"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-accent-500 hover:bg-accent-400 text-brand-950 font-medium text-xs uppercase tracking-wider transition-colors"
             >
-              <span>Daftar Menjadi Konsultan</span>
-              <ChevronRight size={16} />
+              <span>Ajukan Kemitraan</span>
+              <ChevronRight size={14} />
             </a>
           </div>
         </div>
 
         {/* 6 Core Benefits */}
-        <div className="mb-20">
-          <div className="text-center max-w-xl mx-auto mb-12">
-            <span className="text-xs uppercase tracking-wider font-bold text-accent-700">Kenapa Bergabung Bersama Kami</span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-950 mt-1">Ekosistem Sukses Konsultan Eagletree</h2>
+        <div className="mb-14">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 pb-4 border-b border-neutral-200/80">
+            <div>
+              <p className="text-[11px] uppercase tracking-widest text-accent-700 font-semibold">Fondasi Karir</p>
+              <h2 className="font-serif text-2xl font-medium text-brand-950 mt-1">Ekosistem Konsultan Eagletree</h2>
+            </div>
+            <p className="text-xs text-neutral-500 mt-2 sm:mt-0 max-w-md">
+              Infrastruktur terintegrasi dirancang agar Anda dapat berfokus penuh pada advisory dan hubungan klien.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((b) => {
-              const Icon = b.icon;
-              return (
-                <div
-                  key={b.title}
-                  className="p-7 rounded-2xl bg-white border border-neutral-200/80 shadow-xs hover:shadow-md hover:border-accent-500/40 transition-all flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="w-12 h-12 rounded-xl bg-accent-50 text-accent-700 flex items-center justify-center mb-5">
-                      <Icon size={24} />
-                    </div>
-                    <h3 className="font-bold text-base text-brand-950 mb-2">{b.title}</h3>
-                    <p className="text-sm text-neutral-600 leading-relaxed">{b.description}</p>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {benefits.map((b) => (
+              <div
+                key={b.code}
+                className="p-6 rounded-xl bg-white border border-neutral-200/80 hover:border-neutral-300 transition-colors flex flex-col justify-between"
+              >
+                <div>
+                  <span className="text-xs font-mono font-medium text-neutral-400 block mb-3">{b.code}</span>
+                  <h3 className="font-medium text-base text-brand-950 mb-2">{b.title}</h3>
+                  <p className="text-xs text-neutral-600 leading-relaxed">{b.description}</p>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Kisah Sukses Agen */}
-        <div className="mb-20">
-          <div className="text-center max-w-xl mx-auto mb-10">
-            <span className="text-xs uppercase tracking-wider font-bold text-accent-700">Inspirasi Nyata</span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-950 mt-1">Mereka yang Telah Membuktikannya</h2>
+        {/* Kisah Rekan Agen */}
+        <div className="mb-14">
+          <div className="mb-6 pb-4 border-b border-neutral-200/80">
+            <p className="text-[11px] uppercase tracking-widest text-accent-700 font-semibold">Testimoni Tim</p>
+            <h2 className="font-serif text-2xl font-medium text-brand-950 mt-1">Perspektif Dari Konsultan Kami</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {agentStories.map((story) => (
               <div
                 key={story.name}
-                className="p-8 rounded-3xl bg-surface-raised border border-border-subtle hover:border-brand-800/30 transition-all flex flex-col justify-between"
+                className="p-6 rounded-xl bg-white border border-neutral-200/80 flex flex-col justify-between"
               >
-                <blockquote className="text-base text-neutral-700 leading-relaxed italic mb-6">
-                  “{story.quote}”
-                </blockquote>
+                <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed font-serif italic mb-6">
+                  &ldquo;{story.quote}&rdquo;
+                </p>
 
-                <div className="flex items-center gap-4 pt-4 border-t border-neutral-200/80">
-                  <div className="w-12 h-12 rounded-full bg-brand-950 text-accent-400 font-extrabold flex items-center justify-center text-sm">
-                    {story.avatar}
+                <div className="flex items-center gap-3 pt-4 border-t border-neutral-100">
+                  <div className="w-10 h-10 rounded-full bg-brand-950 text-accent-400 font-medium flex items-center justify-center text-xs shrink-0">
+                    {story.initials}
                   </div>
                   <div>
-                    <h4 className="font-bold text-base text-brand-950">{story.name}</h4>
-                    <p className="text-xs text-accent-700 font-semibold">{story.role}</p>
-                    <p className="text-xs text-neutral-500">{story.experience}</p>
+                    <h4 className="font-medium text-sm text-brand-950">{story.name}</h4>
+                    <p className="text-[11px] text-neutral-500">{story.role} &middot; {story.experience}</p>
                   </div>
                 </div>
               </div>
@@ -188,38 +175,38 @@ export default function JoinEagletreePage() {
         </div>
 
         {/* Application Form Section */}
-        <div id="form-join" className="max-w-3xl mx-auto bg-white p-8 sm:p-12 rounded-3xl border border-neutral-200/90 shadow-sm mb-16">
-          <div className="text-center mb-8">
-            <span className="text-xs uppercase tracking-wider font-bold text-accent-700">Formulir Rekrutmen</span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-950 mt-1">
-              Mulai Perjalanan Anda Hari Ini
+        <div id="form-join" className="max-w-2xl mx-auto bg-white p-6 sm:p-8 rounded-xl border border-neutral-200/80 shadow-2xs mb-12">
+          <div className="mb-6 pb-4 border-b border-neutral-100">
+            <p className="text-[11px] uppercase tracking-widest text-accent-700 font-semibold">Formulir Kemitraan</p>
+            <h2 className="font-serif text-xl sm:text-2xl font-medium text-brand-950 mt-1">
+              Daftar Sebagai Konsultan
             </h2>
-            <p className="text-sm text-neutral-500 mt-2">
-              Lengkapi formulir di bawah ini. Tim HR & Talent Acquisition Eagletree akan mengundang Anda untuk sesi konsultasi karir.
+            <p className="text-xs text-neutral-500 mt-1">
+              Lengkapi data profil Anda. Tim Talent Acquisition Eagletree akan menghubungi Anda untuk tahap perkenalan.
             </p>
           </div>
 
           {isSubmitted ? (
-            <div className="py-12 px-6 rounded-2xl bg-brand-50/50 border border-brand-200 text-center">
-              <div className="w-16 h-16 rounded-full bg-brand-100 text-brand-800 flex items-center justify-center mx-auto mb-4">
-                <CheckCircle2 size={32} />
+            <div className="py-10 px-6 rounded-xl bg-brand-50/40 border border-brand-200/80 text-center">
+              <div className="w-12 h-12 rounded-full bg-brand-100 text-brand-900 flex items-center justify-center mx-auto mb-3">
+                <CheckCircle2 size={24} />
               </div>
-              <h3 className="text-xl font-bold text-brand-950 mb-2">Aplikasi Berhasil Dikirim!</h3>
-              <p className="text-sm text-neutral-600 max-w-md mx-auto mb-6">
+              <h3 className="font-serif text-lg font-medium text-brand-950 mb-2">Aplikasi Berhasil Dikirim</h3>
+              <p className="text-xs sm:text-sm text-neutral-600 max-w-md mx-auto mb-6 leading-relaxed">
                 Terima kasih, <strong>{formData.fullName}</strong>. Tim Talent Development kami akan menghubungi nomor WhatsApp Anda dalam 1-2 hari kerja untuk jadwal interview dan orientation session.
               </p>
               <button
                 type="button"
                 onClick={() => setIsSubmitted(false)}
-                className="px-6 py-2.5 rounded-xl bg-brand-950 text-white font-bold text-sm hover:bg-brand-900 transition-colors"
+                className="px-5 py-2.5 rounded-lg bg-brand-950 text-white font-medium text-xs hover:bg-brand-900 transition-colors"
               >
                 Kirim Formulir Lain
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-brand-950 mb-2">
+                <label className="block text-[11px] font-semibold uppercase tracking-wider text-neutral-700 mb-1.5">
                   Nama Lengkap *
                 </label>
                 <input
@@ -227,15 +214,15 @@ export default function JoinEagletreePage() {
                   required
                   value={formData.fullName}
                   onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                  placeholder="Contoh: Rian Pratama"
-                  className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-neutral-50/50 text-sm focus:outline-none focus:border-accent-500 focus:bg-white transition-colors"
+                  placeholder="Nama sesuai KTP"
+                  className="w-full px-3.5 py-2.5 rounded-lg border border-neutral-200 bg-white text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-brand-900 focus:ring-1 focus:ring-brand-900 transition-colors"
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-brand-950 mb-2">
-                    Nomor WhatsApp / HP *
+                  <label className="block text-[11px] font-semibold uppercase tracking-wider text-neutral-700 mb-1.5">
+                    Nomor WhatsApp *
                   </label>
                   <input
                     type="tel"
@@ -243,13 +230,13 @@ export default function JoinEagletreePage() {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="0812-xxxx-xxxx"
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-neutral-50/50 text-sm focus:outline-none focus:border-accent-500 focus:bg-white transition-colors"
+                    className="w-full px-3.5 py-2.5 rounded-lg border border-neutral-200 bg-white text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-brand-900 focus:ring-1 focus:ring-brand-900 transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-brand-950 mb-2">
-                    Email Aktif *
+                  <label className="block text-[11px] font-semibold uppercase tracking-wider text-neutral-700 mb-1.5">
+                    Alamat Email *
                   </label>
                   <input
                     type="email"
@@ -257,14 +244,14 @@ export default function JoinEagletreePage() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="nama@email.com"
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-neutral-50/50 text-sm focus:outline-none focus:border-accent-500 focus:bg-white transition-colors"
+                    className="w-full px-3.5 py-2.5 rounded-lg border border-neutral-200 bg-white text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-brand-900 focus:ring-1 focus:ring-brand-900 transition-colors"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-brand-950 mb-2">
+                  <label className="block text-[11px] font-semibold uppercase tracking-wider text-neutral-700 mb-1.5">
                     Kota Domisili *
                   </label>
                   <input
@@ -272,19 +259,19 @@ export default function JoinEagletreePage() {
                     required
                     value={formData.city}
                     onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                    placeholder="Contoh: Jakarta Selatan, BSD, Surabaya"
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-neutral-50/50 text-sm focus:outline-none focus:border-accent-500 focus:bg-white transition-colors"
+                    placeholder="Contoh: Jakarta Selatan, Surabaya"
+                    className="w-full px-3.5 py-2.5 rounded-lg border border-neutral-200 bg-white text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-brand-900 focus:ring-1 focus:ring-brand-900 transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-brand-950 mb-2">
+                  <label className="block text-[11px] font-semibold uppercase tracking-wider text-neutral-700 mb-1.5">
                     Latar Belakang Pengalaman
                   </label>
                   <select
                     value={formData.experience}
                     onChange={(e) => setFormData({ ...formData, experience: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-neutral-50/50 text-sm focus:outline-none focus:border-accent-500 focus:bg-white transition-colors"
+                    className="w-full px-3.5 py-2.5 rounded-lg border border-neutral-200 bg-white text-xs sm:text-sm text-neutral-900 focus:outline-none focus:border-brand-900 focus:ring-1 focus:ring-brand-900 transition-colors"
                   >
                     <option value="Fresh Graduate / Baru di Properti">Fresh Graduate / Baru di Properti</option>
                     <option value="1 - 2 Tahun di Bidang Sales / Marketing">1 - 2 Tahun di Bidang Sales / Marketing</option>
@@ -295,25 +282,25 @@ export default function JoinEagletreePage() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-brand-950 mb-2">
-                  Mengapa Anda Tertarik Bergabung dengan Eagletree?
+                <label className="block text-[11px] font-semibold uppercase tracking-wider text-neutral-700 mb-1.5">
+                  Motivasi Bergabung Bersama Eagletree
                 </label>
                 <textarea
                   rows={3}
                   value={formData.motivation}
                   onChange={(e) => setFormData({ ...formData, motivation: e.target.value })}
-                  placeholder="Ceritakan singkat tentang motivasi atau target pencapaian karir Anda..."
-                  className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-neutral-50/50 text-sm focus:outline-none focus:border-accent-500 focus:bg-white transition-colors resize-none"
+                  placeholder="Ceritakan target profesional atau alasan Anda ingin berkarier di sektor properti..."
+                  className="w-full px-3.5 py-2.5 rounded-lg border border-neutral-200 bg-white text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-brand-900 focus:ring-1 focus:ring-brand-900 transition-colors resize-none"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-4 rounded-xl bg-accent-500 hover:bg-accent-600 text-brand-950 font-extrabold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70"
+                className="w-full py-3.5 rounded-lg bg-brand-950 hover:bg-brand-900 text-white font-medium text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 mt-2"
               >
-                <Send size={16} />
-                <span>{isSubmitting ? "Mengirim Aplikasi..." : "Kirim Lamaran Kemitraan"}</span>
+                <Send size={14} />
+                <span>{isSubmitting ? "Mengirim Aplikasi..." : "Kirim Pengajuan Kemitraan"}</span>
               </button>
             </form>
           )}

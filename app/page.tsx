@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Sparkles } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { EditorialHeading } from "@/components/home/editorial-heading";
 import {
   NewsSection,
@@ -62,12 +62,12 @@ export default async function Home({ searchParams }: HomeProps) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8" id="projects-title">
             {propertyCategories.map((category, index) => (
               <Link
-                className="group relative h-72 sm:h-84 md:h-96 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl border border-border-subtle flex items-end p-7 sm:p-8 transition-all duration-500"
+                className="group relative h-72 sm:h-84 md:h-96 rounded-xl overflow-hidden shadow-xs hover:shadow-md border border-border-subtle flex items-end p-6 sm:p-8 transition-shadow duration-300"
                 href={category.href}
                 key={category.label}
               >
                 <Image
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   src={category.image}
                   alt=""
                   fill
@@ -77,8 +77,8 @@ export default async function Home({ searchParams }: HomeProps) {
                 <div className="relative z-10 flex flex-col gap-1.5 text-white w-full">
                   <div className="flex items-center justify-between">
                     <span className="text-xl sm:text-2xl font-bold tracking-tight">{content.discover.categories[index]?.label ?? category.label}</span>
-                    <span className="w-9 h-9 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-accent-300 group-hover:bg-accent-500 group-hover:text-brand-950 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all shadow-sm">
-                      <ArrowUpRight size={18} />
+                    <span className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-accent-300 group-hover:bg-accent-500 group-hover:text-brand-950 transition-colors">
+                      <ArrowUpRight size={16} />
                     </span>
                   </div>
                   <span className="text-xs sm:text-sm text-brand-100/85 font-normal leading-relaxed">{content.discover.categories[index]?.description ?? ""}</span>
@@ -143,35 +143,30 @@ export default async function Home({ searchParams }: HomeProps) {
       <TestimonialSection locale={locale} />
 
       {/* 11. Grand Closing CTA Banner */}
-      <section className="py-20 sm:py-28 bg-gradient-to-br from-brand-950 via-brand-900 to-brand-950 text-white relative overflow-hidden" aria-labelledby="cta-title">
-        {/* Subtle Ambient Radial Glow */}
-        <div className="absolute right-0 top-0 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute left-10 bottom-0 w-96 h-96 bg-brand-700/20 rounded-full blur-3xl pointer-events-none" />
-
-        <PageContainer className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-10">
+      <section className="py-16 sm:py-24 bg-brand-950 text-white border-t border-brand-900" aria-labelledby="cta-title">
+        <PageContainer className="flex flex-col lg:flex-row lg:items-center justify-between gap-10">
           <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-xs font-bold uppercase tracking-wider text-accent-400 border border-white/15 mb-3">
-              <Sparkles size={13} className="text-accent-400" />
-              <span>{content.cta.eyebrow}</span>
-            </span>
-            <h2 id="cta-title" className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            <p className="text-xs font-bold uppercase tracking-widest text-accent-400 mb-2">
+              {content.cta.eyebrow}
+            </p>
+            <h2 id="cta-title" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
               {content.cta.title}
             </h2>
-            <p className="mt-4 text-base sm:text-lg text-brand-100/85 leading-relaxed">
+            <p className="mt-3 text-base text-neutral-300 leading-relaxed font-normal">
               {content.cta.description}
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 shrink-0">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 shrink-0">
             <Link
-              className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-2xl bg-accent-500 hover:bg-accent-600 text-brand-950 font-extrabold text-sm shadow-xl hover:shadow-2xl transition-all active:scale-95 cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-accent-500 hover:bg-accent-600 text-brand-950 font-bold text-sm transition-colors cursor-pointer"
               href="/properties"
             >
               <span>{content.cta.button}</span>
-              <ArrowUpRight size={18} aria-hidden="true" />
+              <ArrowUpRight size={16} aria-hidden="true" />
             </Link>
             <Link
-              className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/20 transition-all cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-transparent hover:bg-white/10 text-white font-semibold text-sm border border-white/20 transition-colors cursor-pointer"
               href="/find-agent"
             >
               <span>Konsultasi Gratis</span>

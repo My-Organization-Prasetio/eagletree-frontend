@@ -12,50 +12,46 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-background">
-      <PageContainer className="py-12 sm:py-20 max-w-5xl">
+    <div className="min-h-screen bg-neutral-50/60 pt-24 pb-20">
+      <PageContainer className="max-w-5xl">
         <div className="mb-12 max-w-2xl">
-          <p className="text-xs font-bold uppercase tracking-widest text-accent-700 mb-3">
-            Hubungi Kami
+          <p className="text-[11px] uppercase tracking-widest text-accent-700 font-semibold mb-2">
+            Hubungi Penasihat Kami
           </p>
-          <h1 className="text-3xl sm:text-4xl font-bold text-brand-950 tracking-tight leading-tight mb-4">
-            Mari mulai percakapan tentang properti impian Anda.
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium text-brand-950 tracking-tight leading-tight mb-4">
+            Mari mulai percakapan tentang portofolio properti Anda.
           </h1>
-          <p className="text-base text-neutral-600 leading-relaxed">
-            Tim konsultan Eagletree siap menjawab pertanyaan Anda, mendiskusikan peluang pasar, atau menjadwalkan survei ke lokasi properti pilihan Anda.
+          <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-light">
+            Tim konsultan Eagletree siap memberikan pendampingan objektif, menjawab pertanyaan regulasi pasar, atau mengoordinasikan kunjungan properti pilihan Anda.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           {/* Contact Info (Left) */}
-          <div className="lg:col-span-4 flex flex-col gap-10">
-            <div>
-              <h2 className="text-lg font-bold text-brand-950 mb-4 border-b border-border-subtle pb-2">
-                Informasi Kontak
+          <div className="lg:col-span-5 flex flex-col gap-8">
+            <div className="bg-white p-6 rounded-xl border border-neutral-200/80">
+              <h2 className="font-medium text-sm text-brand-950 mb-4 pb-3 border-b border-neutral-100">
+                Komunikasi Langsung
               </h2>
-              <ul className="flex flex-col gap-5">
-                <li className="flex gap-4">
-                  <div className="w-10 h-10 rounded-full bg-brand-50 text-brand-900 flex items-center justify-center shrink-0">
-                    <Phone size={18} />
-                  </div>
+              <ul className="flex flex-col gap-4 text-xs">
+                <li className="flex gap-3 items-start">
+                  <Phone size={15} className="text-brand-900 shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-xs font-bold text-neutral-500 uppercase tracking-wide mb-1">
+                    <p className="text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-0.5">
                       Telepon / WhatsApp
                     </p>
-                    <a href="tel:+628111222333" className="text-sm font-semibold text-brand-950 hover:text-accent-700 transition-colors">
+                    <a href="tel:+628111222333" className="font-medium text-brand-950 hover:text-accent-700 transition-colors">
                       +62 811 1222 333
                     </a>
                   </div>
                 </li>
-                <li className="flex gap-4">
-                  <div className="w-10 h-10 rounded-full bg-brand-50 text-brand-900 flex items-center justify-center shrink-0">
-                    <Mail size={18} />
-                  </div>
+                <li className="flex gap-3 items-start">
+                  <Mail size={15} className="text-brand-900 shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-xs font-bold text-neutral-500 uppercase tracking-wide mb-1">
-                      Email
+                    <p className="text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-0.5">
+                      Email Representasi
                     </p>
-                    <a href="mailto:hello@eagletree.id" className="text-sm font-semibold text-brand-950 hover:text-accent-700 transition-colors">
+                    <a href="mailto:hello@eagletree.id" className="font-medium text-brand-950 hover:text-accent-700 transition-colors">
                       hello@eagletree.id
                     </a>
                   </div>
@@ -63,19 +59,17 @@ export default function ContactPage() {
               </ul>
             </div>
 
-            <div>
-              <h2 className="text-lg font-bold text-brand-950 mb-4 border-b border-border-subtle pb-2">
-                Kantor Pusat
+            <div className="bg-white p-6 rounded-xl border border-neutral-200/80">
+              <h2 className="font-medium text-sm text-brand-950 mb-4 pb-3 border-b border-neutral-100">
+                Kantor Pusat Eagletree
               </h2>
-              <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-brand-50 text-brand-900 flex items-center justify-center shrink-0">
-                  <MapPin size={18} />
-                </div>
+              <div className="flex gap-3 items-start text-xs">
+                <MapPin size={15} className="text-brand-900 shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-sm font-semibold text-brand-950 mb-1">
+                  <p className="font-medium text-brand-950 mb-1">
                     Eagletree Hub Jakarta
                   </p>
-                  <p className="text-sm text-neutral-600 leading-relaxed">
+                  <p className="text-neutral-600 leading-relaxed">
                     Menara Eagletree Lantai 12<br />
                     Jl. Jend. Sudirman Kav. 45<br />
                     Jakarta Selatan 12930, Indonesia
@@ -84,60 +78,63 @@ export default function ContactPage() {
               </div>
             </div>
             
-            <div className="p-6 bg-surface-raised rounded-2xl border border-border-subtle">
-              <h3 className="text-sm font-bold text-brand-950 mb-2">Ingin berbicara dengan agen spesifik?</h3>
-              <p className="text-xs text-neutral-600 mb-4">Lihat direktori agen kami untuk menemukan konsultan yang fokus di area Anda.</p>
-              <Link href="/find-agent" className="inline-flex items-center gap-1.5 text-xs font-bold text-accent-700 hover:text-accent-600 transition-colors">
-                Cari Agen <ArrowUpRight size={14} />
+            <div className="p-6 bg-white rounded-xl border border-neutral-200/80">
+              <h3 className="font-medium text-sm text-brand-950 mb-1">Perlu Penasihat Spesifik?</h3>
+              <p className="text-xs text-neutral-500 mb-4">Temukan konsultan berlisensi yang terspesialisasi di area domisili properti target Anda.</p>
+              <Link href="/find-agent" className="inline-flex items-center gap-1.5 text-xs font-semibold text-accent-700 hover:text-accent-600 transition-colors">
+                Direktori Konsultan <ArrowUpRight size={13} />
               </Link>
             </div>
           </div>
 
           {/* Contact Form (Right) */}
-          <div className="lg:col-span-8">
-            <div className="bg-white p-8 sm:p-10 rounded-3xl border border-border-subtle shadow-lg">
-              <h2 className="text-xl font-bold text-brand-950 mb-6">
-                Kirim Pesan Langsung
+          <div className="lg:col-span-7">
+            <div className="bg-white p-6 sm:p-8 rounded-xl border border-neutral-200/80 shadow-2xs">
+              <h2 className="font-serif text-xl sm:text-2xl font-medium text-brand-950 mb-2">
+                Kirimkan Pesan
               </h2>
-              <form className="flex flex-col gap-5">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <p className="text-xs text-neutral-500 mb-6">
+                Kami akan merespons pesan Anda dalam 1x24 jam kerja.
+              </p>
+              <form className="flex flex-col gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="name" className="text-xs font-bold text-neutral-700">Nama Lengkap</label>
-                    <input type="text" id="name" className="px-4 py-3 rounded-xl border border-border-subtle bg-surface-raised focus:outline-none focus:border-brand-800 focus:ring-2 focus:ring-brand-800/10 transition-all text-sm" placeholder="Contoh: Budi Santoso" />
+                    <label htmlFor="name" className="text-[11px] font-semibold uppercase tracking-wider text-neutral-700">Nama Lengkap *</label>
+                    <input type="text" id="name" required className="px-3.5 py-2.5 rounded-lg border border-neutral-200 bg-white text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-brand-900 focus:ring-1 focus:ring-brand-900 transition-colors" placeholder="Nama Anda" />
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="phone" className="text-xs font-bold text-neutral-700">Nomor Telepon / WhatsApp</label>
-                    <input type="tel" id="phone" className="px-4 py-3 rounded-xl border border-border-subtle bg-surface-raised focus:outline-none focus:border-brand-800 focus:ring-2 focus:ring-brand-800/10 transition-all text-sm" placeholder="Contoh: 08123456789" />
+                    <label htmlFor="phone" className="text-[11px] font-semibold uppercase tracking-wider text-neutral-700">WhatsApp / Telepon *</label>
+                    <input type="tel" id="phone" required className="px-3.5 py-2.5 rounded-lg border border-neutral-200 bg-white text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-brand-900 focus:ring-1 focus:ring-brand-900 transition-colors" placeholder="0812-xxxx-xxxx" />
                   </div>
                 </div>
                 
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="email" className="text-xs font-bold text-neutral-700">Email Address</label>
-                  <input type="email" id="email" className="px-4 py-3 rounded-xl border border-border-subtle bg-surface-raised focus:outline-none focus:border-brand-800 focus:ring-2 focus:ring-brand-800/10 transition-all text-sm" placeholder="budi@example.com" />
+                  <label htmlFor="email" className="text-[11px] font-semibold uppercase tracking-wider text-neutral-700">Alamat Email *</label>
+                  <input type="email" id="email" required className="px-3.5 py-2.5 rounded-lg border border-neutral-200 bg-white text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-brand-900 focus:ring-1 focus:ring-brand-900 transition-colors" placeholder="nama@email.com" />
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="topic" className="text-xs font-bold text-neutral-700">Topik Pembicaraan</label>
-                  <select id="topic" className="px-4 py-3 rounded-xl border border-border-subtle bg-surface-raised focus:outline-none focus:border-brand-800 focus:ring-2 focus:ring-brand-800/10 transition-all text-sm appearance-none cursor-pointer">
-                    <option value="">Pilih topik...</option>
+                  <label htmlFor="topic" className="text-[11px] font-semibold uppercase tracking-wider text-neutral-700">Topik Konsultasi</label>
+                  <select id="topic" className="px-3.5 py-2.5 rounded-lg border border-neutral-200 bg-white text-xs sm:text-sm text-neutral-900 focus:outline-none focus:border-brand-900 focus:ring-1 focus:ring-brand-900 transition-colors cursor-pointer">
+                    <option value="">Pilih topik pembicaraan...</option>
                     <option value="buy">Mencari properti untuk dibeli</option>
                     <option value="rent">Mencari properti untuk disewa</option>
-                    <option value="sell">Ingin memasarkan/menjual properti</option>
-                    <option value="consultation">Konsultasi umum / KPR</option>
-                    <option value="other">Lainnya</option>
+                    <option value="sell">Ingin memasarkan / menjual aset</option>
+                    <option value="consultation">Konsultasi regulasi / KPR</option>
+                    <option value="other">Kemitraan atau hal lainnya</option>
                   </select>
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="message" className="text-xs font-bold text-neutral-700">Pesan Anda</label>
-                  <textarea id="message" rows={5} className="px-4 py-3 rounded-xl border border-border-subtle bg-surface-raised focus:outline-none focus:border-brand-800 focus:ring-2 focus:ring-brand-800/10 transition-all text-sm resize-none" placeholder="Ceritakan detail kebutuhan atau pertanyaan Anda..." />
+                  <label htmlFor="message" className="text-[11px] font-semibold uppercase tracking-wider text-neutral-700">Pesan atau Rincian Kebutuhan</label>
+                  <textarea id="message" rows={4} className="px-3.5 py-2.5 rounded-lg border border-neutral-200 bg-white text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-brand-900 focus:ring-1 focus:ring-brand-900 transition-colors resize-none" placeholder="Tuliskan preferensi lokasi, estimasi anggaran, atau hal yang ingin Anda tanyakan..." />
                 </div>
 
-                <button type="button" className="mt-2 w-full py-4 rounded-xl bg-brand-950 hover:bg-brand-900 text-white font-bold text-sm shadow-md transition-all active:scale-[0.98]">
-                  Kirim Pesan
+                <button type="submit" className="mt-2 w-full py-3.5 rounded-lg bg-brand-950 hover:bg-brand-900 text-white font-medium text-xs uppercase tracking-wider transition-colors cursor-pointer">
+                  Kirimkan Pesan
                 </button>
-                <p className="text-[11px] text-neutral-500 text-center mt-2">
-                  Dengan mengirimkan pesan, Anda menyetujui Kebijakan Privasi Eagletree.
+                <p className="text-[11px] text-neutral-400 text-center">
+                  Data Anda dijaga kerahasiaannya sesuai ketentuan privasi Eagletree.
                 </p>
               </form>
             </div>

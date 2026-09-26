@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Calendar, Clock, Tag } from "lucide-react";
+import { ArrowUpRight, Clock } from "lucide-react";
 import { PageContainer } from "@/components/layout/page-container";
 import { mockArticles, articleCategories } from "@/lib/mock-data";
 
@@ -75,74 +75,72 @@ export default async function ArticlesPage({ searchParams }: ArticlesPageProps) 
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="min-h-screen bg-background">
-        {/* Hero / Featured Article */}
-        <section className="relative bg-gradient-to-b from-brand-950 via-brand-900 to-brand-950 text-white overflow-hidden">
-          <div className="absolute inset-0 bg-brand-950/40 pointer-events-none" />
-          <div className="absolute -bottom-20 -right-20 w-[500px] h-[500px] bg-accent-500/8 rounded-full blur-3xl pointer-events-none" />
-
-          <PageContainer className="relative z-10 py-16 sm:py-24">
-            <p className="text-xs font-bold uppercase tracking-widest text-accent-400 mb-2">
-              Berita & Artikel
-            </p>
-            <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight max-w-3xl">
-              Wawasan seputar properti, gaya hidup, dan investasi.
-            </h1>
-            <p className="mt-4 text-base sm:text-lg text-brand-100/85 max-w-2xl leading-relaxed">
-              Informasi dan panduan yang membantu Anda membuat keputusan properti
-              dengan lebih percaya diri.
-            </p>
+      <div className="min-h-screen bg-neutral-50/60 pt-24 pb-20">
+        {/* Header Section */}
+        <section className="mb-10">
+          <PageContainer>
+            <div className="max-w-3xl mb-8">
+              <p className="text-[11px] uppercase tracking-widest text-accent-700 font-semibold mb-2">
+                Jurnal & Wawasan Properti
+              </p>
+              <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium text-brand-950 tracking-tight leading-tight">
+                Analisis Pasar, Regulasi & Refleksi Arsitektural.
+              </h1>
+              <p className="mt-2 text-xs sm:text-sm text-neutral-600 leading-relaxed font-light">
+                Artikel kurasi dari tim riset Eagletree untuk membantu Anda mengambil keputusan aset secara terukur.
+              </p>
+            </div>
 
             {/* Featured Article Card */}
             <Link
               href={`/articles/${featured.slug}`}
-              className="group mt-10 grid grid-cols-1 lg:grid-cols-2 gap-6 bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 overflow-hidden hover:border-accent-500/30 transition-all"
+              className="group grid grid-cols-1 lg:grid-cols-12 gap-6 bg-white rounded-xl border border-neutral-200/80 overflow-hidden hover:border-neutral-300 transition-colors shadow-2xs"
             >
-              <div className="relative h-64 lg:h-auto overflow-hidden">
+              <div className="relative h-64 lg:h-auto lg:col-span-7 overflow-hidden">
                 <Image
                   src={featured.image.src}
                   alt={featured.image.alt}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                  sizes="(max-width: 1023px) 100vw, 50vw"
+                  className="object-cover group-hover:scale-102 transition-transform duration-500 ease-out"
+                  sizes="(max-width: 1023px) 100vw, 58vw"
                 />
               </div>
-              <div className="flex flex-col justify-center p-7 sm:p-10 gap-4">
-                <div className="flex items-center gap-3 text-xs">
-                  <span className="px-3 py-1 rounded-full bg-accent-500/20 text-accent-300 font-bold uppercase tracking-wider">
+              <div className="flex flex-col justify-center p-6 sm:p-8 lg:col-span-5 gap-3">
+                <div className="flex items-center gap-2 text-[11px] font-mono">
+                  <span className="text-accent-700 uppercase tracking-wider font-semibold">
                     {featured.category}
                   </span>
-                  <span className="text-white/60 flex items-center gap-1">
-                    <Calendar size={12} />
+                  <span className="text-neutral-300">&middot;</span>
+                  <span className="text-neutral-400">
                     {formatDate(featured.publishedAt)}
                   </span>
                 </div>
-                <h2 className="text-xl sm:text-2xl font-bold text-white leading-snug group-hover:text-accent-300 transition-colors">
+                <h2 className="font-serif text-xl sm:text-2xl font-medium text-brand-950 leading-snug group-hover:text-accent-700 transition-colors">
                   {featured.title}
                 </h2>
-                <p className="text-sm text-white/70 leading-relaxed">
+                <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-light">
                   {featured.description}
                 </p>
-                <span className="inline-flex items-center gap-1.5 text-sm font-bold text-accent-400 group-hover:translate-x-1 transition-transform">
-                  Baca selengkapnya
-                  <ArrowUpRight size={16} />
-                </span>
+                <div className="pt-2 flex items-center gap-1.5 text-xs font-medium text-brand-950 group-hover:text-accent-700 transition-colors">
+                  <span>Baca Selengkapnya</span>
+                  <ArrowUpRight size={13} />
+                </div>
               </div>
             </Link>
           </PageContainer>
         </section>
 
         {/* Category Filter & Articles Grid */}
-        <section className="py-14 sm:py-20">
+        <section>
           <PageContainer>
-            {/* Category Pills */}
-            <div className="flex flex-wrap items-center gap-2 mb-10">
+            {/* Category Tabs */}
+            <div className="flex flex-wrap items-center gap-1.5 mb-6 pb-3 border-b border-neutral-200/80">
               <Link
                 href="/articles"
-                className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
+                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                   activeCategory === "all"
-                    ? "bg-brand-950 text-white shadow-sm"
-                    : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+                    ? "bg-brand-950 text-white"
+                    : "bg-white text-neutral-600 border border-neutral-200 hover:bg-neutral-50 hover:text-neutral-900"
                 }`}
               >
                 Semua
@@ -151,10 +149,10 @@ export default async function ArticlesPage({ searchParams }: ArticlesPageProps) 
                 <Link
                   key={cat}
                   href={`/articles?category=${encodeURIComponent(cat)}`}
-                  className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                     activeCategory === cat
-                      ? "bg-brand-950 text-white shadow-sm"
-                      : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+                      ? "bg-brand-950 text-white"
+                      : "bg-white text-neutral-600 border border-neutral-200 hover:bg-neutral-50 hover:text-neutral-900"
                   }`}
                 >
                   {cat}
@@ -162,63 +160,48 @@ export default async function ArticlesPage({ searchParams }: ArticlesPageProps) 
               ))}
             </div>
 
-            {/* Results count */}
-            <p className="text-sm font-bold text-brand-950 mb-6">
-              {articles.length} artikel ditemukan
-            </p>
-
             {/* Articles Grid */}
             {articles.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {articles.map((article) => (
                   <article
                     key={article.id}
-                    className="group bg-surface-raised rounded-2xl overflow-hidden border border-border-subtle hover:border-brand-800/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+                    className="group bg-white rounded-xl overflow-hidden border border-neutral-200/80 hover:border-neutral-300 transition-colors shadow-2xs flex flex-col"
                   >
                     <Link
                       href={`/articles/${article.slug}`}
-                      className="relative h-52 w-full overflow-hidden block"
+                      className="relative h-48 w-full overflow-hidden block"
                     >
                       <Image
                         src={article.image.src}
                         alt={article.image.alt}
                         fill
-                        className="object-cover group-hover:scale-106 transition-transform duration-700 ease-out"
+                        className="object-cover group-hover:scale-103 transition-transform duration-500 ease-out"
                         sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
                       />
                     </Link>
-                    <div className="p-5 sm:p-6 flex flex-col flex-1 gap-3">
-                      <div className="flex items-center justify-between text-xs">
-                        <span className="inline-flex items-center gap-1 text-accent-700 font-bold tracking-wide uppercase text-[11px]">
-                          <Tag size={11} />
+                    <div className="p-5 flex flex-col flex-1 gap-2.5">
+                      <div className="flex items-center justify-between text-[11px] font-mono">
+                        <span className="text-accent-700 uppercase tracking-wider font-semibold">
                           {article.category}
                         </span>
-                        <time className="text-neutral-500 flex items-center gap-1 font-medium">
-                          <Calendar size={11} />
+                        <time className="text-neutral-400">
                           {formatDate(article.publishedAt)}
                         </time>
                       </div>
-                      <h3 className="text-base font-bold text-brand-950 line-clamp-2 group-hover:text-accent-700 transition-colors leading-snug">
+                      <h3 className="font-serif text-base font-medium text-brand-950 line-clamp-2 group-hover:text-accent-700 transition-colors leading-snug">
                         <Link href={`/articles/${article.slug}`}>
                           {article.title}
                         </Link>
                       </h3>
-                      <p className="text-sm text-neutral-600 line-clamp-2 leading-relaxed flex-1">
+                      <p className="text-xs text-neutral-600 line-clamp-2 leading-relaxed flex-1 font-light">
                         {article.description}
                       </p>
-                      <div className="flex items-center justify-between pt-2 border-t border-border-subtle/70 mt-auto">
-                        <div className="flex items-center gap-2">
-                          <div
-                            className="w-7 h-7 rounded-full bg-brand-100 text-brand-900 font-bold flex items-center justify-center text-[10px] border border-brand-200"
-                            aria-hidden="true"
-                          >
-                            {article.author.initials}
-                          </div>
-                          <span className="text-xs font-medium text-neutral-600 truncate max-w-[140px]">
-                            {article.author.name}
-                          </span>
-                        </div>
-                        <span className="text-[11px] text-neutral-400 flex items-center gap-1">
+                      <div className="flex items-center justify-between pt-3 border-t border-neutral-100 mt-auto text-xs text-neutral-500">
+                        <span className="font-medium text-neutral-700 truncate max-w-[150px]">
+                          {article.author.name}
+                        </span>
+                        <span className="text-[11px] text-neutral-400 flex items-center gap-1 font-mono">
                           <Clock size={11} />
                           {article.readingTimeMinutes} min
                         </span>
@@ -228,17 +211,16 @@ export default async function ArticlesPage({ searchParams }: ArticlesPageProps) 
                 ))}
               </div>
             ) : (
-              <div className="flex flex-col items-center justify-center p-12 bg-surface-raised rounded-3xl border border-border-subtle text-center">
-                <h3 className="text-lg font-bold text-brand-950 mb-1">
+              <div className="flex flex-col items-center justify-center p-12 bg-white rounded-xl border border-neutral-200/80 text-center">
+                <h3 className="font-serif text-base font-medium text-brand-950 mb-1">
                   Belum ada artikel di kategori ini
                 </h3>
-                <p className="text-sm text-neutral-600 mb-6">
-                  Kami sedang menyiapkan konten terbaru. Coba lihat kategori
-                  lainnya.
+                <p className="text-xs text-neutral-500 mb-5 font-light">
+                  Kami sedang menyiapkan konten terbaru untuk kategori ini.
                 </p>
                 <Link
                   href="/articles"
-                  className="px-5 py-2.5 bg-brand-950 hover:bg-brand-900 text-white text-xs font-semibold rounded-xl transition-colors shadow-sm"
+                  className="px-4 py-2 bg-brand-950 hover:bg-brand-900 text-white text-xs font-medium uppercase tracking-wider rounded-lg transition-colors"
                 >
                   Lihat Semua Artikel
                 </Link>

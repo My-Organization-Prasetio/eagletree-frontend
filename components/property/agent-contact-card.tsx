@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Calculator, CheckCircle2, MessageCircle, Phone, Send, ShieldCheck } from "lucide-react";
+import { CheckCircle2, MessageCircle, Phone, Send, ShieldCheck, ArrowRight } from "lucide-react";
 import type { AgentProfile } from "@/types/agent";
 import type { PropertyPrice } from "@/types/property";
 
@@ -15,7 +15,7 @@ type AgentContactCardProps = {
 };
 
 function calculateEstimatedKpr(amount: number) {
-  // Rough rule of thumb: 20% DP, 20 years (240 mos), 6.5% annual interest
+  // 20% DP, 20 years (240 mos), 6.5% annual interest
   const principal = amount * 0.8;
   const monthlyRate = 0.065 / 12;
   const months = 240;
@@ -33,7 +33,7 @@ export function AgentContactCard({
   const [inquiryName, setInquiryName] = useState("");
   const [inquiryPhone, setInquiryPhone] = useState("");
   const [inquiryMessage, setInquiryMessage] = useState(
-    `Halo, saya tertarik dengan properti ${propertyTitle}. Mohon informasi jadwal survey dan dokumennya.`
+    `Halo, saya tertarik dengan properti ${propertyTitle}. Mohon informasi jadwal survey dan kelengkapan dokumennya.`
   );
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -51,7 +51,7 @@ export function AgentContactCard({
   const currentAgent = agent || fallbackAgent;
 
   const currentUrl = typeof window !== "undefined" ? window.location.href : `https://eagletree.id/properties/${propertyTitle.toLowerCase().replace(/\s+/g, "-")}`;
-  const whatsappMessage = `Halo ${currentAgent.name}, saya menemukan properti "${propertyTitle}" di Eagletree (${currentUrl}). Boleh minta info ketersediaan dan jadwal survey lokasi?`;
+  const whatsappMessage = `Halo ${currentAgent.name}, saya tertarik dengan listing "${propertyTitle}" (${currentUrl}). Boleh minta info ketersediaan dan jadwal survey lokasi?`;
   const whatsappUrl = `https://wa.me/${currentAgent.whatsapp}?text=${encodeURIComponent(whatsappMessage)}`;
 
   const estimatedMonthlyKpr = calculateEstimatedKpr(propertyPrice.amount);
@@ -62,10 +62,10 @@ export function AgentContactCard({
   };
 
   return (
-    <div className="flex flex-col gap-5 p-6 bg-white rounded-2xl border border-[#dde2de] shadow-sm sticky top-24">
+    <div className="flex flex-col gap-4 p-5 sm:p-6 bg-white rounded-xl border border-neutral-200/80 shadow-2xs sticky top-24">
       {/* Agent Bio Header */}
-      <div className="flex items-center gap-3.5 pb-4 border-b border-[#dde2de]">
-        <div className="relative w-14 h-14 rounded-full bg-[#102d26] text-white flex items-center justify-center font-bold text-base overflow-hidden shrink-0 ring-2 ring-[#c99a55]/40">
+      <div className="flex items-center gap-3 pb-4 border-b border-neutral-100">
+        <div className="relative w-12 h-12 rounded-full bg-brand-950 text-accent-400 flex items-center justify-center font-medium text-sm overflow-hidden shrink-0">
           {currentAgent.photo ? (
             <Image src={currentAgent.photo} alt={currentAgent.name} fill className="object-cover" />
           ) : (
@@ -74,36 +74,36 @@ export function AgentContactCard({
         </div>
         <div className="min-w-0">
           <div className="flex items-center gap-1.5">
-            <h3 className="text-base font-bold text-[#102d26] truncate">
+            <h3 className="font-medium text-sm text-brand-950 truncate">
               {currentAgent.name}
             </h3>
-            <span title="Agen Terverifikasi">
-              <ShieldCheck size={16} className="text-[#36705d] shrink-0" aria-hidden="true" />
+            <span title="Konsultan Terverifikasi">
+              <ShieldCheck size={14} className="text-brand-900 shrink-0" aria-hidden="true" />
             </span>
           </div>
-          <p className="text-xs text-[#68766f]">{currentAgent.role}</p>
-          <p className="text-[11px] text-[#87938d] truncate">{currentAgent.office}</p>
+          <p className="text-xs text-neutral-500">{currentAgent.role}</p>
+          <p className="text-[11px] text-neutral-400 truncate">{currentAgent.office}</p>
         </div>
       </div>
 
       {/* Main Direct CTAs */}
-      <div className="flex flex-col gap-2.5">
+      <div className="flex flex-col gap-2">
         <a
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2.5 w-full py-3.5 px-4 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold text-sm rounded-xl transition-all shadow-xs cursor-pointer text-center"
+          className="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-accent-500 hover:bg-accent-400 text-brand-950 font-medium text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer text-center"
         >
-          <MessageCircle size={19} className="shrink-0" />
+          <MessageCircle size={15} className="shrink-0" />
           <span>Hubungi via WhatsApp</span>
         </a>
 
         {currentAgent.phone && (
           <a
             href={`tel:${currentAgent.phone}`}
-            className="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-[#f0f5f1] hover:bg-[#e1ece7] text-[#102d26] font-medium text-xs rounded-xl transition-all border border-[#dde2de] cursor-pointer text-center"
+            className="flex items-center justify-center gap-1.5 w-full py-2 px-4 bg-neutral-50 hover:bg-neutral-100 text-neutral-700 font-medium text-xs rounded-lg transition-colors border border-neutral-200/80 cursor-pointer text-center"
           >
-            <Phone size={14} className="text-[#36705d]" />
+            <Phone size={13} className="text-neutral-500" />
             <span>Telepon: {currentAgent.phone}</span>
           </a>
         )}
@@ -111,49 +111,49 @@ export function AgentContactCard({
 
       {/* Quick Inquiry Form */}
       <div className="pt-2">
-        <p className="text-xs font-semibold text-[#102d26] mb-3">
-          Atau Tinggalkan Pesan untuk Agen
+        <p className="text-xs font-medium text-brand-950 mb-2.5">
+          Kirim Pertanyaan Tertulis
         </p>
 
         {isSubmitted ? (
-          <div className="p-4 rounded-xl bg-[#f0f5f1] border border-[#36705d]/20 text-center flex flex-col items-center gap-2">
-            <CheckCircle2 size={24} className="text-[#36705d]" />
-            <p className="text-xs font-semibold text-[#102d26]">Pesan Terkirim!</p>
-            <p className="text-[11px] text-[#53625c]">
-              Agen kami akan segera menghubungi Anda melalui WhatsApp atau telepon.
+          <div className="p-4 rounded-lg bg-brand-50/50 border border-brand-200 text-center flex flex-col items-center gap-1.5">
+            <CheckCircle2 size={20} className="text-brand-900" />
+            <p className="text-xs font-medium text-brand-950">Pesan Terkirim</p>
+            <p className="text-[11px] text-neutral-500">
+              Konsultan kami akan segera menghubungi Anda.
             </p>
           </div>
         ) : (
-          <form onSubmit={handleSubmitInquiry} className="flex flex-col gap-3">
+          <form onSubmit={handleSubmitInquiry} className="flex flex-col gap-2.5">
             <input
               type="text"
               required
               placeholder="Nama lengkap Anda"
               value={inquiryName}
               onChange={(e) => setInquiryName(e.target.value)}
-              className="w-full px-3 py-2 bg-[#f7f8f5] border border-[#dde2de] rounded-xl text-xs text-[#1c2925] focus:outline-none focus:border-[#36705d]"
+              className="w-full px-3 py-2 bg-white border border-neutral-200 rounded-lg text-xs text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-brand-900"
             />
             <input
               type="tel"
               required
-              placeholder="Nomor WhatsApp (cth: 08123456789)"
+              placeholder="Nomor WhatsApp"
               value={inquiryPhone}
               onChange={(e) => setInquiryPhone(e.target.value)}
-              className="w-full px-3 py-2 bg-[#f7f8f5] border border-[#dde2de] rounded-xl text-xs text-[#1c2925] focus:outline-none focus:border-[#36705d]"
+              className="w-full px-3 py-2 bg-white border border-neutral-200 rounded-lg text-xs text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-brand-900"
             />
             <textarea
               rows={2}
               required
               value={inquiryMessage}
               onChange={(e) => setInquiryMessage(e.target.value)}
-              className="w-full px-3 py-2 bg-[#f7f8f5] border border-[#dde2de] rounded-xl text-xs text-[#1c2925] focus:outline-none focus:border-[#36705d] resize-none"
+              className="w-full px-3 py-2 bg-white border border-neutral-200 rounded-lg text-xs text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-brand-900 resize-none"
             />
             <button
               type="submit"
-              className="flex items-center justify-center gap-2 w-full py-2.5 bg-[#102d26] hover:bg-[#173f35] text-white text-xs font-semibold rounded-xl transition-colors cursor-pointer shadow-xs"
+              className="flex items-center justify-center gap-1.5 w-full py-2 bg-brand-950 hover:bg-brand-900 text-white text-xs font-medium uppercase tracking-wider rounded-lg transition-colors cursor-pointer"
             >
-              <Send size={13} />
-              <span>Kirim Pesan</span>
+              <Send size={12} />
+              <span>Kirimkan Pesan</span>
             </button>
           </form>
         )}
@@ -161,29 +161,25 @@ export function AgentContactCard({
 
       {/* Mini KPR Simulator Widget */}
       {!propertyPrice.period && (
-        <div className="pt-4 border-t border-[#dde2de] flex flex-col gap-2">
-          <div className="flex items-center justify-between">
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-[#68766f]">
-              Simulasi KPR
+        <div className="pt-3 border-t border-neutral-100 flex flex-col gap-2">
+          <div className="p-3 bg-neutral-50/80 rounded-lg border border-neutral-200/60">
+            <span className="text-[10px] font-mono uppercase tracking-wider text-neutral-400 block mb-0.5">
+              ESTIMASI KPR
             </span>
-            <Calculator size={14} className="text-[#c99a55]" />
-          </div>
-          <div className="p-3 bg-[#faf5eb] rounded-xl border border-[#c99a55]/25">
-            <p className="text-[11px] text-[#53625c]">Estimasi Cicilan Bulanan</p>
-            <p className="text-base font-bold text-[#936b2d]">
+            <p className="font-mono text-sm font-medium text-brand-950">
               Rp {new Intl.NumberFormat("id-ID").format(estimatedMonthlyKpr)}{" "}
-              <span className="text-xs font-normal text-[#68766f]">/ bulan</span>
+              <span className="text-xs font-sans text-neutral-500 font-light">/ bln</span>
             </p>
-            <p className="text-[10px] text-[#87938d] mt-1">
-              Asumsi DP 20%, bunga 6.5%, tenor 20 tahun.
+            <p className="text-[10px] text-neutral-400 mt-0.5">
+              Asumsi DP 20%, bunga 6.5%, tenor 20 thn.
             </p>
           </div>
           <Link
             href={`/mortgage-calculator?price=${propertyPrice.amount}`}
-            className="text-xs font-semibold text-[#102d26] hover:text-[#936b2d] transition-colors inline-flex items-center gap-1 mt-1"
+            className="text-xs font-medium text-brand-950 hover:text-accent-700 transition-colors inline-flex items-center gap-1"
           >
-            <span>Hitung Simulasi KPR Lengkap</span>
-            <span aria-hidden="true">→</span>
+            <span>Kalkulator KPR Lengkap</span>
+            <ArrowRight size={12} />
           </Link>
         </div>
       )}

@@ -2,20 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
-  Bath,
-  BedDouble,
-  Building,
-  Calendar,
-  Check,
   ChevronRight,
-  Compass,
   FileCheck,
-  Home,
   MapPin,
-  Ruler,
-  Share2,
-  Sparkles,
-  Zap,
+  Check,
 } from "lucide-react";
 import { getPropertyBySlug, getRelatedProperties, mockProperties } from "@/lib/mock-data";
 import { PropertyGallery } from "@/components/property/property-gallery";
@@ -155,29 +145,29 @@ export default async function PropertyDetailPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="min-h-screen bg-[#f7f8f5] py-6 lg:py-10">
+      <div className="min-h-screen bg-neutral-50/60 py-6 lg:py-10">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
           {/* Breadcrumb Navigation */}
           <nav
             aria-label="Breadcrumb"
-            className="flex items-center gap-1.5 text-xs text-[#68766f] mb-6 overflow-x-auto whitespace-nowrap py-1"
+            className="flex items-center gap-1.5 text-xs text-neutral-500 mb-6 overflow-x-auto whitespace-nowrap py-1"
           >
-            <Link href="/" className="hover:text-[#102d26] transition-colors">
+            <Link href="/" className="hover:text-brand-700 transition-colors">
               Beranda
             </Link>
-            <ChevronRight size={13} className="shrink-0 text-[#87938d]" />
-            <Link href="/properties" className="hover:text-[#102d26] transition-colors">
+            <ChevronRight size={13} className="shrink-0 text-neutral-400" />
+            <Link href="/properties" className="hover:text-brand-700 transition-colors">
               Properti
             </Link>
-            <ChevronRight size={13} className="shrink-0 text-[#87938d]" />
+            <ChevronRight size={13} className="shrink-0 text-neutral-400" />
             <Link
               href={property.status === "For rent" ? "/for-rent" : "/for-sale"}
-              className="hover:text-[#102d26] transition-colors"
+              className="hover:text-brand-700 transition-colors"
             >
               {property.status === "For rent" ? "Disewa" : "Dijual"}
             </Link>
-            <ChevronRight size={13} className="shrink-0 text-[#87938d]" />
-            <span className="text-[#102d26] font-semibold truncate max-w-xs">
+            <ChevronRight size={13} className="shrink-0 text-neutral-400" />
+            <span className="text-neutral-900 font-medium truncate max-w-xs">
               {property.title}
             </span>
           </nav>
@@ -186,34 +176,34 @@ export default async function PropertyDetailPage({
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
             <div>
               <div className="flex items-center gap-2 mb-2">
-                <span className="px-2.5 py-0.5 rounded-md bg-[#102d26] text-white text-[11px] font-semibold uppercase tracking-wider">
-                  {property.status}
+                <span className="px-2.5 py-0.5 rounded bg-brand-950 text-white text-[10px] font-mono uppercase tracking-wider">
+                  {property.status === "For rent" ? "DISEWA" : "DIJUAL"}
                 </span>
-                <span className="px-2.5 py-0.5 rounded-md bg-[#e1ece7] text-[#36705d] text-[11px] font-semibold">
+                <span className="px-2.5 py-0.5 rounded bg-neutral-200/80 text-neutral-800 text-[11px] font-medium">
                   {property.type}
                 </span>
                 {property.certificate && (
-                  <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-white border border-[#dde2de] text-[11px] text-[#53625c]">
-                    <FileCheck size={12} className="text-[#36705d]" />
+                  <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-white border border-neutral-200 text-[11px] text-neutral-600">
+                    <FileCheck size={12} className="text-brand-900" />
                     {property.certificate}
                   </span>
                 )}
               </div>
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#102d26] tracking-tight">
+              <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-medium text-brand-950 tracking-tight">
                 {property.title}
               </h1>
-              <p className="flex items-center gap-1.5 mt-2 text-sm text-[#53625c]">
-                <MapPin size={16} className="text-[#36705d] shrink-0" />
+              <p className="flex items-center gap-1.5 mt-2 text-xs sm:text-sm text-neutral-600">
+                <MapPin size={14} className="text-neutral-400 shrink-0" />
                 <span>{property.address || property.location}</span>
               </p>
             </div>
 
-            <div className="flex flex-row md:flex-col items-baseline md:items-end justify-between gap-1 pt-2 md:pt-0 border-t md:border-t-0 border-[#dde2de]">
-              <span className="text-xs text-[#68766f]">Harga Penawaran</span>
-              <div className="text-2xl sm:text-3xl font-extrabold text-[#936b2d]">
+            <div className="flex flex-row md:flex-col items-baseline md:items-end justify-between gap-0.5 pt-2 md:pt-0 border-t md:border-t-0 border-neutral-200">
+              <span className="text-[11px] uppercase tracking-wider text-neutral-400 font-mono">Nilai Penawaran</span>
+              <div className="font-serif text-2xl sm:text-3xl font-normal text-brand-950">
                 {formattedPrice}
                 {property.price.period && (
-                  <span className="text-sm font-normal text-[#68766f]">
+                  <span className="text-xs font-sans text-neutral-500 font-light">
                     {" "}
                     / {property.price.period === "month" ? "bulan" : "tahun"}
                   </span>
@@ -223,174 +213,123 @@ export default async function PropertyDetailPage({
           </div>
 
           {/* Photo Gallery with Lightbox */}
-          <section aria-label="Galeri Foto Properti" className="mb-10">
+          <section aria-label="Galeri Foto Properti" className="mb-8">
             <PropertyGallery images={property.images} title={property.title} />
           </section>
 
           {/* 2-Column Content: Left Overview, Right Sticky Agent Sidebar */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             {/* Left Content Column (8 cols) */}
-            <div className="lg:col-span-8 flex flex-col gap-10">
+            <div className="lg:col-span-8 flex flex-col gap-6">
               {/* Key Specifications Grid */}
-              <section className="p-6 bg-white rounded-2xl border border-[#dde2de] shadow-xs">
-                <h2 className="text-base font-bold text-[#102d26] mb-4 pb-3 border-b border-[#dde2de] flex items-center gap-2">
-                  <Sparkles size={17} className="text-[#c99a55]" />
-                  <span>Spesifikasi Utama Properti</span>
+              <section className="p-6 bg-white rounded-xl border border-neutral-200/80 shadow-2xs">
+                <h2 className="font-serif text-base font-medium text-brand-950 mb-4 pb-3 border-b border-neutral-100">
+                  Spesifikasi Properti
                 </h2>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
                   {property.specifications?.bedrooms !== undefined && (
-                    <div className="flex items-center gap-3 p-3 rounded-xl bg-[#f7f8f5]">
-                      <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-[#36705d] shadow-xs shrink-0">
-                        <BedDouble size={20} />
-                      </div>
-                      <div>
-                        <p className="text-[11px] text-[#68766f]">Kamar Tidur</p>
-                        <p className="text-sm font-bold text-[#102d26]">
-                          {property.specifications.bedrooms} Ruang
-                        </p>
-                      </div>
+                    <div className="p-3 rounded-lg bg-neutral-50/80 border border-neutral-100">
+                      <p className="text-[10px] uppercase font-mono tracking-wider text-neutral-400 mb-0.5">Kamar Tidur</p>
+                      <p className="text-sm font-medium text-brand-950">
+                        {property.specifications.bedrooms} Ruang
+                      </p>
                     </div>
                   )}
 
                   {property.specifications?.bathrooms !== undefined && (
-                    <div className="flex items-center gap-3 p-3 rounded-xl bg-[#f7f8f5]">
-                      <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-[#36705d] shadow-xs shrink-0">
-                        <Bath size={20} />
-                      </div>
-                      <div>
-                        <p className="text-[11px] text-[#68766f]">Kamar Mandi</p>
-                        <p className="text-sm font-bold text-[#102d26]">
-                          {property.specifications.bathrooms} Ruang
-                        </p>
-                      </div>
+                    <div className="p-3 rounded-lg bg-neutral-50/80 border border-neutral-100">
+                      <p className="text-[10px] uppercase font-mono tracking-wider text-neutral-400 mb-0.5">Kamar Mandi</p>
+                      <p className="text-sm font-medium text-brand-950">
+                        {property.specifications.bathrooms} Ruang
+                      </p>
                     </div>
                   )}
 
                   {property.specifications?.buildingAreaSqm !== undefined && (
-                    <div className="flex items-center gap-3 p-3 rounded-xl bg-[#f7f8f5]">
-                      <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-[#36705d] shadow-xs shrink-0">
-                        <Building size={20} />
-                      </div>
-                      <div>
-                        <p className="text-[11px] text-[#68766f]">Luas Bangunan</p>
-                        <p className="text-sm font-bold text-[#102d26]">
-                          {property.specifications.buildingAreaSqm} m²
-                        </p>
-                      </div>
+                    <div className="p-3 rounded-lg bg-neutral-50/80 border border-neutral-100">
+                      <p className="text-[10px] uppercase font-mono tracking-wider text-neutral-400 mb-0.5">Luas Bangunan</p>
+                      <p className="text-sm font-medium text-brand-950">
+                        {property.specifications.buildingAreaSqm} m²
+                      </p>
                     </div>
                   )}
 
                   {property.specifications?.landAreaSqm !== undefined && (
-                    <div className="flex items-center gap-3 p-3 rounded-xl bg-[#f7f8f5]">
-                      <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-[#36705d] shadow-xs shrink-0">
-                        <Ruler size={20} />
-                      </div>
-                      <div>
-                        <p className="text-[11px] text-[#68766f]">Luas Tanah</p>
-                        <p className="text-sm font-bold text-[#102d26]">
-                          {property.specifications.landAreaSqm} m²
-                        </p>
-                      </div>
+                    <div className="p-3 rounded-lg bg-neutral-50/80 border border-neutral-100">
+                      <p className="text-[10px] uppercase font-mono tracking-wider text-neutral-400 mb-0.5">Luas Tanah</p>
+                      <p className="text-sm font-medium text-brand-950">
+                        {property.specifications.landAreaSqm} m²
+                      </p>
                     </div>
                   )}
 
                   {property.specifications?.floors !== undefined && (
-                    <div className="flex items-center gap-3 p-3 rounded-xl bg-[#f7f8f5]">
-                      <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-[#36705d] shadow-xs shrink-0">
-                        <Home size={20} />
-                      </div>
-                      <div>
-                        <p className="text-[11px] text-[#68766f]">Jumlah Lantai</p>
-                        <p className="text-sm font-bold text-[#102d26]">
-                          {property.specifications.floors} Lantai
-                        </p>
-                      </div>
+                    <div className="p-3 rounded-lg bg-neutral-50/80 border border-neutral-100">
+                      <p className="text-[10px] uppercase font-mono tracking-wider text-neutral-400 mb-0.5">Jumlah Lantai</p>
+                      <p className="text-sm font-medium text-brand-950">
+                        {property.specifications.floors} Lantai
+                      </p>
                     </div>
                   )}
 
                   {property.specifications?.parking !== undefined && (
-                    <div className="flex items-center gap-3 p-3 rounded-xl bg-[#f7f8f5]">
-                      <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-[#36705d] shadow-xs shrink-0">
-                        <Home size={20} />
-                      </div>
-                      <div>
-                        <p className="text-[11px] text-[#68766f]">Kapasitas Garasi</p>
-                        <p className="text-sm font-bold text-[#102d26]">
-                          {property.specifications.parking} Mobil
-                        </p>
-                      </div>
+                    <div className="p-3 rounded-lg bg-neutral-50/80 border border-neutral-100">
+                      <p className="text-[10px] uppercase font-mono tracking-wider text-neutral-400 mb-0.5">Garasi / Carport</p>
+                      <p className="text-sm font-medium text-brand-950">
+                        {property.specifications.parking} Mobil
+                      </p>
                     </div>
                   )}
 
                   {property.specifications?.electricityWatts !== undefined && (
-                    <div className="flex items-center gap-3 p-3 rounded-xl bg-[#f7f8f5]">
-                      <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-[#36705d] shadow-xs shrink-0">
-                        <Zap size={20} />
-                      </div>
-                      <div>
-                        <p className="text-[11px] text-[#68766f]">Daya Listrik</p>
-                        <p className="text-sm font-bold text-[#102d26]">
-                          {property.specifications.electricityWatts} Watt
-                        </p>
-                      </div>
+                    <div className="p-3 rounded-lg bg-neutral-50/80 border border-neutral-100">
+                      <p className="text-[10px] uppercase font-mono tracking-wider text-neutral-400 mb-0.5">Daya Listrik</p>
+                      <p className="text-sm font-medium text-brand-950">
+                        {property.specifications.electricityWatts} Watt
+                      </p>
                     </div>
                   )}
 
                   {property.specifications?.facing && (
-                    <div className="flex items-center gap-3 p-3 rounded-xl bg-[#f7f8f5]">
-                      <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-[#36705d] shadow-xs shrink-0">
-                        <Compass size={20} />
-                      </div>
-                      <div>
-                        <p className="text-[11px] text-[#68766f]">Arah Hadap</p>
-                        <p className="text-sm font-bold text-[#102d26]">
-                          {property.specifications.facing}
-                        </p>
-                      </div>
+                    <div className="p-3 rounded-lg bg-neutral-50/80 border border-neutral-100">
+                      <p className="text-[10px] uppercase font-mono tracking-wider text-neutral-400 mb-0.5">Arah Hadap</p>
+                      <p className="text-sm font-medium text-brand-950">
+                        {property.specifications.facing}
+                      </p>
                     </div>
                   )}
 
                   {property.yearBuilt && (
-                    <div className="flex items-center gap-3 p-3 rounded-xl bg-[#f7f8f5]">
-                      <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-[#36705d] shadow-xs shrink-0">
-                        <Calendar size={20} />
-                      </div>
-                      <div>
-                        <p className="text-[11px] text-[#68766f]">Tahun Bangun</p>
-                        <p className="text-sm font-bold text-[#102d26]">
-                          {property.yearBuilt}
-                        </p>
-                      </div>
+                    <div className="p-3 rounded-lg bg-neutral-50/80 border border-neutral-100">
+                      <p className="text-[10px] uppercase font-mono tracking-wider text-neutral-400 mb-0.5">Tahun Bangun</p>
+                      <p className="text-sm font-medium text-brand-950">
+                        {property.yearBuilt}
+                      </p>
                     </div>
                   )}
 
                   {property.certificate && (
-                    <div className="flex items-center gap-3 p-3 rounded-xl bg-[#f7f8f5] col-span-2">
-                      <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-[#36705d] shadow-xs shrink-0">
-                        <FileCheck size={20} />
-                      </div>
-                      <div>
-                        <p className="text-[11px] text-[#68766f]">Status Sertifikat</p>
-                        <p className="text-sm font-bold text-[#102d26]">
-                          {property.certificate}
-                        </p>
-                      </div>
+                    <div className="p-3 rounded-lg bg-neutral-50/80 border border-neutral-100 col-span-2">
+                      <p className="text-[10px] uppercase font-mono tracking-wider text-neutral-400 mb-0.5">Status Sertifikat</p>
+                      <p className="text-sm font-medium text-brand-950">
+                        {property.certificate}
+                      </p>
                     </div>
                   )}
                 </div>
               </section>
 
               {/* Narrative Description Section */}
-              <section className="p-6 bg-white rounded-2xl border border-[#dde2de] shadow-xs">
-                <h2 className="text-lg font-bold text-[#102d26] mb-4 pb-3 border-b border-[#dde2de]">
-                  Deskripsi Properti
+              <section className="p-6 bg-white rounded-xl border border-neutral-200/80 shadow-2xs">
+                <h2 className="font-serif text-base font-medium text-brand-950 mb-3 pb-3 border-b border-neutral-100">
+                  Ulasan Properti
                 </h2>
-                <div className="prose prose-sm max-w-none text-[#53625c] leading-relaxed flex flex-col gap-4">
-                  <p className="text-base text-[#102d26] font-medium">
+                <div className="prose prose-sm max-w-none text-neutral-600 leading-relaxed flex flex-col gap-3 font-light text-xs sm:text-sm">
+                  <p className="text-brand-950 font-normal">
                     {property.description}
                   </p>
                   {property.longDescription && (
-                    <p className="text-sm">
+                    <p>
                       {property.longDescription}
                     </p>
                   )}
@@ -399,19 +338,17 @@ export default async function PropertyDetailPage({
 
               {/* Facilities & Amenities Grid */}
               {property.facilities && property.facilities.length > 0 && (
-                <section className="p-6 bg-white rounded-2xl border border-[#dde2de] shadow-xs">
-                  <h2 className="text-lg font-bold text-[#102d26] mb-4 pb-3 border-b border-[#dde2de]">
-                    Fasilitas & Keunggulan
+                <section className="p-6 bg-white rounded-xl border border-neutral-200/80 shadow-2xs">
+                  <h2 className="font-serif text-base font-medium text-brand-950 mb-3 pb-3 border-b border-neutral-100">
+                    Fasilitas & Fitur Unggulan
                   </h2>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
                     {property.facilities.map((fac) => (
                       <div
                         key={fac}
-                        className="flex items-center gap-2.5 p-3 rounded-xl bg-[#f7f8f5] text-xs font-semibold text-[#102d26]"
+                        className="flex items-center gap-2 p-2.5 rounded-lg bg-neutral-50 text-xs text-neutral-800"
                       >
-                        <div className="w-6 h-6 rounded-full bg-[#e1ece7] text-[#36705d] flex items-center justify-center shrink-0">
-                          <Check size={14} />
-                        </div>
+                        <Check size={13} className="text-brand-900 shrink-0" />
                         <span>{fac}</span>
                       </div>
                     ))}
@@ -420,17 +357,17 @@ export default async function PropertyDetailPage({
               )}
 
               {/* Location & Surroundings */}
-              <section className="p-6 bg-white rounded-2xl border border-[#dde2de] shadow-xs">
-                <h2 className="text-lg font-bold text-[#102d26] mb-4 pb-3 border-b border-[#dde2de]">
-                  Lokasi & Akses Sekitar
+              <section className="p-6 bg-white rounded-xl border border-neutral-200/80 shadow-2xs">
+                <h2 className="font-serif text-base font-medium text-brand-950 mb-3 pb-3 border-b border-neutral-100">
+                  Lokasi & Akses
                 </h2>
-                <div className="flex flex-col gap-3 text-sm text-[#53625c]">
+                <div className="flex flex-col gap-2 text-xs sm:text-sm text-neutral-600 font-light">
                   <p>
-                    <strong className="text-[#102d26]">Alamat Lengkap:</strong>{" "}
+                    <strong className="text-brand-950 font-medium">Alamat:</strong>{" "}
                     {property.address || property.location}
                   </p>
-                  <p className="text-xs text-[#68766f]">
-                    *Lokasi presisi dan survei tempat dapat diatur langsung dengan menghubungi agen pengelola kami.
+                  <p className="text-xs text-neutral-400">
+                    *Koordinat presisi dan jadwal survei langsung dapat diatur bersama konsultan pengelola listing.
                   </p>
                 </div>
               </section>
@@ -449,13 +386,13 @@ export default async function PropertyDetailPage({
 
           {/* Related Properties Section */}
           {related.length > 0 && (
-            <section className="mt-16 pt-12 border-t border-[#dde2de]">
+            <section className="mt-14 pt-8 border-t border-neutral-200/80">
               <div className="mb-6">
-                <p className="text-xs font-bold uppercase tracking-widest text-[#936b2d]">
+                <p className="text-[11px] uppercase tracking-widest text-accent-700 font-semibold">
                   Rekomendasi Terkait
                 </p>
-                <h2 className="text-2xl font-bold text-[#102d26] mt-1">
-                  Properti Serupa yang Mungkin Anda Sukai
+                <h2 className="font-serif text-2xl font-medium text-brand-950 mt-1">
+                  Properti Serupa di Kawasan Ini
                 </h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

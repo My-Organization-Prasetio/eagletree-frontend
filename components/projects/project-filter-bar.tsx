@@ -2,13 +2,12 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useState } from "react";
-import { Search, MapPin, Building2, SlidersHorizontal, ArrowDownUp } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 export function ProjectFilterBar() {
   const router = useRouter();
   const searchParams = useSearchParams();
   
-  // Local state for instant visual feedback, though we sync with URL
   const [city, setCity] = useState(searchParams.get("city") || "all");
   const [sort, setSort] = useState(searchParams.get("sort") || "newest");
   
@@ -33,49 +32,42 @@ export function ProjectFilterBar() {
   };
 
   return (
-    <div className="bg-white border border-neutral-200 rounded-xl p-4 shadow-sm mb-8 flex flex-col md:flex-row gap-4 items-center justify-between">
-      {/* Mobile Title / Icon */}
-      <div className="flex items-center gap-2 w-full md:w-auto text-brand-900 font-semibold">
-        <SlidersHorizontal size={20} className="text-accent-500" />
-        <span>Filter Proyek</span>
+    <div className="bg-white border border-neutral-200/80 rounded-xl p-3.5 sm:p-4 shadow-2xs mb-8 flex flex-col sm:flex-row gap-3 items-center justify-between">
+      <div className="text-xs text-neutral-500 font-medium w-full sm:w-auto">
+        Filter Kawasan & Pengurutan
       </div>
 
-      {/* Filters Container */}
-      <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+      <div className="flex flex-col sm:flex-row gap-2.5 w-full sm:w-auto">
         {/* City Filter */}
-        <div className="relative flex-1 sm:w-48">
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <MapPin size={16} className="text-neutral-400" />
-          </div>
+        <div className="relative flex-1 sm:w-44">
           <select
             value={city}
             onChange={(e) => handleFilterChange("city", e.target.value)}
-            className="w-full pl-10 pr-8 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg text-sm text-neutral-700 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 appearance-none outline-none transition-shadow"
+            className="w-full pl-3 pr-8 py-2 bg-neutral-50/70 border border-neutral-200 rounded-lg text-xs font-medium text-neutral-800 focus:outline-none focus:border-brand-900 appearance-none cursor-pointer"
           >
-            <option value="all">Semua Kota</option>
+            <option value="all">Semua Wilayah</option>
             <option value="jakarta">Jakarta</option>
-            <option value="tangerang">Tangerang</option>
+            <option value="tangerang">Tangerang / BSD</option>
             <option value="bogor">Bogor</option>
             <option value="bandung">Bandung</option>
             <option value="surabaya">Surabaya</option>
             <option value="bali">Bali</option>
           </select>
+          <ChevronDown size={13} className="pointer-events-none absolute right-3 top-3 text-neutral-400" />
         </div>
 
         {/* Sort */}
-        <div className="relative flex-1 sm:w-48">
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <ArrowDownUp size={16} className="text-neutral-400" />
-          </div>
+        <div className="relative flex-1 sm:w-44">
           <select
             value={sort}
             onChange={(e) => handleFilterChange("sort", e.target.value)}
-            className="w-full pl-10 pr-8 py-2.5 bg-neutral-50 border border-neutral-200 rounded-lg text-sm text-neutral-700 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 appearance-none outline-none transition-shadow"
+            className="w-full pl-3 pr-8 py-2 bg-neutral-50/70 border border-neutral-200 rounded-lg text-xs font-medium text-neutral-800 focus:outline-none focus:border-brand-900 appearance-none cursor-pointer"
           >
             <option value="newest">Terbaru</option>
             <option value="price-asc">Harga Terendah</option>
             <option value="price-desc">Harga Tertinggi</option>
           </select>
+          <ChevronDown size={13} className="pointer-events-none absolute right-3 top-3 text-neutral-400" />
         </div>
       </div>
     </div>

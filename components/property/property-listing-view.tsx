@@ -60,17 +60,17 @@ export function PropertyListingView({
   }, [filters]);
 
   return (
-    <div className="min-h-screen bg-background py-8 lg:py-12">
+    <div className="min-h-screen bg-neutral-50/60 py-8 lg:py-12">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 flex flex-col gap-6 sm:gap-8">
         {/* Page Heading */}
         <div>
-          <p className="text-xs font-bold uppercase tracking-widest text-accent-700 mb-1.5">
+          <p className="text-[11px] uppercase tracking-widest text-accent-700 font-semibold mb-1.5">
             Eagletree Portfolio
           </p>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-brand-950 tracking-tight">
+          <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-brand-950 tracking-tight">
             {title}
           </h1>
-          <p className="mt-2 text-sm md:text-base text-neutral-600 max-w-2xl leading-relaxed">
+          <p className="mt-2 text-xs sm:text-sm text-neutral-600 max-w-2xl leading-relaxed font-light">
             {subtitle}
           </p>
         </div>
@@ -84,27 +84,27 @@ export function PropertyListingView({
         />
 
         {/* Results Info & Sort Bar */}
-        <div className="flex flex-wrap items-center justify-between gap-4 py-2">
+        <div className="flex flex-wrap items-center justify-between gap-4 py-1">
           <div className="flex items-center gap-2">
-            <span className="text-sm font-bold text-brand-950">
-              {total} properti ditemukan
+            <span className="text-xs sm:text-sm font-medium text-brand-950">
+              {total} Properti Ditemukan
             </span>
             {total > 0 && (
-              <span className="text-xs text-neutral-500 font-medium">
-                (Halaman {page} dari {totalPages})
+              <span className="text-xs text-neutral-400">
+                &middot; Halaman {page} dari {totalPages}
               </span>
             )}
           </div>
 
           <div className="flex items-center gap-2">
-            <label htmlFor="sort-dropdown" className="text-xs font-semibold text-neutral-600">
+            <label htmlFor="sort-dropdown" className="text-xs text-neutral-500">
               Urutkan:
             </label>
             <select
               id="sort-dropdown"
               value={filters.sort ?? "newest"}
               onChange={(e) => handleFilterChange({ sort: e.target.value as PropertySortOption })}
-              className="px-3 py-2 bg-surface-raised border border-border-subtle rounded-xl text-xs font-medium text-brand-950 focus:outline-none focus:border-brand-800 cursor-pointer shadow-xs"
+              className="px-3 py-1.5 bg-white border border-neutral-200 rounded-lg text-xs font-medium text-neutral-800 focus:outline-none focus:border-brand-900 cursor-pointer"
             >
               <option value="newest">Terbaru</option>
               <option value="popular">Paling Populer</option>
@@ -114,7 +114,7 @@ export function PropertyListingView({
           </div>
         </div>
 
-        {/* Full-width Property Grid (1 col mobile, 2 tablet, 3 lg, 4 xl) */}
+        {/* Full-width Property Grid */}
         {properties.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {properties.map((property) => (
@@ -123,22 +123,22 @@ export function PropertyListingView({
           </div>
         ) : (
           /* Empty State */
-          <div className="flex flex-col items-center justify-center p-12 bg-surface-raised rounded-3xl border border-border-subtle text-center shadow-xs">
-            <div className="w-16 h-16 rounded-2xl bg-brand-50 flex items-center justify-center text-brand-900 mb-4">
-              <SlidersHorizontal size={28} />
+          <div className="flex flex-col items-center justify-center p-12 bg-white rounded-xl border border-neutral-200/80 text-center">
+            <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-600 mb-3">
+              <SlidersHorizontal size={20} />
             </div>
-            <h3 className="text-lg font-bold text-brand-950 mb-1">
-              Tidak ada properti yang cocok
+            <h3 className="font-serif text-base font-medium text-brand-950 mb-1">
+              Tidak ada properti yang sesuai
             </h3>
-            <p className="text-sm text-neutral-600 max-w-md mb-6 leading-relaxed">
-              Coba ubah kriteria pencarian, kurangi batas harga, atau atur ulang filter untuk menemukan pilihan lain.
+            <p className="text-xs text-neutral-500 max-w-md mb-5 leading-relaxed font-light">
+              Coba sesuaikan kata kunci pencarian, perluas rentang harga, atau atur ulang filter Anda.
             </p>
             <button
               type="button"
               onClick={handleResetFilters}
-              className="px-5 py-2.5 bg-brand-950 hover:bg-brand-900 text-white text-xs font-semibold rounded-xl transition-colors cursor-pointer shadow-sm active:scale-95"
+              className="px-4 py-2 bg-brand-950 hover:bg-brand-900 text-white text-xs font-medium uppercase tracking-wider rounded-lg transition-colors cursor-pointer"
             >
-              Atur Ulang Semua Filter
+              Atur Ulang Filter
             </button>
           </div>
         )}
@@ -153,13 +153,13 @@ export function PropertyListingView({
                 handleFilterChange({ page: page - 1 });
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
-              className="flex items-center gap-1 px-3.5 py-2 rounded-xl border border-border-subtle bg-surface-raised text-xs font-semibold text-neutral-700 hover:bg-neutral-100 disabled:opacity-40 disabled:pointer-events-none transition-colors cursor-pointer shadow-xs"
+              className="flex items-center gap-1 px-3 py-1.5 rounded-lg border border-neutral-200 bg-white text-xs font-medium text-neutral-700 hover:bg-neutral-50 disabled:opacity-40 disabled:pointer-events-none transition-colors cursor-pointer"
             >
-              <ChevronLeft size={16} />
+              <ChevronLeft size={14} />
               <span>Sebelumnya</span>
             </button>
 
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1">
               {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
                 <button
                   key={p}
@@ -168,10 +168,10 @@ export function PropertyListingView({
                     handleFilterChange({ page: p });
                     window.scrollTo({ top: 0, behavior: "smooth" });
                   }}
-                  className={`w-9 h-9 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                  className={`w-8 h-8 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
                     p === page
-                      ? "bg-brand-950 text-white shadow-xs"
-                      : "bg-surface-raised text-neutral-600 border border-border-subtle hover:border-brand-800 hover:text-brand-950"
+                      ? "bg-brand-950 text-white"
+                      : "bg-white text-neutral-600 border border-neutral-200 hover:border-neutral-300 hover:text-brand-950"
                   }`}
                   aria-current={p === page ? "page" : undefined}
                 >
@@ -187,10 +187,10 @@ export function PropertyListingView({
                 handleFilterChange({ page: page + 1 });
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
-              className="flex items-center gap-1 px-3.5 py-2 rounded-xl border border-border-subtle bg-surface-raised text-xs font-semibold text-neutral-700 hover:bg-neutral-100 disabled:opacity-40 disabled:pointer-events-none transition-colors cursor-pointer shadow-xs"
+              className="flex items-center gap-1 px-3 py-1.5 rounded-lg border border-neutral-200 bg-white text-xs font-medium text-neutral-700 hover:bg-neutral-50 disabled:opacity-40 disabled:pointer-events-none transition-colors cursor-pointer"
             >
               <span>Berikutnya</span>
-              <ChevronRight size={16} />
+              <ChevronRight size={14} />
             </button>
           </nav>
         )}

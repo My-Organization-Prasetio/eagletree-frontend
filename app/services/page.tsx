@@ -68,23 +68,33 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-16 sm:py-24">
+      <section className="py-16 sm:py-20">
         <PageContainer>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((s) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((s, idx) => (
               <div
                 key={s.title}
-                className="group p-8 rounded-3xl bg-white border border-border-subtle hover:border-brand-800/30 hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+                className="p-7 rounded-xl bg-white border border-neutral-200/80 shadow-2xs hover:border-neutral-300 transition-colors flex flex-col justify-between"
               >
-                <div className="w-14 h-14 rounded-2xl bg-brand-50 text-brand-900 flex items-center justify-center mb-6 shadow-xs group-hover:scale-110 group-hover:bg-brand-950 group-hover:text-accent-400 transition-all duration-300">
-                  <s.icon size={26} strokeWidth={1.5} />
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="font-mono text-xs font-semibold text-accent-700 tracking-wider">
+                      0{idx + 1}
+                    </span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent-600" aria-hidden="true" />
+                  </div>
+                  <h3 className="text-lg font-bold text-brand-950 mb-3 leading-snug">
+                    {s.title}
+                  </h3>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    {s.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-brand-950 mb-3">
-                  {s.title}
-                </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed flex-1">
-                  {s.description}
-                </p>
+
+                <div className="pt-6 mt-6 border-t border-neutral-100 flex items-center justify-between text-xs font-semibold text-brand-950">
+                  <span>Konsultasi Spesialis</span>
+                  <ArrowUpRight size={14} className="text-accent-700" />
+                </div>
               </div>
             ))}
           </div>
@@ -92,21 +102,21 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 sm:py-24 bg-brand-950 text-white mt-10">
+      <section className="py-16 sm:py-20 bg-brand-950 text-white border-t border-brand-900">
         <PageContainer className="text-center max-w-3xl">
-          <h2 className="text-2xl sm:text-4xl font-bold tracking-tight">
-            Diskusikan rencana properti Anda.
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
+            Diskusikan Rencana Properti Anda
           </h2>
-          <p className="mt-4 text-brand-100/80 leading-relaxed">
-            Tidak yakin layanan mana yang Anda butuhkan? Mari bicara. Konsultan kami akan mendengarkan kebutuhan Anda dan memberikan saran langkah selanjutnya tanpa komitmen.
+          <p className="mt-3 text-sm sm:text-base text-neutral-300 leading-relaxed font-normal">
+            Tidak yakin layanan mana yang paling tepat untuk Anda? Konsultan kami siap mendengarkan rencana Anda dan memberikan arahan objektif tanpa komitmen.
           </p>
           <div className="mt-8">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-accent-500 hover:bg-accent-600 text-brand-950 font-bold shadow-lg hover:shadow-xl transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-accent-500 hover:bg-accent-600 text-brand-950 font-bold text-sm transition-colors"
             >
-              Hubungi Kami Sekarang
-              <ArrowUpRight size={18} />
+              <span>Hubungi Konsultan Kami</span>
+              <ArrowUpRight size={16} />
             </Link>
           </div>
         </PageContainer>

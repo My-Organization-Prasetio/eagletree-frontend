@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Search, MapPin, Building2, Users } from "lucide-react";
+import { Search, ChevronDown } from "lucide-react";
 import { PageContainer } from "@/components/layout/page-container";
 import { AgentCard } from "@/components/agent/agent-card";
 import { mockAgents } from "@/lib/mock-data";
@@ -21,51 +21,46 @@ export default function FindAgentPage() {
   });
 
   return (
-    <main className="flex min-h-screen flex-col pt-24 pb-16 bg-neutral-50">
+    <main className="flex min-h-screen flex-col pt-24 pb-16 bg-neutral-50/60">
       <PageContainer>
         {/* Header Section */}
-        <div className="mb-10 text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-full bg-brand-100/50 text-brand-800 text-sm font-medium mb-4">
-            <Users size={16} />
-            <span>Direktori Agen Resmi</span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-brand-950 mb-4">
-            Temukan Agen Properti Terbaik
+        <div className="mb-8">
+          <p className="text-[11px] uppercase tracking-widest text-accent-700 font-semibold mb-2">
+            Konsultan Berlisensi
+          </p>
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-brand-950 mb-3">
+            Direktori Penasihat Properti
           </h1>
-          <p className="text-lg text-neutral-600">
-            Konsultan properti profesional kami siap membantu Anda menemukan hunian impian atau memasarkan properti Anda dengan harga terbaik.
+          <p className="text-xs sm:text-sm text-neutral-600 max-w-2xl leading-relaxed font-light">
+            Temukan konsultan berdedikasi dengan spesialisasi area yang relevan untuk mendampingi pencarian maupun penjualan aset properti Anda.
           </p>
         </div>
 
         {/* Filter Bar */}
-        <div className="bg-white border border-neutral-200 rounded-xl p-4 shadow-sm mb-10 max-w-4xl mx-auto flex flex-col md:flex-row gap-4">
+        <div className="bg-white border border-neutral-200/80 rounded-xl p-3.5 sm:p-4 shadow-2xs mb-8 flex flex-col sm:flex-row gap-3">
           <div className="relative flex-1">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <Search size={18} className="text-neutral-400" />
-            </div>
+            <Search size={15} className="absolute left-3.5 top-3 text-neutral-400 pointer-events-none" />
             <input
               type="text"
-              placeholder="Cari nama agen atau wilayah spesialisasi..."
+              placeholder="Cari nama penasihat atau kawasan spesialisasi..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 bg-neutral-50 border border-neutral-200 rounded-lg text-sm text-neutral-700 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-shadow"
+              className="w-full pl-9 pr-4 py-2 bg-neutral-50/70 border border-neutral-200 rounded-lg text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-brand-900 focus:ring-1 focus:ring-brand-900 transition-colors"
             />
           </div>
           
-          <div className="relative md:w-64">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <Building2 size={18} className="text-neutral-400" />
-            </div>
+          <div className="relative sm:w-64">
             <select
               value={selectedOffice}
               onChange={(e) => setSelectedOffice(e.target.value)}
-              className="w-full pl-10 pr-8 py-3 bg-neutral-50 border border-neutral-200 rounded-lg text-sm text-neutral-700 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 appearance-none outline-none transition-shadow"
+              className="w-full pl-3 pr-8 py-2 bg-neutral-50/70 border border-neutral-200 rounded-lg text-xs font-medium text-neutral-800 focus:outline-none focus:border-brand-900 appearance-none cursor-pointer"
             >
               <option value="all">Semua Kantor Cabang</option>
               {offices.map(office => (
                 <option key={office} value={office}>{office}</option>
               ))}
             </select>
+            <ChevronDown size={13} className="pointer-events-none absolute right-3 top-3 text-neutral-400" />
           </div>
         </div>
 
@@ -77,13 +72,10 @@ export default function FindAgentPage() {
             ))}
           </div>
         ) : (
-          <div className="py-20 text-center flex flex-col items-center">
-            <div className="w-16 h-16 bg-neutral-100 rounded-full flex items-center justify-center mb-4">
-              <Users size={32} className="text-neutral-400" />
-            </div>
-            <h3 className="text-xl font-bold text-neutral-900 mb-2">Agen Tidak Ditemukan</h3>
-            <p className="text-neutral-500">
-              Maaf, tidak ada agen yang sesuai dengan kata kunci pencarian Anda.
+          <div className="py-16 text-center flex flex-col items-center justify-center p-8 bg-white rounded-xl border border-neutral-200/80">
+            <h3 className="font-serif text-base font-medium text-brand-950 mb-1">Penasihat Tidak Ditemukan</h3>
+            <p className="text-xs text-neutral-500 font-light">
+              Maaf, tidak ada penasihat yang sesuai dengan kata kunci pencarian Anda.
             </p>
           </div>
         )}

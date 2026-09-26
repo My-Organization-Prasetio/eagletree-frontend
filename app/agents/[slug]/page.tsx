@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight, MapPin, Building2, Star, Award, MessageCircle, Calendar, CheckCircle2 } from "lucide-react";
+import { ChevronRight, MessageCircle, ShieldCheck } from "lucide-react";
 import { Metadata } from "next";
 
 import { PageContainer } from "@/components/layout/page-container";
@@ -26,8 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!agent) return { title: "Agen Tidak Ditemukan" };
 
   return {
-    title: `Profil Agen: ${agent.name} - ${agent.office} | Eagletree Property`,
-    description: agent.bio || `Temukan properti idaman Anda bersama ${agent.name}, ${agent.role} di ${agent.office}.`,
+    title: `Profil Konsultan: ${agent.name} — ${agent.office} | Eagletree`,
+    description: agent.bio || `Konsultasi properti pilihan Anda bersama ${agent.name}, ${agent.role} di ${agent.office}.`,
   };
 }
 
@@ -47,143 +47,116 @@ export default async function AgentProfilePage({ params }: Props) {
     : "#";
 
   return (
-    <main className="flex min-h-screen flex-col pt-24 pb-20 bg-neutral-50">
+    <main className="flex min-h-screen flex-col pt-24 pb-20 bg-neutral-50/60">
       <PageContainer>
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-sm text-neutral-500 mb-8" aria-label="Breadcrumb">
+        <nav className="flex items-center gap-1.5 text-xs text-neutral-500 mb-6" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-brand-700 transition-colors">
             Beranda
           </Link>
-          <ChevronRight size={14} />
+          <ChevronRight size={13} className="text-neutral-400" />
           <Link href="/find-agent" className="hover:text-brand-700 transition-colors">
-            Direktori Agen
+            Direktori Konsultan
           </Link>
-          <ChevronRight size={14} />
+          <ChevronRight size={13} className="text-neutral-400" />
           <span className="text-neutral-900 font-medium" aria-current="page">
             {agent.name}
           </span>
         </nav>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-          
-          {/* Left Column: Profile Card */}
-          <div className="lg:col-span-1">
-            <div className="bg-white rounded-2xl border border-neutral-200 shadow-sm p-6 sticky top-24">
-              <div className="flex flex-col items-center text-center mb-6">
-                <div className="relative mb-4">
-                  <div className="w-32 h-32 rounded-full bg-brand-50 border-4 border-white shadow-sm flex items-center justify-center overflow-hidden relative z-10">
-                    {agent.photo ? (
-                      <Image 
-                        src={agent.photo} 
-                        alt={agent.name}
-                        fill
-                        className="object-cover"
-                      />
-                    ) : (
-                      <span className="text-4xl font-bold text-brand-700 tracking-wider">{agent.initials}</span>
-                    )}
-                  </div>
-                  {agent.licenseNumber && (
-                    <div className="absolute bottom-0 right-0 bg-accent-500 text-white p-2 rounded-full shadow-md z-20" title="Licensed Agent">
-                      <Award size={20} />
-                    </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Left Column: Profile Card (4 cols) */}
+          <div className="lg:col-span-4">
+            <div className="bg-white rounded-xl border border-neutral-200/80 shadow-2xs p-6 sticky top-24">
+              <div className="flex flex-col items-center text-center mb-6 pb-6 border-b border-neutral-100">
+                <div className="w-24 h-24 rounded-full bg-brand-950 text-accent-400 flex items-center justify-center font-medium text-2xl overflow-hidden relative mb-4">
+                  {agent.photo ? (
+                    <Image 
+                      src={agent.photo} 
+                      alt={agent.name}
+                      fill
+                      className="object-cover"
+                    />
+                  ) : (
+                    <span>{agent.initials}</span>
                   )}
                 </div>
                 
-                <h1 className="text-2xl font-bold text-neutral-900 mb-1">{agent.name}</h1>
-                <p className="text-brand-700 font-medium mb-2">{agent.role}</p>
+                <div className="flex items-center gap-1.5 mb-0.5">
+                  <h1 className="font-serif text-xl font-medium text-brand-950">{agent.name}</h1>
+                  <span title="Konsultan Terverifikasi">
+                    <ShieldCheck size={15} className="text-brand-900" />
+                  </span>
+                </div>
+                <p className="text-xs text-neutral-500 mb-2">{agent.role}</p>
                 {agent.licenseNumber && (
-                  <p className="text-xs text-neutral-500 uppercase tracking-wider font-semibold bg-neutral-100 px-3 py-1 rounded-full">
+                  <p className="text-[10px] text-neutral-500 font-mono uppercase tracking-wider bg-neutral-100 px-2 py-0.5 rounded">
                     {agent.licenseNumber}
                   </p>
                 )}
               </div>
 
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center shrink-0">
-                    <Building2 size={18} className="text-brand-700" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-neutral-500 font-medium">Kantor Cabang</p>
-                    <p className="text-sm font-semibold text-neutral-900">{agent.office}</p>
-                  </div>
+              <div className="space-y-3 mb-6 text-xs">
+                <div className="flex justify-between py-1 border-b border-neutral-100">
+                  <span className="text-neutral-400">Kantor</span>
+                  <span className="font-medium text-neutral-800">{agent.office}</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center shrink-0">
-                    <MapPin size={18} className="text-brand-700" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-neutral-500 font-medium">Spesialisasi Area</p>
-                    <p className="text-sm font-semibold text-neutral-900">{agent.region}</p>
-                  </div>
+                <div className="flex justify-between py-1 border-b border-neutral-100">
+                  <span className="text-neutral-400">Spesialisasi</span>
+                  <span className="font-medium text-neutral-800">{agent.region}</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center shrink-0">
-                    <Calendar size={18} className="text-brand-700" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-neutral-500 font-medium">Bergabung Sejak</p>
-                    <p className="text-sm font-semibold text-neutral-900">{agent.joinedYear || 2020}</p>
-                  </div>
+                <div className="flex justify-between py-1 border-b border-neutral-100">
+                  <span className="text-neutral-400">Bergabung</span>
+                  <span className="font-medium text-neutral-800">{agent.joinedYear || 2020}</span>
                 </div>
               </div>
 
-              <div className="pt-6 border-t border-neutral-100">
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white px-4 py-3 rounded-xl font-medium transition-colors shadow-sm"
-                >
-                  <MessageCircle size={20} />
-                  Chat WhatsApp
-                </a>
-              </div>
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center gap-2 bg-accent-500 hover:bg-accent-400 text-brand-950 px-4 py-2.5 rounded-lg text-xs font-medium uppercase tracking-wider transition-colors"
+              >
+                <MessageCircle size={15} />
+                <span>Konsultasi WhatsApp</span>
+              </a>
             </div>
           </div>
 
-          {/* Right Column: Bio & Listings */}
-          <div className="lg:col-span-2 space-y-10">
+          {/* Right Column: Bio & Listings (8 cols) */}
+          <div className="lg:col-span-8 space-y-8">
             {/* Bio Section */}
-            <section className="bg-white rounded-2xl border border-neutral-200 p-8 shadow-sm">
-              <h2 className="text-2xl font-bold text-neutral-900 mb-6">Tentang Agen</h2>
-              <p className="text-neutral-700 leading-relaxed text-lg mb-8">
-                {agent.bio || `${agent.name} adalah ${agent.role} profesional yang siap membantu Anda dalam proses jual, beli, dan sewa properti dengan pelayanan terbaik dan transparan.`}
+            <section className="bg-white rounded-xl border border-neutral-200/80 p-6 sm:p-7 shadow-2xs">
+              <h2 className="font-serif text-lg font-medium text-brand-950 mb-3">Tentang Konsultan</h2>
+              <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-light mb-6">
+                {agent.bio || `${agent.name} adalah ${agent.role} profesional yang siap membantu Anda dalam proses jual, beli, dan sewa properti dengan standar etika tinggi dan transparansi penuh.`}
               </p>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-neutral-100">
-                <div className="text-center">
-                  <div className="flex items-center justify-center gap-1 text-accent-500 mb-2">
-                    <Star size={20} className="fill-accent-500" />
-                  </div>
-                  <span className="block text-2xl font-bold text-neutral-900">{agent.rating || "5.0"}</span>
-                  <span className="text-xs font-medium text-neutral-500 uppercase tracking-wider">Rating</span>
+              <div className="grid grid-cols-3 gap-4 pt-5 border-t border-neutral-100 text-center">
+                <div>
+                  <span className="block font-serif text-2xl font-normal text-brand-950">{agent.rating || "5.0"}</span>
+                  <span className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">Rating Klien</span>
                 </div>
-                <div className="text-center">
-                  <div className="flex items-center justify-center gap-1 text-brand-500 mb-2">
-                    <Building2 size={20} />
-                  </div>
-                  <span className="block text-2xl font-bold text-neutral-900">{agentProperties.length}</span>
-                  <span className="text-xs font-medium text-neutral-500 uppercase tracking-wider">Listing Aktif</span>
+                <div>
+                  <span className="block font-serif text-2xl font-normal text-brand-950">{agentProperties.length}</span>
+                  <span className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">Listing Aktif</span>
                 </div>
-                <div className="text-center">
-                  <div className="flex items-center justify-center gap-1 text-emerald-500 mb-2">
-                    <CheckCircle2 size={20} />
-                  </div>
-                  <span className="block text-2xl font-bold text-neutral-900">{agent.transactionCount || agentProperties.length * 3}</span>
-                  <span className="text-xs font-medium text-neutral-500 uppercase tracking-wider">Transaksi Selesai</span>
+                <div>
+                  <span className="block font-serif text-2xl font-normal text-brand-950">{agent.transactionCount || agentProperties.length * 3}</span>
+                  <span className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">Transaksi Sukses</span>
                 </div>
               </div>
             </section>
 
             {/* Listings Section */}
             <section>
-              <h2 className="text-2xl font-bold text-neutral-900 mb-6">Listing Properti</h2>
+              <div className="mb-4">
+                <h2 className="font-serif text-xl font-medium text-brand-950">Portofolio Listing</h2>
+                <p className="text-xs text-neutral-500">Unit yang saat ini dikelola oleh {agent.name}.</p>
+              </div>
               <AgentListingTabs properties={agentProperties} />
             </section>
           </div>
-
         </div>
       </PageContainer>
     </main>

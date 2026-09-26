@@ -4,14 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import {
   ChevronRight,
-  Star,
-  Quote,
-  CheckCircle2,
-  Building2,
-  HeartHandshake,
-  TrendingUp,
-  Sparkles,
-  ArrowRight,
   ShieldCheck,
 } from "lucide-react";
 import { PageContainer } from "@/components/layout/page-container";
@@ -137,9 +129,9 @@ const testimonialsData: TestimonialItem[] = [
 ];
 
 const categoryTabs = [
-  { id: "all", label: "Semua Ulasan" },
-  { id: "buyer", label: "Pembeli Properti" },
-  { id: "owner", label: "Pemilik Properti" },
+  { id: "all", label: "Semua Kategori" },
+  { id: "buyer", label: "Pembeli Rumah & Unit" },
+  { id: "owner", label: "Pemilik & Penjual" },
   { id: "investor", label: "Investor" },
   { id: "renter", label: "Penyewa" },
 ];
@@ -153,74 +145,73 @@ export default function TestimoniPage() {
       : testimonialsData.filter((item) => item.category === activeCategory);
 
   return (
-    <main className="min-h-screen pt-24 pb-20 bg-neutral-50">
+    <main className="min-h-screen pt-24 pb-20 bg-neutral-50/60">
       <PageContainer>
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-sm text-neutral-500 mb-8" aria-label="Breadcrumb">
+        <nav className="flex items-center gap-2 text-xs text-neutral-500 mb-6" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-brand-700 transition-colors">
             Beranda
           </Link>
-          <ChevronRight size={14} />
-          <span className="text-brand-950 font-medium">Testimoni Klien</span>
+          <ChevronRight size={13} className="text-neutral-400" />
+          <span className="text-neutral-800 font-medium">Testimoni Klien</span>
         </nav>
 
         {/* Hero Section */}
-        <div className="relative overflow-hidden rounded-3xl bg-brand-950 text-white p-8 sm:p-12 lg:p-16 mb-16 shadow-xl border border-brand-800/40">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="relative z-10 max-w-2xl">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-500/20 text-accent-400 text-xs font-bold uppercase tracking-wider mb-4 border border-accent-500/30">
-              <Sparkles size={13} />
-              Kisah Nyata Klien
-            </span>
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-4">
-              Kepercayaan yang Tumbuh di Setiap Babak Perjalanan Properti Anda.
+        <div className="bg-brand-950 text-white p-8 sm:p-12 lg:p-14 mb-12 rounded-2xl border border-brand-900 shadow-xs relative overflow-hidden">
+          <div className="max-w-3xl relative z-10">
+            <p className="text-[11px] uppercase tracking-widest text-accent-400 font-semibold mb-3">
+              Catatan Kepuasan Klien
+            </p>
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight leading-tight text-white mb-4">
+              Kepercayaan yang Dibangun Dari Reputasi Riil.
             </h1>
-            <p className="text-base sm:text-lg text-neutral-300 leading-relaxed">
-              Dengarkan langsung pengalaman para pemilik rumah, investor, dan keluarga yang telah mempercayakan keputusan berharga mereka bersama konsultan Eagletree Property.
+            <p className="text-sm sm:text-base text-neutral-300 leading-relaxed max-w-2xl font-light">
+              Dengarkan refleksi para pemilik aset, investor, dan keluarga yang telah mempercayakan keputusan bernilai penting bersama konsultan Eagletree.
             </p>
           </div>
         </div>
 
-        {/* Key Trust Stats Banner */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-16">
-          <div className="p-6 rounded-2xl bg-white border border-neutral-200/80 text-center shadow-xs">
-            <div className="flex items-center justify-center gap-1 text-accent-600 mb-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} size={18} fill="currentColor" />
-              ))}
+        {/* Key Trust Stats - Architectural Metric Divider */}
+        <div className="border-y border-neutral-200/80 py-8 mb-12 bg-white/70 rounded-xl px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-neutral-200/80">
+            <div className="py-4 md:py-0 md:px-6 text-center">
+              <span className="text-xs font-mono uppercase text-neutral-500 tracking-wider block mb-1">INDEX KEPUASAN</span>
+              <p className="font-serif text-3xl sm:text-4xl font-normal text-brand-950">4.9 / 5.0</p>
+              <p className="text-xs text-neutral-500 mt-1">Skor Klien Terverifikasi</p>
             </div>
-            <p className="text-2xl sm:text-3xl font-extrabold text-brand-950">4.9 / 5.0</p>
-            <p className="text-xs text-neutral-500 mt-1 font-medium">Rata-rata Kepuasan Klien</p>
-          </div>
 
-          <div className="p-6 rounded-2xl bg-white border border-neutral-200/80 text-center shadow-xs">
-            <p className="text-2xl sm:text-3xl font-extrabold text-brand-950">1,200+</p>
-            <p className="text-xs text-neutral-500 mt-1 font-medium">Transaksi Sukses Dituntaskan</p>
-          </div>
+            <div className="py-4 md:py-0 md:px-6 text-center">
+              <span className="text-xs font-mono uppercase text-neutral-500 tracking-wider block mb-1">TRANSAKSI SELESAI</span>
+              <p className="font-serif text-3xl sm:text-4xl font-normal text-brand-950">1,200+</p>
+              <p className="text-xs text-neutral-500 mt-1">Akad Transaksi Berhasil</p>
+            </div>
 
-          <div className="p-6 rounded-2xl bg-white border border-neutral-200/80 text-center shadow-xs">
-            <p className="text-2xl sm:text-3xl font-extrabold text-brand-950">98%</p>
-            <p className="text-xs text-neutral-500 mt-1 font-medium">Klien Merekomendasikan Kami</p>
-          </div>
+            <div className="py-4 md:py-0 md:px-6 text-center">
+              <span className="text-xs font-mono uppercase text-neutral-500 tracking-wider block mb-1">RETENSI & REKOMENDASI</span>
+              <p className="font-serif text-3xl sm:text-4xl font-normal text-brand-950">98%</p>
+              <p className="text-xs text-neutral-500 mt-1">Klien Merekomendasikan</p>
+            </div>
 
-          <div className="p-6 rounded-2xl bg-white border border-neutral-200/80 text-center shadow-xs">
-            <p className="text-2xl sm:text-3xl font-extrabold text-brand-950">Rp 5T+</p>
-            <p className="text-xs text-neutral-500 mt-1 font-medium">Total Akumulasi Transaksi</p>
+            <div className="py-4 md:py-0 md:px-6 text-center">
+              <span className="text-xs font-mono uppercase text-neutral-500 tracking-wider block mb-1">TOTAL VOLUME</span>
+              <p className="font-serif text-3xl sm:text-4xl font-normal text-brand-950">Rp 5T+</p>
+              <p className="text-xs text-neutral-500 mt-1">Nilai Properti Difasilitasi</p>
+            </div>
           </div>
         </div>
 
         {/* Category Filter Tabs */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none" role="tablist">
+        <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-8 scrollbar-none" role="tablist">
           {categoryTabs.map((tab) => (
             <button
               key={tab.id}
               role="tab"
               aria-selected={activeCategory === tab.id}
               onClick={() => setActiveCategory(tab.id)}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold shrink-0 transition-all cursor-pointer ${
+              className={`px-4 py-2 rounded-lg text-xs font-medium shrink-0 transition-colors cursor-pointer ${
                 activeCategory === tab.id
-                  ? "bg-brand-950 text-white shadow-sm"
-                  : "bg-white text-neutral-600 border border-neutral-200 hover:border-neutral-300 hover:text-brand-950"
+                  ? "bg-brand-950 text-white"
+                  : "bg-white text-neutral-600 border border-neutral-200/80 hover:bg-neutral-50 hover:text-neutral-900"
               }`}
             >
               {tab.label}
@@ -229,46 +220,40 @@ export default function TestimoniPage() {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
           {filteredTestimonials.map((item) => (
             <figure
               key={item.id}
-              className="p-7 rounded-2xl bg-white border border-neutral-200/80 shadow-xs hover:shadow-md hover:border-accent-500/40 transition-all flex flex-col justify-between"
+              className="p-6 rounded-xl bg-white border border-neutral-200/80 hover:border-neutral-300 transition-colors flex flex-col justify-between"
             >
               <div>
-                {/* Header: Stars & Category badge */}
                 <div className="flex items-center justify-between gap-2 mb-4">
-                  <div className="flex items-center gap-1 text-accent-600">
-                    {[...Array(item.rating)].map((_, i) => (
-                      <Star key={i} size={15} fill="currentColor" />
-                    ))}
-                  </div>
-                  <span className="px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-600 text-[11px] font-semibold">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-accent-700 bg-accent-50/80 px-2 py-0.5 rounded">
                     {item.categoryLabel}
                   </span>
+                  <span className="text-[11px] text-neutral-400 font-mono">{item.date}</span>
                 </div>
 
-                {/* Quote */}
-                <blockquote className="text-sm text-neutral-700 leading-relaxed italic mb-6">
-                  “{item.quote}”
+                <blockquote className="text-xs sm:text-sm text-neutral-700 leading-relaxed font-serif italic mb-6">
+                  &ldquo;{item.quote}&rdquo;
                 </blockquote>
               </div>
 
               <div className="pt-4 border-t border-neutral-100 flex items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-brand-100 text-brand-950 font-bold flex items-center justify-center text-xs border border-brand-200 shrink-0">
+                  <div className="w-9 h-9 rounded-full bg-brand-950 text-accent-400 font-medium flex items-center justify-center text-xs shrink-0">
                     {item.initials}
                   </div>
                   <div>
-                    <figcaption className="font-bold text-sm text-brand-950 leading-tight">
+                    <figcaption className="font-medium text-xs sm:text-sm text-brand-950 leading-tight">
                       {item.name}
                     </figcaption>
-                    <p className="text-xs text-neutral-500 leading-tight mt-0.5">{item.role}</p>
+                    <p className="text-[11px] text-neutral-500 leading-tight mt-0.5">{item.role}</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-1 text-emerald-600 text-xs font-semibold shrink-0" title="Transaksi Terverifikasi">
-                  <ShieldCheck size={14} />
+                <div className="flex items-center gap-1 text-brand-900 text-[11px] font-medium shrink-0" title="Transaksi Terverifikasi">
+                  <ShieldCheck size={13} />
                   <span className="hidden sm:inline">Terverifikasi</span>
                 </div>
               </div>
@@ -277,28 +262,28 @@ export default function TestimoniPage() {
         </div>
 
         {/* CTA Card */}
-        <div className="rounded-3xl bg-surface-raised border border-border-subtle p-8 sm:p-12 flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div className="rounded-xl bg-white border border-neutral-200/80 p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between gap-6">
           <div className="max-w-xl text-center lg:text-left">
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-brand-950 mb-3">
-              Siap Menuliskan Kisah Sukses Properti Anda?
+            <h3 className="font-serif text-xl sm:text-2xl font-medium text-brand-950 mb-1.5">
+              Siap Menemukan Properti Terbaik Anda?
             </h3>
-            <p className="text-sm text-neutral-600 leading-relaxed">
-              Jelajahi ratusan listing pilihan kami atau bicarakan kebutuhan spesifik Anda dengan konsultan berpengalaman Eagletree hari ini.
+            <p className="text-xs text-neutral-600 leading-relaxed">
+              Jelajahi ratusan inventaris terverifikasi atau diskusikan kriteria spesifik Anda bersama penasihat Eagletree.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
             <Link
               href="/properties"
-              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-brand-950 hover:bg-brand-900 text-white font-bold text-sm text-center shadow-sm hover:shadow-md transition-all"
+              className="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-brand-950 hover:bg-brand-900 text-white font-medium text-xs uppercase tracking-wider text-center transition-colors"
             >
-              Jelajahi Properti
+              Katalog Properti
             </Link>
             <Link
               href="/find-agent"
-              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-accent-500 hover:bg-accent-600 text-brand-950 font-bold text-sm text-center transition-all"
+              className="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-accent-500 hover:bg-accent-400 text-brand-950 font-medium text-xs uppercase tracking-wider text-center transition-colors"
             >
-              Temukan Konsultan
+              Hubungi Konsultan
             </Link>
           </div>
         </div>

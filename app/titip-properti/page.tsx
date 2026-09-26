@@ -3,18 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import {
-  Building2,
   ChevronRight,
-  ShieldCheck,
-  TrendingUp,
-  Users,
-  Award,
   CheckCircle2,
-  HelpCircle,
   Phone,
   Send,
-  Sparkles,
-  ArrowRight,
 } from "lucide-react";
 import { PageContainer } from "@/components/layout/page-container";
 
@@ -52,105 +44,102 @@ export default function TitipPropertiPage() {
   };
 
   return (
-    <main className="min-h-screen pt-24 pb-20 bg-neutral-50">
+    <main className="min-h-screen pt-24 pb-20 bg-neutral-50/60">
       <PageContainer>
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-sm text-neutral-500 mb-8" aria-label="Breadcrumb">
+        <nav className="flex items-center gap-2 text-xs text-neutral-500 mb-6" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-brand-700 transition-colors">
             Beranda
           </Link>
-          <ChevronRight size={14} />
-          <span className="text-brand-950 font-medium">Titip Properti</span>
+          <ChevronRight size={13} className="text-neutral-400" />
+          <span className="text-neutral-800 font-medium">Titip Properti</span>
         </nav>
 
-        {/* Hero Section */}
-        <div className="relative overflow-hidden rounded-3xl bg-brand-950 text-white p-8 sm:p-12 lg:p-16 mb-16 shadow-xl border border-brand-800/40">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="relative z-10 max-w-2xl">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-500/20 text-accent-400 text-xs font-bold uppercase tracking-wider mb-4 border border-accent-500/30">
-              <Sparkles size={13} />
-              Layanan Pemilik Properti
-            </span>
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-4">
-              Titipkan Properti Anda, Biarkan Ahlinya Menemukan Pembeli Terbaik.
+        {/* Hero Header */}
+        <div className="bg-brand-950 text-white p-8 sm:p-12 lg:p-14 mb-12 rounded-2xl border border-brand-900 shadow-xs relative overflow-hidden">
+          <div className="max-w-3xl relative z-10">
+            <p className="text-[11px] uppercase tracking-widest text-accent-400 font-semibold mb-3">
+              Layanan Penjualan & Sewa Properti
+            </p>
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight leading-tight text-white mb-4">
+              Titipkan Properti Anda Kepada Penasihat Berpengalaman.
             </h1>
-            <p className="text-base sm:text-lg text-neutral-300 leading-relaxed">
-              Jual atau sewakan aset properti Anda lebih cepat dengan dukungan jaringan 50+ agen elit Eagletree, database ribuan qualified buyer, dan strategi pemasaran multi-channel terintegrasi.
+            <p className="text-sm sm:text-base text-neutral-300 leading-relaxed max-w-2xl font-light">
+              Jual atau sewakan aset Anda dengan dukungan 50+ konsultan berlisensi Eagletree, database pembeli terverifikasi, dan komitmen penutupan transaksi yang transparan.
             </p>
           </div>
         </div>
 
         {/* 4 Keunggulan Titip di Eagletree */}
-        <div className="mb-16">
-          <div className="text-center max-w-xl mx-auto mb-10">
-            <span className="text-xs uppercase tracking-wider font-bold text-accent-700">Kenapa Memilih Eagletree</span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-950 mt-1">Keunggulan Pemasaran Bersama Kami</h2>
+        <div className="mb-14">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 pb-4 border-b border-neutral-200/80">
+            <div>
+              <p className="text-[11px] uppercase tracking-widest text-accent-700 font-semibold">Keunggulan Layanan</p>
+              <h2 className="font-serif text-2xl font-medium text-brand-950 mt-1">Standar Representasi Eagletree</h2>
+            </div>
+            <p className="text-xs text-neutral-500 mt-2 sm:mt-0 max-w-md">
+              Pendekatan terukur memastikan setiap aset mendapatkan valuasi pasar yang presisi dan pembeli yang berkualifikasi.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-6 rounded-2xl bg-white border border-neutral-200/80 shadow-xs hover:shadow-md hover:border-accent-500/40 transition-all">
-              <div className="w-12 h-12 rounded-xl bg-accent-50 text-accent-700 flex items-center justify-center mb-4">
-                <TrendingUp size={22} />
-              </div>
-              <h3 className="font-bold text-base text-brand-950 mb-2">Valuasi Harga Akurat</h3>
-              <p className="text-sm text-neutral-600 leading-relaxed">
-                Kami menganalisis data transaksi riil kawasan untuk menentukan harga jual/sewa yang kompetitif namun menguntungkan.
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="p-6 rounded-xl bg-white border border-neutral-200/80 hover:border-neutral-300 transition-colors">
+              <span className="text-xs font-mono font-medium text-neutral-400 block mb-3">01 / VALUASI</span>
+              <h3 className="font-medium text-base text-brand-950 mb-2">Penetapan Harga Presisi</h3>
+              <p className="text-xs text-neutral-600 leading-relaxed">
+                Analisis mendalam berdasarkan riwayat transaksi kawasan terkini untuk memastikan harga jual atau sewa yang optimal.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white border border-neutral-200/80 shadow-xs hover:shadow-md hover:border-accent-500/40 transition-all">
-              <div className="w-12 h-12 rounded-xl bg-accent-50 text-accent-700 flex items-center justify-center mb-4">
-                <Users size={22} />
-              </div>
-              <h3 className="font-bold text-base text-brand-950 mb-2">Qualified Buyer Database</h3>
-              <p className="text-sm text-neutral-600 leading-relaxed">
-                Aset Anda langsung ditawarkan ke database ribuan pembeli aktif dan investor yang sedang mencari properti serupa.
+            <div className="p-6 rounded-xl bg-white border border-neutral-200/80 hover:border-neutral-300 transition-colors">
+              <span className="text-xs font-mono font-medium text-neutral-400 block mb-3">02 / PEMBELI</span>
+              <h3 className="font-medium text-base text-brand-950 mb-2">Jaringan Pembeli Terkualifikasi</h3>
+              <p className="text-xs text-neutral-600 leading-relaxed">
+                Aset dipasarkan langsung ke database pembeli aktif, investor institusional, dan keluarga dengan daya beli riil.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white border border-neutral-200/80 shadow-xs hover:shadow-md hover:border-accent-500/40 transition-all">
-              <div className="w-12 h-12 rounded-xl bg-accent-50 text-accent-700 flex items-center justify-center mb-4">
-                <ShieldCheck size={22} />
-              </div>
-              <h3 className="font-bold text-base text-brand-950 mb-2">Legalitas & Transaksi Aman</h3>
-              <p className="text-sm text-neutral-600 leading-relaxed">
-                Didampingi konsultan hukum dan rekanan notaris bersertifikat untuk memastikan keabsahan dokumen hingga tahap AJB.
+            <div className="p-6 rounded-xl bg-white border border-neutral-200/80 hover:border-neutral-300 transition-colors">
+              <span className="text-xs font-mono font-medium text-neutral-400 block mb-3">03 / LEGALITAS</span>
+              <h3 className="font-medium text-base text-brand-950 mb-2">Perlindungan Hukum & Notaris</h3>
+              <p className="text-xs text-neutral-600 leading-relaxed">
+                Pendampingan legal lengkap sejak pengecekan sertifikat hingga penandatanganan AJB bersama rekanan notaris terpercaya.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white border border-neutral-200/80 shadow-xs hover:shadow-md hover:border-accent-500/40 transition-all">
-              <div className="w-12 h-12 rounded-xl bg-accent-50 text-accent-700 flex items-center justify-center mb-4">
-                <Award size={22} />
-              </div>
-              <h3 className="font-bold text-base text-brand-950 mb-2">Materi Promosi Premium</h3>
-              <p className="text-sm text-neutral-600 leading-relaxed">
-                Foto profesional, virtual tour, dan penayangan prioritas di situs utama serta jaringan media sosial Eagletree.
+            <div className="p-6 rounded-xl bg-white border border-neutral-200/80 hover:border-neutral-300 transition-colors">
+              <span className="text-xs font-mono font-medium text-neutral-400 block mb-3">04 / PRESENTASI</span>
+              <h3 className="font-medium text-base text-brand-950 mb-2">Dokumentasi Arsitektural</h3>
+              <p className="text-xs text-neutral-600 leading-relaxed">
+                Fotografi profesional dan penyajian informasi listing yang terstruktur untuk menonjolkan nilai unik properti Anda.
               </p>
             </div>
           </div>
         </div>
 
         {/* Form Titip Properti Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-20 items-start">
-          <div className="lg:col-span-8 bg-white p-8 sm:p-10 rounded-3xl border border-neutral-200/90 shadow-sm">
-            <h2 className="text-2xl font-extrabold text-brand-950 mb-2">Formulir Titip Jual / Sewa</h2>
-            <p className="text-sm text-neutral-500 mb-8">
-              Isi data properti di bawah ini secara lengkap. Konsultan spesialis area kami akan segera menghubungi Anda.
-            </p>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-start">
+          <div className="lg:col-span-8 bg-white p-6 sm:p-8 rounded-xl border border-neutral-200/80 shadow-2xs">
+            <div className="mb-6 pb-4 border-b border-neutral-100">
+              <h2 className="font-serif text-xl sm:text-2xl font-medium text-brand-950">Formulir Titip Jual / Sewa</h2>
+              <p className="text-xs text-neutral-500 mt-1">
+                Lengkapi rincian properti Anda di bawah ini. Konsultan area kami akan meninjau dan menghubungi Anda.
+              </p>
+            </div>
 
             {isSubmitted ? (
-              <div className="py-12 px-6 rounded-2xl bg-brand-50/50 border border-brand-200 text-center">
-                <div className="w-16 h-16 rounded-full bg-brand-100 text-brand-800 flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle2 size={32} />
+              <div className="py-12 px-6 rounded-xl bg-brand-50/40 border border-brand-200/80 text-center">
+                <div className="w-12 h-12 rounded-full bg-brand-100 text-brand-900 flex items-center justify-center mx-auto mb-3">
+                  <CheckCircle2 size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-brand-950 mb-2">Properti Berhasil Didaftarkan!</h3>
-                <p className="text-sm text-neutral-600 max-w-md mx-auto mb-6">
-                  Terima kasih, <strong>{formData.ownerName}</strong>. Konsultan Eagletree akan memverifikasi data dan menghubungi nomor WhatsApp Anda dalam 1x24 jam untuk survei dan konsultasi valuasi.
+                <h3 className="font-serif text-lg font-medium text-brand-950 mb-2">Properti Berhasil Didaftarkan</h3>
+                <p className="text-xs sm:text-sm text-neutral-600 max-w-md mx-auto mb-6 leading-relaxed">
+                  Terima kasih, <strong>{formData.ownerName}</strong>. Konsultan Eagletree akan menghubungi nomor WhatsApp Anda dalam 1x24 jam untuk verifikasi awal dan koordinasi survei lokasi.
                 </p>
                 <button
                   type="button"
                   onClick={() => setIsSubmitted(false)}
-                  className="px-6 py-2.5 rounded-xl bg-brand-950 text-white font-bold text-sm hover:bg-brand-900 transition-colors"
+                  className="px-5 py-2.5 rounded-lg bg-brand-950 text-white font-medium text-xs hover:bg-brand-900 transition-colors"
                 >
                   Kirim Properti Lainnya
                 </button>
@@ -159,8 +148,8 @@ export default function TitipPropertiPage() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Status Transaksi */}
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-brand-950 mb-2">
-                    Status Pemasaran *
+                  <label className="block text-[11px] font-semibold uppercase tracking-wider text-neutral-700 mb-2">
+                    Tujuan Pemasaran *
                   </label>
                   <div className="grid grid-cols-2 gap-3">
                     {["Dijual", "Disewa"].map((mode) => (
@@ -168,10 +157,10 @@ export default function TitipPropertiPage() {
                         key={mode}
                         type="button"
                         onClick={() => setFormData({ ...formData, listingType: mode })}
-                        className={`py-3 px-4 rounded-xl border text-sm font-bold transition-all text-center ${
+                        className={`py-2.5 px-4 rounded-lg border text-xs font-medium transition-all text-center ${
                           formData.listingType === mode
-                            ? "bg-brand-950 text-white border-brand-950 shadow-xs"
-                            : "bg-neutral-50 text-neutral-700 border-neutral-200 hover:bg-neutral-100"
+                            ? "bg-brand-950 text-white border-brand-950"
+                            : "bg-white text-neutral-700 border-neutral-200 hover:bg-neutral-50"
                         }`}
                       >
                         {mode}
@@ -181,9 +170,9 @@ export default function TitipPropertiPage() {
                 </div>
 
                 {/* Data Pemilik */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-brand-950 mb-2">
+                    <label className="block text-[11px] font-semibold uppercase tracking-wider text-neutral-700 mb-1.5">
                       Nama Pemilik / Kuasa *
                     </label>
                     <input
@@ -191,13 +180,13 @@ export default function TitipPropertiPage() {
                       required
                       value={formData.ownerName}
                       onChange={(e) => setFormData({ ...formData, ownerName: e.target.value })}
-                      placeholder="Contoh: Hendra Wijaya"
-                      className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-neutral-50/50 text-sm focus:outline-none focus:border-accent-500 focus:bg-white transition-colors"
+                      placeholder="Nama lengkap"
+                      className="w-full px-3.5 py-2.5 rounded-lg border border-neutral-200 bg-white text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-brand-900 focus:ring-1 focus:ring-brand-900 transition-colors"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-brand-950 mb-2">
+                    <label className="block text-[11px] font-semibold uppercase tracking-wider text-neutral-700 mb-1.5">
                       Nomor WhatsApp *
                     </label>
                     <input
@@ -206,34 +195,34 @@ export default function TitipPropertiPage() {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="0812-xxxx-xxxx"
-                      className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-neutral-50/50 text-sm focus:outline-none focus:border-accent-500 focus:bg-white transition-colors"
+                      className="w-full px-3.5 py-2.5 rounded-lg border border-neutral-200 bg-white text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-brand-900 focus:ring-1 focus:ring-brand-900 transition-colors"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-brand-950 mb-2">
-                    Email Aktif
+                  <label className="block text-[11px] font-semibold uppercase tracking-wider text-neutral-700 mb-1.5">
+                    Alamat Email
                   </label>
                   <input
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="nama@email.com"
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-neutral-50/50 text-sm focus:outline-none focus:border-accent-500 focus:bg-white transition-colors"
+                    className="w-full px-3.5 py-2.5 rounded-lg border border-neutral-200 bg-white text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-brand-900 focus:ring-1 focus:ring-brand-900 transition-colors"
                   />
                 </div>
 
                 {/* Detail Properti */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-brand-950 mb-2">
+                    <label className="block text-[11px] font-semibold uppercase tracking-wider text-neutral-700 mb-1.5">
                       Tipe Properti *
                     </label>
                     <select
                       value={formData.propertyType}
                       onChange={(e) => setFormData({ ...formData, propertyType: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-neutral-50/50 text-sm focus:outline-none focus:border-accent-500 focus:bg-white transition-colors"
+                      className="w-full px-3.5 py-2.5 rounded-lg border border-neutral-200 bg-white text-xs sm:text-sm text-neutral-900 focus:outline-none focus:border-brand-900 focus:ring-1 focus:ring-brand-900 transition-colors"
                     >
                       {propertyTypes.map((t) => (
                         <option key={t} value={t}>
@@ -244,7 +233,7 @@ export default function TitipPropertiPage() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-brand-950 mb-2">
+                    <label className="block text-[11px] font-semibold uppercase tracking-wider text-neutral-700 mb-1.5">
                       Kota / Wilayah *
                     </label>
                     <input
@@ -252,79 +241,79 @@ export default function TitipPropertiPage() {
                       required
                       value={formData.city}
                       onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                      placeholder="Contoh: Jakarta Selatan, BSD, Surabaya"
-                      className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-neutral-50/50 text-sm focus:outline-none focus:border-accent-500 focus:bg-white transition-colors"
+                      placeholder="Contoh: Jakarta Selatan, BSD City"
+                      className="w-full px-3.5 py-2.5 rounded-lg border border-neutral-200 bg-white text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-brand-900 focus:ring-1 focus:ring-brand-900 transition-colors"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-brand-950 mb-2">
-                    Alamat Lengkap / Nama Komplek *
+                  <label className="block text-[11px] font-semibold uppercase tracking-wider text-neutral-700 mb-1.5">
+                    Alamat Lengkap / Komplek *
                   </label>
                   <input
                     type="text"
                     required
                     value={formData.address}
                     onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                    placeholder="Contoh: Cluster Senja Blok A3 No. 12, Jl. Senopati"
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-neutral-50/50 text-sm focus:outline-none focus:border-accent-500 focus:bg-white transition-colors"
+                    placeholder="Nama jalan, nomor rumah, atau cluster"
+                    className="w-full px-3.5 py-2.5 rounded-lg border border-neutral-200 bg-white text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-brand-900 focus:ring-1 focus:ring-brand-900 transition-colors"
                   />
                 </div>
 
                 {/* Dimensi & Spesifikasi */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   <div>
-                    <label className="block text-xs font-medium text-neutral-600 mb-1">Luas Tanah (m²)</label>
+                    <label className="block text-xs text-neutral-600 mb-1">LT (m²)</label>
                     <input
                       type="number"
                       value={formData.landArea}
                       onChange={(e) => setFormData({ ...formData, landArea: e.target.value })}
-                      placeholder="Contoh: 120"
-                      className="w-full px-3 py-2.5 rounded-lg border border-neutral-200 bg-neutral-50/50 text-sm focus:outline-none focus:border-accent-500 focus:bg-white transition-colors"
+                      placeholder="120"
+                      className="w-full px-3 py-2 rounded-lg border border-neutral-200 bg-white text-xs sm:text-sm text-neutral-900 focus:outline-none focus:border-brand-900 transition-colors"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-medium text-neutral-600 mb-1">Luas Bangunan (m²)</label>
+                    <label className="block text-xs text-neutral-600 mb-1">LB (m²)</label>
                     <input
                       type="number"
                       value={formData.buildingArea}
                       onChange={(e) => setFormData({ ...formData, buildingArea: e.target.value })}
-                      placeholder="Contoh: 90"
-                      className="w-full px-3 py-2.5 rounded-lg border border-neutral-200 bg-neutral-50/50 text-sm focus:outline-none focus:border-accent-500 focus:bg-white transition-colors"
+                      placeholder="90"
+                      className="w-full px-3 py-2 rounded-lg border border-neutral-200 bg-white text-xs sm:text-sm text-neutral-900 focus:outline-none focus:border-brand-900 transition-colors"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-medium text-neutral-600 mb-1">Kamar Tidur</label>
+                    <label className="block text-xs text-neutral-600 mb-1">Kamar Tidur</label>
                     <input
                       type="number"
                       value={formData.bedrooms}
                       onChange={(e) => setFormData({ ...formData, bedrooms: e.target.value })}
-                      placeholder="Contoh: 3"
-                      className="w-full px-3 py-2.5 rounded-lg border border-neutral-200 bg-neutral-50/50 text-sm focus:outline-none focus:border-accent-500 focus:bg-white transition-colors"
+                      placeholder="3"
+                      className="w-full px-3 py-2 rounded-lg border border-neutral-200 bg-white text-xs sm:text-sm text-neutral-900 focus:outline-none focus:border-brand-900 transition-colors"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-medium text-neutral-600 mb-1">Kamar Mandi</label>
+                    <label className="block text-xs text-neutral-600 mb-1">Kamar Mandi</label>
                     <input
                       type="number"
                       value={formData.bathrooms}
                       onChange={(e) => setFormData({ ...formData, bathrooms: e.target.value })}
-                      placeholder="Contoh: 2"
-                      className="w-full px-3 py-2.5 rounded-lg border border-neutral-200 bg-neutral-50/50 text-sm focus:outline-none focus:border-accent-500 focus:bg-white transition-colors"
+                      placeholder="2"
+                      className="w-full px-3 py-2 rounded-lg border border-neutral-200 bg-white text-xs sm:text-sm text-neutral-900 focus:outline-none focus:border-brand-900 transition-colors"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-brand-950 mb-2">
+                    <label className="block text-[11px] font-semibold uppercase tracking-wider text-neutral-700 mb-1.5">
                       Legalitas Sertifikat
                     </label>
                     <select
                       value={formData.certificate}
                       onChange={(e) => setFormData({ ...formData, certificate: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-neutral-50/50 text-sm focus:outline-none focus:border-accent-500 focus:bg-white transition-colors"
+                      className="w-full px-3.5 py-2.5 rounded-lg border border-neutral-200 bg-white text-xs sm:text-sm text-neutral-900 focus:outline-none focus:border-brand-900 focus:ring-1 focus:ring-brand-900 transition-colors"
                     >
                       {certificates.map((c) => (
                         <option key={c} value={c}>
@@ -335,146 +324,142 @@ export default function TitipPropertiPage() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-brand-950 mb-2">
-                      Estimasi Harga yang Diharapkan (Rp) *
+                    <label className="block text-[11px] font-semibold uppercase tracking-wider text-neutral-700 mb-1.5">
+                      Estimasi Harga Target (Rp) *
                     </label>
                     <input
                       type="text"
                       required
                       value={formData.expectedPrice}
                       onChange={(e) => setFormData({ ...formData, expectedPrice: e.target.value })}
-                      placeholder="Contoh: 2.500.000.000 (2,5 Miliar)"
-                      className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-neutral-50/50 text-sm focus:outline-none focus:border-accent-500 focus:bg-white transition-colors"
+                      placeholder="Contoh: 2.500.000.000"
+                      className="w-full px-3.5 py-2.5 rounded-lg border border-neutral-200 bg-white text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-brand-900 focus:ring-1 focus:ring-brand-900 transition-colors"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-brand-950 mb-2">
-                    Catatan Tambahan & Keunggulan Properti
+                  <label className="block text-[11px] font-semibold uppercase tracking-wider text-neutral-700 mb-1.5">
+                    Catatan Khusus Properti
                   </label>
                   <textarea
                     rows={3}
                     value={formData.notes}
                     onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                    placeholder="Contoh: Baru renovasi, hadap timur, dekat stasiun MRT, semi-furnished..."
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-200 bg-neutral-50/50 text-sm focus:outline-none focus:border-accent-500 focus:bg-white transition-colors resize-none"
+                    placeholder="Contoh: Hadap timur, baru renovasi, semi-furnished, akses tol 5 menit..."
+                    className="w-full px-3.5 py-2.5 rounded-lg border border-neutral-200 bg-white text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-brand-900 focus:ring-1 focus:ring-brand-900 transition-colors resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 rounded-xl bg-accent-500 hover:bg-accent-600 text-brand-950 font-extrabold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70"
+                  className="w-full py-3.5 rounded-lg bg-brand-950 hover:bg-brand-900 text-white font-medium text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70"
                 >
-                  <Send size={16} />
-                  <span>{isSubmitting ? "Mengirim Data Properti..." : "Titipkan Properti Sekarang"}</span>
+                  <Send size={14} />
+                  <span>{isSubmitting ? "Mengirim Data..." : "Kirim Data Properti"}</span>
                 </button>
               </form>
             )}
           </div>
 
           {/* Sidebar Info & 4 Langkah Mudah */}
-          <div className="lg:col-span-4 space-y-6">
-            <div className="bg-white p-6 rounded-3xl border border-neutral-200/90 shadow-xs">
-              <h3 className="font-bold text-base text-brand-950 mb-4 flex items-center gap-2">
-                <CheckCircle2 size={18} className="text-accent-600" />
-                <span>4 Langkah Proses Penjualan</span>
+          <div className="lg:col-span-4 space-y-4">
+            <div className="bg-white p-6 rounded-xl border border-neutral-200/80">
+              <h3 className="font-medium text-sm text-brand-950 mb-4 pb-3 border-b border-neutral-100">
+                Alur Kerja Titip Properti
               </h3>
-              <ol className="space-y-4 text-sm">
+              <ol className="space-y-4 text-xs">
                 <li className="flex gap-3">
-                  <span className="w-6 h-6 rounded-full bg-brand-950 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+                  <span className="w-5 h-5 rounded-full bg-neutral-100 text-neutral-700 text-[10px] font-mono font-medium flex items-center justify-center shrink-0 mt-0.5">
                     1
                   </span>
                   <div>
-                    <strong className="block text-brand-950">Pengisian Data & Survei</strong>
-                    <span className="text-neutral-500 text-xs">Konsultan kami mengunjungi lokasi untuk verifikasi dan pengambilan foto.</span>
+                    <strong className="block text-brand-950 font-medium">Verifikasi Awal & Survei</strong>
+                    <span className="text-neutral-500">Konsultan kami meninjau lokasi dan memeriksa kelayakan dokumen.</span>
                   </div>
                 </li>
                 <li className="flex gap-3">
-                  <span className="w-6 h-6 rounded-full bg-brand-950 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+                  <span className="w-5 h-5 rounded-full bg-neutral-100 text-neutral-700 text-[10px] font-mono font-medium flex items-center justify-center shrink-0 mt-0.5">
                     2
                   </span>
                   <div>
-                    <strong className="block text-brand-950">Analisis Valuasi Pasar</strong>
-                    <span className="text-neutral-500 text-xs">Menentukan strategi harga terbaik dan target pembeli potensial.</span>
+                    <strong className="block text-brand-950 font-medium">Valuasi & Rencana Pemasaran</strong>
+                    <span className="text-neutral-500">Menyepakati target harga dan strategi paparan listing.</span>
                   </div>
                 </li>
                 <li className="flex gap-3">
-                  <span className="w-6 h-6 rounded-full bg-brand-950 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+                  <span className="w-5 h-5 rounded-full bg-neutral-100 text-neutral-700 text-[10px] font-mono font-medium flex items-center justify-center shrink-0 mt-0.5">
                     3
                   </span>
                   <div>
-                    <strong className="block text-brand-950">Kampanye Pemasaran Aktif</strong>
-                    <span className="text-neutral-500 text-xs">Penayangan digital, pendampingan viewing calon pembeli yang serius.</span>
+                    <strong className="block text-brand-950 font-medium">Penayangan & Pendampingan</strong>
+                    <span className="text-neutral-500">Penyaringan calon pembeli potensial dan jadwal kunjungan terkoordinasi.</span>
                   </div>
                 </li>
                 <li className="flex gap-3">
-                  <span className="w-6 h-6 rounded-full bg-brand-950 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+                  <span className="w-5 h-5 rounded-full bg-neutral-100 text-neutral-700 text-[10px] font-mono font-medium flex items-center justify-center shrink-0 mt-0.5">
                     4
                   </span>
                   <div>
-                    <strong className="block text-brand-950">Negosiasi & Akad Transaksi</strong>
-                    <span className="text-neutral-500 text-xs">Penyusunan PPJB / AJB aman didampingi notaris terpercaya.</span>
+                    <strong className="block text-brand-950 font-medium">Negosiasi & Akad Notaris</strong>
+                    <span className="text-neutral-500">Penyelesaian transaksi aman hingga serah terima kunci.</span>
                   </div>
                 </li>
               </ol>
             </div>
 
             {/* Direct WhatsApp Callout */}
-            <div className="bg-brand-950 text-white p-6 rounded-3xl border border-brand-800 shadow-md">
-              <h4 className="font-bold text-base mb-2">Ingin Konsultasi Langsung?</h4>
-              <p className="text-xs text-neutral-300 leading-relaxed mb-4">
-                Punya pertanyaan mengenai regulasi pajak, appraisal, atau komisi? Hubungi Head of Listing Eagletree.
+            <div className="bg-brand-950 text-white p-6 rounded-xl border border-brand-900">
+              <h4 className="font-serif text-base font-medium mb-1.5">Konsultasi Langsung</h4>
+              <p className="text-xs text-neutral-400 leading-relaxed mb-4 font-light">
+                Perlu panduan terkait perpajakan, estimasi nilai pasar, atau skema eksklusif? Hubungi tim representasi kami.
               </p>
               <a
                 href="https://wa.me/628111222333?text=Halo%20Eagletree,%20saya%20ingin%20berkonsultasi%20mengenai%20titip%20jual%20properti%20saya."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-accent-500 hover:bg-accent-600 text-brand-950 font-bold text-xs transition-colors"
+                className="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-lg bg-accent-500 hover:bg-accent-400 text-brand-950 font-medium text-xs transition-colors"
               >
-                <Phone size={14} />
+                <Phone size={13} />
                 <span>WhatsApp Listing Specialist</span>
               </a>
             </div>
           </div>
         </div>
 
-        {/* FAQ Accordion */}
-        <div className="max-w-3xl mx-auto pt-8 border-t border-neutral-200">
-          <div className="text-center mb-8">
-            <span className="text-xs uppercase tracking-wider font-bold text-accent-700">Tanya Jawab</span>
-            <h3 className="text-xl sm:text-2xl font-bold text-brand-950 mt-1">Pertanyaan Seputar Titip Properti</h3>
+        {/* FAQ Section */}
+        <div className="max-w-3xl mx-auto pt-6 border-t border-neutral-200/80">
+          <div className="text-center mb-6">
+            <p className="text-[11px] uppercase tracking-widest text-accent-700 font-semibold">Tanya Jawab</p>
+            <h3 className="font-serif text-xl font-medium text-brand-950 mt-1">Pertanyaan Seputar Titip Properti</h3>
           </div>
 
-          <div className="space-y-4 text-sm">
-            <div className="p-5 rounded-2xl bg-white border border-neutral-200">
-              <h4 className="font-bold text-brand-950 mb-1.5 flex items-center gap-2">
-                <HelpCircle size={16} className="text-accent-600" />
-                <span>Apakah ada biaya di awal saat menitipkan properti?</span>
+          <div className="space-y-3 text-xs sm:text-sm">
+            <div className="p-4 rounded-xl bg-white border border-neutral-200/80">
+              <h4 className="font-medium text-brand-950 mb-1">
+                Apakah ada biaya di awal saat menitipkan properti?
               </h4>
-              <p className="text-neutral-600 leading-relaxed text-xs sm:text-sm pl-6">
-                Tidak ada biaya di depan (no upfront fee). Segala biaya promosi, fotografi, dan penayangan listing ditanggung oleh Eagletree. Komisi jasa agen hanya dibayarkan apabila transaksi properti berhasil terealisasi (success fee).
+              <p className="text-neutral-600 leading-relaxed text-xs">
+                Tidak ada biaya di depan (no upfront fee). Segala proses verifikasi, pemotretan, dan penayangan listing ditanggung oleh Eagletree. Komisi jasa agen hanya dibayarkan apabila transaksi properti berhasil terealisasi (success fee).
               </p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-white border border-neutral-200">
-              <h4 className="font-bold text-brand-950 mb-1.5 flex items-center gap-2">
-                <HelpCircle size={16} className="text-accent-600" />
-                <span>Berapa besaran komisi jasa agen Eagletree?</span>
+            <div className="p-4 rounded-xl bg-white border border-neutral-200/80">
+              <h4 className="font-medium text-brand-950 mb-1">
+                Berapa besaran komisi jasa agen Eagletree?
               </h4>
-              <p className="text-neutral-600 leading-relaxed text-xs sm:text-sm pl-6">
+              <p className="text-neutral-600 leading-relaxed text-xs">
                 Besaran komisi mengikuti standar asosiasi AREBI (Asosiasi Real Estate Broker Indonesia) dan Permendag RI, yaitu berkisar 2% - 3% untuk transaksi jual beli, dan 5% untuk transaksi sewa menyewa.
               </p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-white border border-neutral-200">
-              <h4 className="font-bold text-brand-950 mb-1.5 flex items-center gap-2">
-                <HelpCircle size={16} className="text-accent-600" />
-                <span>Apakah saya boleh menitipkan properti ke agen lain juga?</span>
+            <div className="p-4 rounded-xl bg-white border border-neutral-200/80">
+              <h4 className="font-medium text-brand-950 mb-1">
+                Apakah saya boleh menitipkan properti ke agen lain juga?
               </h4>
-              <p className="text-neutral-600 leading-relaxed text-xs sm:text-sm pl-6">
-                Eagletree menawarkan dua opsi: Listing Terbuka (Open Listing) dan Listing Eksklusif (Exclusive Listing). Pada opsi Eksklusif, properti Anda mendapatkan alokasi budget promosi premium, featured banner di web, dan komitmen prioritas penuh dari tim kami.
+              <p className="text-neutral-600 leading-relaxed text-xs">
+                Eagletree melayani opsi Listing Terbuka (Open Listing) maupun Listing Eksklusif (Exclusive Listing). Pada opsi Eksklusif, properti Anda mendapatkan alokasi kampanye prioritas dan komitmen penuh dari penasihat senior kami.
               </p>
             </div>
           </div>

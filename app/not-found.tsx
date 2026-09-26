@@ -1,82 +1,64 @@
 import Link from "next/link";
-import { ArrowLeft, Home, Search, Building2, Calculator, PhoneCall } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { PageContainer } from "@/components/layout/page-container";
 
 export default function NotFound() {
   return (
-    <main className="min-h-[80vh] flex items-center justify-center py-20 px-4 bg-gradient-to-b from-neutral-50 via-white to-neutral-50">
-      <PageContainer className="max-w-2xl text-center">
-        {/* Visual Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-50 border border-accent-200 text-accent-700 text-xs font-bold uppercase tracking-wider mb-6">
-          <span>Error 404</span>
-        </div>
+    <main className="min-h-[75vh] flex items-center justify-center py-20 px-4 bg-neutral-50/60">
+      <PageContainer className="max-w-xl text-center">
+        {/* Monospace Status Tag */}
+        <span className="text-xs font-mono font-medium tracking-widest text-neutral-400 uppercase mb-4 block">
+          404 &middot; Halaman Tidak Ditemukan
+        </span>
 
-        <h1 className="text-4xl sm:text-6xl font-extrabold text-brand-950 tracking-tight mb-4">
-          Halaman Tidak Ditemukan
+        <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium text-brand-950 tracking-tight mb-4">
+          Tautan yang Anda Tuju Tidak Tersedia.
         </h1>
 
-        <p className="text-base sm:text-lg text-neutral-600 leading-relaxed mb-8 max-w-lg mx-auto">
-          Maaf, halaman yang Anda cari mungkin telah dipindahkan, diubah tautannya, atau sementara tidak tersedia.
+        <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed mb-8 max-w-md mx-auto font-light">
+          Halaman yang Anda tuju mungkin telah dipindahkan, diperbarui, atau alamat URL yang dimasukkan kurang tepat.
         </p>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-12">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
           <Link
             href="/"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-950 hover:bg-brand-900 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all"
+            className="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-brand-950 hover:bg-brand-900 text-white font-medium text-xs uppercase tracking-wider transition-colors"
           >
-            <Home size={16} />
-            <span>Kembali ke Beranda</span>
+            Kembali ke Beranda
           </Link>
           <Link
             href="/properties"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-neutral-50 text-brand-950 font-bold text-sm border border-neutral-200 shadow-xs hover:border-neutral-300 transition-all"
+            className="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-white hover:bg-neutral-50 text-neutral-800 font-medium text-xs uppercase tracking-wider border border-neutral-200 transition-colors"
           >
-            <Search size={16} />
-            <span>Jelajahi Properti</span>
+            Katalog Properti
           </Link>
         </div>
 
         {/* Quick Suggestion Links */}
-        <div className="pt-8 border-t border-neutral-200">
-          <p className="text-xs uppercase tracking-wider font-bold text-neutral-400 mb-4">
-            Tautan Cepat yang Mungkin Membantu
+        <div className="pt-6 border-t border-neutral-200/80 text-xs">
+          <p className="text-[11px] uppercase tracking-wider font-mono text-neutral-400 mb-3">
+            Destinasi Terpopuler
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-left">
-            <Link
-              href="/for-sale"
-              className="p-3 rounded-xl bg-white border border-neutral-200/80 hover:border-accent-500 hover:shadow-sm transition-all group"
-            >
-              <Building2 size={16} className="text-accent-600 mb-1.5 group-hover:scale-110 transition-transform" />
-              <p className="text-xs font-bold text-brand-950 group-hover:text-accent-700">Properti Dijual</p>
-              <p className="text-[11px] text-neutral-500">Rumah & apartemen</p>
+          <div className="flex flex-wrap items-center justify-center gap-3 text-neutral-600">
+            <Link href="/for-sale" className="hover:text-brand-950 transition-colors">
+              Properti Dijual
             </Link>
-
-            <Link
-              href="/for-rent"
-              className="p-3 rounded-xl bg-white border border-neutral-200/80 hover:border-accent-500 hover:shadow-sm transition-all group"
-            >
-              <Building2 size={16} className="text-accent-600 mb-1.5 group-hover:scale-110 transition-transform" />
-              <p className="text-xs font-bold text-brand-950 group-hover:text-accent-700">Properti Disewa</p>
-              <p className="text-[11px] text-neutral-500">Sewa bulanan/tahunan</p>
+            <span className="text-neutral-300">&middot;</span>
+            <Link href="/for-rent" className="hover:text-brand-950 transition-colors">
+              Properti Disewa
             </Link>
-
-            <Link
-              href="/mortgage-calculator"
-              className="p-3 rounded-xl bg-white border border-neutral-200/80 hover:border-accent-500 hover:shadow-sm transition-all group"
-            >
-              <Calculator size={16} className="text-accent-600 mb-1.5 group-hover:scale-110 transition-transform" />
-              <p className="text-xs font-bold text-brand-950 group-hover:text-accent-700">Simulasi KPR</p>
-              <p className="text-[11px] text-neutral-500">Hitung cicilan bank</p>
+            <span className="text-neutral-300">&middot;</span>
+            <Link href="/new-projects" className="hover:text-brand-950 transition-colors">
+              Proyek Baru
             </Link>
-
-            <Link
-              href="/contact"
-              className="p-3 rounded-xl bg-white border border-neutral-200/80 hover:border-accent-500 hover:shadow-sm transition-all group"
-            >
-              <PhoneCall size={16} className="text-accent-600 mb-1.5 group-hover:scale-110 transition-transform" />
-              <p className="text-xs font-bold text-brand-950 group-hover:text-accent-700">Hubungi Kami</p>
-              <p className="text-[11px] text-neutral-500">Bantuan langsung agen</p>
+            <span className="text-neutral-300">&middot;</span>
+            <Link href="/mortgage-calculator" className="hover:text-brand-950 transition-colors">
+              Simulasi KPR
+            </Link>
+            <span className="text-neutral-300">&middot;</span>
+            <Link href="/contact" className="hover:text-brand-950 transition-colors">
+              Hubungi Tim Kami
             </Link>
           </div>
         </div>

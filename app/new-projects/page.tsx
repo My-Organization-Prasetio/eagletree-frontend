@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import { Metadata } from "next";
-import { Building2 } from "lucide-react";
 import { PageContainer } from "@/components/layout/page-container";
 import { ProjectFilterBar } from "@/components/projects/project-filter-bar";
 import { ProjectCard } from "@/components/projects/project-card";
@@ -35,46 +34,40 @@ export default async function NewProjectsPage({ searchParams }: Props) {
     filteredProjects.sort((a, b) => a.startingPrice.amount - b.startingPrice.amount);
   } else if (sort === "price-desc") {
     filteredProjects.sort((a, b) => b.startingPrice.amount - a.startingPrice.amount);
-  } else {
-    // newest / default: we can just leave it as is or sort by something if we had a date.
   }
 
   return (
-    <main className="flex min-h-screen flex-col pt-24 pb-16 bg-neutral-50">
+    <main className="flex min-h-screen flex-col pt-24 pb-16 bg-neutral-50/60">
       <PageContainer>
         {/* Header Section */}
-        <div className="mb-10 text-center sm:text-left">
-          <div className="inline-flex items-center justify-center sm:justify-start gap-2 px-3 py-1.5 rounded-full bg-brand-100/50 text-brand-800 text-sm font-medium mb-4">
-            <Building2 size={16} />
-            <span>Katalog Proyek Terpilih</span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-brand-950 mb-4">
-            Proyek Properti Baru
+        <div className="mb-8">
+          <p className="text-[11px] uppercase tracking-widest text-accent-700 font-semibold mb-2">
+            Katalog Proyek Primer
+          </p>
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-brand-950 mb-3">
+            Peluncuran Proyek Baru
           </h1>
-          <p className="text-lg text-neutral-600 max-w-2xl">
-            Jelajahi perumahan, apartemen, dan kawasan komersial terbaru dari developer terpercaya di Indonesia.
+          <p className="text-xs sm:text-sm text-neutral-600 max-w-2xl leading-relaxed font-light">
+            Kawasan residensial, kondominium, dan area komersial terpadu yang dikembangkan oleh mitra pengembang institusional terpercaya.
           </p>
         </div>
 
         {/* Filters */}
-        <Suspense fallback={<div className="h-20 bg-white rounded-xl border border-neutral-200 animate-pulse mb-8" />}>
+        <Suspense fallback={<div className="h-16 bg-white rounded-xl border border-neutral-200/80 animate-pulse mb-8" />}>
           <ProjectFilterBar />
         </Suspense>
 
         {/* Results */}
         {filteredProjects.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>
         ) : (
-          <div className="py-20 text-center flex flex-col items-center">
-            <div className="w-16 h-16 bg-neutral-100 rounded-full flex items-center justify-center mb-4">
-              <Building2 size={32} className="text-neutral-400" />
-            </div>
-            <h3 className="text-xl font-bold text-neutral-900 mb-2">Proyek Tidak Ditemukan</h3>
-            <p className="text-neutral-500">
+          <div className="py-16 text-center flex flex-col items-center justify-center p-8 bg-white rounded-xl border border-neutral-200/80">
+            <h3 className="font-serif text-base font-medium text-brand-950 mb-1">Tidak Ada Proyek yang Sesuai</h3>
+            <p className="text-xs text-neutral-500 font-light">
               Maaf, belum ada proyek baru yang sesuai dengan kriteria pencarian Anda.
             </p>
           </div>
