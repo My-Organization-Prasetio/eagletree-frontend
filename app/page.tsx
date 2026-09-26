@@ -172,7 +172,7 @@ export default async function Home({ searchParams }: HomeProps) {
             </Link>
             <Link
               className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/20 transition-all cursor-pointer"
-              href="/cari-agen"
+              href="/find-agent"
             >
               <span>Konsultasi Gratis</span>
             </Link>

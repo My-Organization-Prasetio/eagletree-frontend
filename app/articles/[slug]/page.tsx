@@ -24,7 +24,9 @@ type ArticleDetailProps = {
 };
 
 export async function generateStaticParams() {
-  return mockArticles.map((a) => ({ slug: a.slug }));
+  const slugs = mockArticles.map((a) => ({ slug: a.slug }));
+  const indices = mockArticles.map((_, i) => ({ slug: String(i + 1) }));
+  return [...slugs, ...indices];
 }
 
 export async function generateMetadata({

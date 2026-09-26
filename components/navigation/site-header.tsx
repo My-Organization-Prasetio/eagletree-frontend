@@ -8,11 +8,11 @@ import { BrandMark } from "@/components/layout/brand-mark";
 import { copy, resolveLocale } from "@/lib/i18n";
 
 const utilityLinks = [
-  { href: "/tentang", label: "Tentang Eagletree" },
+  { href: "/about", label: "Tentang Eagletree" },
   { href: "/join", label: "Join Eagletree" },
   { href: "/prestasi", label: "Prestasi" },
-  { href: "/artikel", label: "Artikel" },
-  { href: "/kontak", label: "Kontak" },
+  { href: "/articles", label: "Artikel" },
+  { href: "/contact", label: "Kontak" },
 ];
 
 const navigationLinks = [

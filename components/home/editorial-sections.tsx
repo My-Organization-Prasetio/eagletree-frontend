@@ -139,7 +139,7 @@ export function NewsSection({ locale }: EditorialSectionProps) {
           title={content.title}
           description={content.description}
           action={
-            <Link className="inline-flex items-center gap-1.5 text-sm font-bold text-accent-700 hover:text-accent-600 transition-colors" href="/artikel">
+            <Link className="inline-flex items-center gap-1.5 text-sm font-bold text-accent-700 hover:text-accent-600 transition-colors" href="/articles">
               <span>{content.link}</span>
               <ArrowUpRight size={16} aria-hidden="true" />
             </Link>
@@ -164,7 +164,7 @@ export function NewsSection({ locale }: EditorialSectionProps) {
                 </div>
                 <h3 className="text-base font-bold text-brand-950 line-clamp-2 group-hover:text-accent-700 transition-colors leading-snug">{item.title}</h3>
                 <p className="text-sm text-neutral-600 line-clamp-2 leading-relaxed flex-1">{item.description}</p>
-                <Link className="inline-flex items-center gap-1 text-xs font-bold text-accent-700 hover:text-accent-600 mt-2" href={`/artikel/${index + 1}`}>
+                <Link className="inline-flex items-center gap-1 text-xs font-bold text-accent-700 hover:text-accent-600 mt-2" href={`/articles/${index + 1}`}>
                   <span>{content.link}</span>
                   <ArrowUpRight size={14} aria-hidden="true" />
                 </Link>

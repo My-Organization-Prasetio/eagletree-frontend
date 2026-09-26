@@ -1076,9 +1076,17 @@ export const articleCategories: ArticleCategory[] = [
 
 export function getArticleBySlug(slug: string): ArticleItem | undefined {
   const decoded = decodeURIComponent(slug).toLowerCase();
-  return mockArticles.find(
+  const bySlug = mockArticles.find(
     (a) => a.slug.toLowerCase() === decoded || a.id.toLowerCase() === decoded,
   );
+  if (bySlug) return bySlug;
+
+  const numericIndex = parseInt(decoded, 10);
+  if (!isNaN(numericIndex) && numericIndex >= 1 && numericIndex <= mockArticles.length) {
+    return mockArticles[numericIndex - 1];
+  }
+
+  return undefined;
 }
 
 export function getRelatedArticles(currentId: string, limit: number = 3): ArticleItem[] {
