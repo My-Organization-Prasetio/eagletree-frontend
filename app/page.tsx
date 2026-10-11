@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { EditorialHeading } from "@/components/home/editorial-heading";
 import {
   NewsSection,
   HomeBannerSection,
-  PromotionBanner,
-  ShortcutSection,
   TestimonialSection,
 } from "@/components/home/editorial-sections";
 import { HeroSection } from "@/components/home/hero-section";
-import { TrustSection } from "@/components/home/trust-section";
+import { AboutSpotlightSection } from "@/components/home/about-spotlight-section";
+import { StatsRibbon } from "@/components/home/stats-ribbon";
+import { ServicesGrid } from "@/components/home/services-grid";
+import { MortgageSolutionSection } from "@/components/home/mortgage-solution-section";
+import { ClosingCtaBanner } from "@/components/home/closing-cta-banner";
 import { PageContainer } from "@/components/layout/page-container";
 import { PropertyCard } from "@/components/property/property-card";
 import { mockProperties, propertyCategories } from "@/lib/mock-data";
@@ -28,32 +30,74 @@ export default async function Home({ searchParams }: HomeProps) {
   const { lang } = await searchParams;
   const locale: Locale = resolveLocale(lang);
   const content = copy[locale].home;
-  const popularProperties = mockProperties.slice(0, 3);
-  const latestProperties = mockProperties.slice(3, 7);
+  
+  // 4 Featured properties for the reference 4-column row
+  const featuredProperties = mockProperties.slice(0, 4);
+  const latestProperties = mockProperties.slice(4, 8);
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
-      {/* 1. Hero Section */}
+      {/* 1. Hero Section (Twilight Villa, Headline with Gold Accent, Dual CTAs, Floating Search & Shortcuts) */}
       <HeroSection locale={locale} />
 
-      {/* 2. Quick Shortcuts */}
-      <ShortcutSection locale={locale} />
+      {/* 2. Featured Properties / Explore Our Exclusive Listings (Matching Valora Reference 4-Card Row) */}
+      <section className="py-20 sm:py-28 bg-white border-b border-neutral-200/80" aria-labelledby="featured-listings-title">
+        <PageContainer>
+          {/* Header Row */}
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 sm:mb-12">
+            <div>
+              <div className="inline-flex items-center gap-2.5 text-gold-600 text-xs font-bold tracking-[0.22em] uppercase mb-2">
+                <span className="w-5 h-px bg-gold-500/80" aria-hidden="true" />
+                <span>{locale === "en" ? "FEATURED PROPERTIES" : "PROPERTI UNGGULAN"}</span>
+              </div>
+              <h2
+                id="featured-listings-title"
+                className="text-3xl sm:text-4xl font-bold tracking-tight text-navy-950 font-serif"
+              >
+                {locale === "en" ? "Explore Our Exclusive Listings" : "Jelajahi Listing Eksklusif Kami"}
+              </h2>
+            </div>
 
-      {/* 3. Featured Banners */}
+            <Link
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-gold-500/80 hover:bg-gold-500 text-gold-700 hover:text-navy-950 font-bold text-xs sm:text-sm tracking-wide transition-all shadow-2xs hover:shadow-xs self-start sm:self-auto cursor-pointer"
+              href="/for-sale"
+            >
+              <span>{locale === "en" ? "View All Properties" : "Lihat Semua Properti"}</span>
+              <ArrowRight size={14} />
+            </Link>
+          </div>
+
+          {/* 4-Card Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 lg:gap-7">
+            {featuredProperties.map((property) => (
+              <PropertyCard key={property.id} property={property} locale={locale} />
+            ))}
+          </div>
+        </PageContainer>
+      </section>
+
+      {/* 3. About Section (Video Spotlight Living Room Media + 3 Golden Value Pillars) */}
+      <AboutSpotlightSection locale={locale} />
+
+      {/* 4. Full-Width Dark Stats Ribbon Bar (10+ Years, 1,200+ Sold, 2,500+ Clients, 25+ Awards) */}
+      <StatsRibbon locale={locale} />
+
+      {/* 5. Our Services (How We Can Help You - 4 Modular Service Cards) */}
+      <ServicesGrid locale={locale} />
+
+      {/* 6. Featured Banners & Dominant KPR Mortgage Solution */}
       <HomeBannerSection locale={locale} />
+      <MortgageSolutionSection locale={locale} />
 
-      {/* 4. KPR Promotion Banner */}
-      <PromotionBanner locale={locale} />
-
-      {/* 5. Lifestyle Categories */}
-      <section className="py-16 sm:py-24 bg-surface-muted/40 border-b border-border-subtle" aria-labelledby="projects-title">
+      {/* 7. Lifestyle Categories */}
+      <section className="py-20 sm:py-28 bg-[#fdfbf7] border-b border-neutral-200/80" aria-labelledby="projects-title">
         <PageContainer>
           <EditorialHeading
             identity={content.projects.identity}
             title={content.projects.title}
             description={content.projects.description}
             action={
-              <Link className="inline-flex items-center gap-1.5 text-sm font-bold text-accent-700 hover:text-accent-600 transition-colors" href="/properties">
+              <Link className="inline-flex items-center gap-1.5 text-sm font-bold text-gold-600 hover:text-gold-700 transition-colors" href="/properties">
                 <span>{content.projects.link}</span>
                 <ArrowUpRight size={16} aria-hidden="true" />
               </Link>
@@ -62,7 +106,7 @@ export default async function Home({ searchParams }: HomeProps) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8" id="projects-title">
             {propertyCategories.map((category, index) => (
               <Link
-                className="group relative h-72 sm:h-84 md:h-96 rounded-xl overflow-hidden shadow-xs hover:shadow-md border border-border-subtle flex items-end p-6 sm:p-8 transition-shadow duration-300"
+                className="group relative h-80 sm:h-96 md:h-[420px] rounded-2xl overflow-hidden shadow-xs hover:shadow-md border border-neutral-200/80 flex items-end p-6 sm:p-8 transition-all duration-300"
                 href={category.href}
                 key={category.label}
               >
@@ -73,15 +117,15 @@ export default async function Home({ searchParams }: HomeProps) {
                   fill
                   sizes="(max-width: 767px) 100vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-950/95 via-brand-950/40 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/95 via-navy-950/40 to-transparent pointer-events-none" />
                 <div className="relative z-10 flex flex-col gap-1.5 text-white w-full">
                   <div className="flex items-center justify-between">
                     <span className="text-xl sm:text-2xl font-bold tracking-tight">{content.discover.categories[index]?.label ?? category.label}</span>
-                    <span className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-accent-300 group-hover:bg-accent-500 group-hover:text-brand-950 transition-colors">
+                    <span className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-gold-400 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
                       <ArrowUpRight size={16} />
                     </span>
                   </div>
-                  <span className="text-xs sm:text-sm text-brand-100/85 font-normal leading-relaxed">{content.discover.categories[index]?.description ?? ""}</span>
+                  <span className="text-xs sm:text-sm text-neutral-200 font-light leading-relaxed">{content.discover.categories[index]?.description ?? ""}</span>
                 </div>
               </Link>
             ))}
@@ -89,43 +133,21 @@ export default async function Home({ searchParams }: HomeProps) {
         </PageContainer>
       </section>
 
-      {/* 6. Popular / Handpicked Properties (3 cols) */}
-      <section className="py-16 sm:py-24 bg-surface-raised border-b border-border-subtle" aria-labelledby="popular-title">
-        <PageContainer>
-          <EditorialHeading
-            identity={content.popular.identity}
-            title={content.popular.title}
-            description={content.popular.description}
-            action={
-              <Link className="inline-flex items-center gap-1.5 text-sm font-bold text-accent-700 hover:text-accent-600 transition-colors" href="/for-sale">
-                <span>{content.popular.link}</span>
-                <ArrowUpRight size={16} aria-hidden="true" />
-              </Link>
-            }
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="popular-title">
-            {popularProperties.map((property) => (
-              <PropertyCard key={property.id} property={property} locale={locale} />
-            ))}
-          </div>
-        </PageContainer>
-      </section>
-
-      {/* 7. Latest Listings (4 cols) */}
-      <section className="py-16 sm:py-24 bg-background border-b border-border-subtle" aria-labelledby="latest-title">
+      {/* 8. Latest Listings (4 cols) */}
+      <section className="py-20 sm:py-28 bg-white border-b border-neutral-200/80" aria-labelledby="latest-title">
         <PageContainer>
           <EditorialHeading
             identity={content.latest.eyebrow}
             title={content.latest.title}
             description={content.latest.description}
             action={
-              <Link className="inline-flex items-center gap-1.5 text-sm font-bold text-accent-700 hover:text-accent-600 transition-colors" href="/for-sale?sort=newest">
+              <Link className="inline-flex items-center gap-1.5 text-sm font-bold text-gold-600 hover:text-gold-700 transition-colors" href="/for-sale?sort=newest">
                 <span>{content.latest.link}</span>
                 <ArrowUpRight size={16} aria-hidden="true" />
               </Link>
             }
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-7" id="latest-title">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 lg:gap-7" id="latest-title">
             {latestProperties.map((property) => (
               <PropertyCard key={property.id} property={property} locale={locale} />
             ))}
@@ -133,47 +155,14 @@ export default async function Home({ searchParams }: HomeProps) {
         </PageContainer>
       </section>
 
-      {/* 8. Trust & Local Advisors */}
-      <TrustSection locale={locale} />
-
       {/* 9. Property Articles & Insights */}
       <NewsSection locale={locale} />
 
       {/* 10. Client Testimonials */}
       <TestimonialSection locale={locale} />
 
-      {/* 11. Grand Closing CTA Banner */}
-      <section className="py-16 sm:py-24 bg-brand-950 text-white border-t border-brand-900" aria-labelledby="cta-title">
-        <PageContainer className="flex flex-col lg:flex-row lg:items-center justify-between gap-10">
-          <div className="max-w-2xl">
-            <p className="text-xs font-bold uppercase tracking-widest text-accent-400 mb-2">
-              {content.cta.eyebrow}
-            </p>
-            <h2 id="cta-title" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
-              {content.cta.title}
-            </h2>
-            <p className="mt-3 text-base text-neutral-300 leading-relaxed font-normal">
-              {content.cta.description}
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 shrink-0">
-            <Link
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-accent-500 hover:bg-accent-600 text-brand-950 font-bold text-sm transition-colors cursor-pointer"
-              href="/properties"
-            >
-              <span>{content.cta.button}</span>
-              <ArrowUpRight size={16} aria-hidden="true" />
-            </Link>
-            <Link
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-transparent hover:bg-white/10 text-white font-semibold text-sm border border-white/20 transition-colors cursor-pointer"
-              href="/find-agent"
-            >
-              <span>Konsultasi Gratis</span>
-            </Link>
-          </div>
-        </PageContainer>
-      </section>
+      {/* 11. Closing CTA Skyline Penthouse Banner */}
+      <ClosingCtaBanner locale={locale} />
     </div>
   );
 }

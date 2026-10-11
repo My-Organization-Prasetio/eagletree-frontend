@@ -86,7 +86,7 @@ export function PropertyCard({
   );
 
   return (
-    <article className="group bg-white rounded-xl overflow-hidden border border-neutral-200/80 hover:border-neutral-300 shadow-2xs hover:shadow-sm transition-all duration-200 flex flex-col">
+    <article className="group bg-white rounded-xl overflow-hidden border border-neutral-200/90 hover:border-gold-400/80 shadow-2xs hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col">
       {/* Media Wrap with Zoom Effect */}
       <div className="relative aspect-[16/11] w-full overflow-hidden bg-neutral-100">
         <Link
@@ -179,9 +179,11 @@ export function PropertyCard({
         {/* Price & Action Row */}
         <div className="flex items-end justify-between gap-2 pt-1 mt-auto">
           <div>
-            <span className="text-[10px] text-neutral-500 font-semibold uppercase tracking-wider block">Harga</span>
+            <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-widest block">
+              {locale === "en" ? "Price" : "Harga"}
+            </span>
             <div className="flex items-baseline">
-              <span className="text-xl font-extrabold text-brand-950 tracking-tight">
+              <span className="text-xl font-extrabold text-gold-600 tracking-tight">
                 {formattedAmount}
               </span>
               {periodText && (
@@ -191,7 +193,7 @@ export function PropertyCard({
           </div>
 
           <Link
-            className="inline-flex items-center gap-1 text-xs font-semibold text-brand-950 hover:text-accent-700 transition-colors py-1"
+            className="inline-flex items-center gap-1 text-xs font-semibold text-navy-950 hover:text-gold-600 transition-colors py-1"
             href={propertyHref}
           >
             <span>{content.view}</span>

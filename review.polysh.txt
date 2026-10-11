@@ -1,0 +1,157 @@
+## ADDITIONAL REQUIREMENT — PREMIUM HOMEPAGE VISUAL COMPOSITION
+
+Act as a Senior Frontend Engineer and Art Director specializing in premium real-estate websites.
+
+Elevate the existing Eagletree homepage with a more sophisticated visual composition using carefully selected background treatments, subtle parallax effects, editorial layouts, and intentional transitions between sections.
+
+The goal is to create a premium, polished real-estate experience that feels thoughtfully art-directed — not a generic AI-generated landing page.
+
+**Important: Enhance the existing homepage rather than redesigning it from scratch. Preserve existing functionality, content, components, assets, and architecture wherever practical.**
+
+### 1. Strategic Background Treatments
+
+Review the existing homepage section by section and determine which background treatment best supports each section's purpose.
+
+Do not use the same background color for every section, but do not alternate colors mechanically either.
+
+Consider the following treatments where appropriate:
+
+- **Primary hero:** Existing high-quality property imagery, a restrained overlay when necessary for text readability, and a clear visual focal point.
+- **Property search:** A clean, well-defined surface that separates the search controls from the hero without creating unnecessary visual clutter.
+- **Latest properties:** A neutral background that allows property photography to stand out.
+- **Featured properties:** A subtly contrasting background or a more editorial composition to establish a clear visual distinction.
+- **New developments:** A darker or brand-colored section only if it complements the existing branding and available imagery.
+- **Popular locations:** A carefully composed image-led layout with restrained overlays and consistent image proportions.
+- **Articles and insights:** An editorial layout with generous but controlled spacing and a clear typography hierarchy.
+- **Testimonials:** A quiet, contrasting surface that improves readability without excessive quotation marks, decorative shapes, or oversized cards.
+- **Mortgage calculator:** A functional, clearly structured surface that distinguishes interactive financial controls from surrounding editorial content.
+- **Final CTA:** A visually distinct closing section that encourages action without competing with the hero.
+- **Footer:** A cohesive conclusion to the page, with clear navigation hierarchy and appropriate contrast.
+
+These are design directions, not mandatory section styles. Inspect the actual homepage and apply only the treatments that make sense.
+
+Preserve existing Eagletree brand colors and assets. Use color variations to establish hierarchy, not decoration.
+
+### 2. Selective Parallax and Depth
+
+Evaluate where subtle parallax or layered depth would genuinely improve the experience.
+
+Potential candidates include:
+
+- The hero background image.
+- Large editorial property imagery.
+- Selected featured property or development imagery.
+- Existing background image compositions.
+
+When appropriate, use a very subtle movement effect that creates a sense of depth while keeping text, navigation, search controls, and property information stable and readable.
+
+Implementation requirements:
+
+- Prefer lightweight CSS transforms or the existing animation infrastructure.
+- Use the smallest movement distance that produces a perceptible but restrained effect.
+- Avoid moving entire content sections independently in ways that cause visual instability.
+- Avoid excessive scroll-linked JavaScript, expensive event handlers, and unnecessary animation libraries.
+- Prevent image distortion, content overlap, and layout shifts.
+- Do not apply parallax to every section.
+- Do not introduce parallax where it reduces readability or makes interactions uncomfortable.
+- Respect `prefers-reduced-motion` and disable or substantially reduce movement when requested by the user.
+- Ensure that the mobile experience remains stable and usable; disable parallax on mobile if appropriate.
+
+**The effect should be subtle enough to feel premium rather than theatrical.**
+
+If the existing implementation does not support a clean, performant parallax effect, use a static composition with carefully controlled image positioning instead.
+
+### 3. Section Transitions and Visual Rhythm
+
+Make the homepage feel like one coherent experience rather than a sequence of unrelated component blocks.
+
+Refine transitions between sections through:
+
+- Intentional background-color changes.
+- Consistent content container widths.
+- Carefully controlled vertical spacing.
+- Image-led compositions where appropriate.
+- Clear heading and description hierarchy.
+- Subtle borders or dividers when necessary.
+- Consistent alignment between section headings and content.
+- Carefully chosen differences in content density.
+
+Avoid excessive rounded containers, decorative wave separators, random overlapping cards, floating shapes, and gradients without a clear design purpose.
+
+Do not force every section into the same layout or card grid.
+
+Use a combination of open layouts, image-led sections, and contained content areas where it improves the visual narrative.
+
+### 4. Professional Use of Color
+
+Use background color to support content hierarchy and brand identity.
+
+- Preserve the established Eagletree brand palette.
+- Use neutral surfaces as the foundation.
+- Introduce subtle tonal variations between selected sections.
+- Reserve strong brand colors for meaningful visual emphasis.
+- Maintain sufficient contrast for headings, descriptions, metadata, links, and buttons.
+- Avoid alternating backgrounds simply for the sake of alternating them.
+- Avoid using too many unrelated colors within a single viewport.
+- Ensure that the property imagery remains the primary visual focus.
+
+The result should feel restrained, sophisticated, and commercially credible.
+
+### 5. Refine the Hero Without Unnecessary Redesign
+
+Treat the hero as the primary visual anchor of the homepage.
+
+Inspect the current implementation before making changes.
+
+Refine the existing composition by considering:
+
+- Image positioning and cropping.
+- Text placement and maximum line width.
+- Overlay strength and readability.
+- Headline hierarchy.
+- Spacing between headline, supporting text, and search controls.
+- Integration of the search panel with the hero.
+- Responsive behavior and image focal points.
+
+Use parallax only if it improves the existing concept.
+
+Do not automatically replace the current hero image, change the entire color scheme, introduce glassmorphism, or reposition every element.
+
+If the current hero already works well, make only targeted refinements.
+
+### 6. Preserve Existing Functionality and Responsive Behavior
+
+All visual improvements must preserve:
+
+- Existing navigation and links.
+- Search and filter behavior.
+- Property cards and API-driven data.
+- Existing CTAs and WhatsApp actions.
+- Authentication and user interactions.
+- Responsive layouts.
+- SEO and accessibility.
+- Existing component architecture.
+
+Avoid changing backend code, API contracts, data models, and unrelated pages.
+
+### 7. Implementation and Review
+
+First inspect the existing homepage and map its current sections.
+
+Before implementation, identify:
+
+1. Which sections need different background treatments.
+2. Where parallax would genuinely improve the composition.
+3. Which sections should remain simple and neutral.
+4. Which shared components need small visual adjustments.
+5. Any performance, accessibility, or responsive risks.
+
+Then implement the improvements directly in the existing code.
+
+After implementation, inspect the actual rendered homepage where browser tools are available.
+
+Evaluate whether the overall page has a clear visual rhythm, balanced contrast, natural spacing, and restrained depth.
+
+Remove any effect that looks decorative rather than purposeful.
+
+**Final quality standard: the homepage should feel like a professionally art-directed property brand, with subtle depth, intentional color composition, excellent typography, and a coherent visual rhythm — while remaining recognizably the existing Eagletree website.**

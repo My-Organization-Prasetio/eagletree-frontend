@@ -16,6 +16,17 @@
   --color-accent-100: #f3e7d0;
   --color-accent-50: #faf5eb;
 
+  --color-gold-600: #b3891e;
+  --color-gold-500: #c59b27;
+  --color-gold-400: #d4af37;
+  --color-gold-100: #f7eed8;
+  --color-gold-50: #fdfaf3;
+
+  --color-navy-950: #0c192c;
+  --color-navy-900: #0f1d32;
+  --color-navy-800: #162a47;
+  --color-navy-700: #1e375c;
+
   --color-neutral-950: #1c2925;
   --color-neutral-900: #293732;
   --color-neutral-700: #53625c;
@@ -57,6 +68,15 @@
   --color-accent-500: var(--color-accent-500);
   --color-accent-100: var(--color-accent-100);
   --color-accent-50: var(--color-accent-50);
+  --color-gold-600: var(--color-gold-600);
+  --color-gold-500: var(--color-gold-500);
+  --color-gold-400: var(--color-gold-400);
+  --color-gold-100: var(--color-gold-100);
+  --color-gold-50: var(--color-gold-50);
+  --color-navy-950: var(--color-navy-950);
+  --color-navy-900: var(--color-navy-900);
+  --color-navy-800: var(--color-navy-800);
+  --color-navy-700: var(--color-navy-700);
   --color-neutral-950: var(--color-neutral-950);
   --color-neutral-900: var(--color-neutral-900);
   --color-neutral-700: var(--color-neutral-700);
