@@ -34,7 +34,7 @@ export function ShortcutSection({ locale }: EditorialSectionProps) {
                 <span className="text-xs font-mono font-semibold text-neutral-400 group-hover:text-accent-700 transition-colors">
                   0{index + 1}
                 </span>
-                <ArrowUpRight className="text-neutral-400 group-hover:text-brand-950 transition-colors" size={17} aria-hidden="true" />
+                <ArrowUpRight className="text-neutral-400 group-hover:text-brand-950 transition-colors" size={16} aria-hidden="true" />
               </div>
               <div>
                 <span className="block font-bold text-brand-950 text-base group-hover:text-accent-700 transition-colors">
@@ -86,7 +86,7 @@ export function HomeBannerSection({ locale }: EditorialSectionProps) {
                 <span className="text-2xl sm:text-3xl font-bold tracking-tight text-white">{item.title}</span>
                 <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-brand-100 group-hover:text-accent-300 transition-colors mt-2">
                   {item.action}
-                  <ArrowUpRight size={15} aria-hidden="true" />
+                  <ArrowUpRight size={16} aria-hidden="true" />
                 </span>
               </div>
             </Link>

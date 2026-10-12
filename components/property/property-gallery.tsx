@@ -80,7 +80,7 @@ export function PropertyGallery({ images, title }: PropertyGalleryProps) {
             }}
             className="absolute bottom-4 left-4 inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/90 hover:bg-white text-[#102d26] text-xs font-semibold backdrop-blur-xs shadow-md transition-all cursor-pointer"
           >
-            <Expand size={15} />
+            <Expand size={16} />
             <span>Lihat Semua Foto ({totalImages})</span>
           </button>
         </div>

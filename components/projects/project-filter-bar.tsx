@@ -53,7 +53,7 @@ export function ProjectFilterBar() {
             <option value="surabaya">Surabaya</option>
             <option value="bali">Bali</option>
           </select>
-          <ChevronDown size={13} className="pointer-events-none absolute right-3 top-3 text-neutral-400" />
+          <ChevronDown size={14} className="pointer-events-none absolute right-3 top-3 text-neutral-400" />
         </div>
 
         {/* Sort */}
@@ -67,7 +67,7 @@ export function ProjectFilterBar() {
             <option value="price-asc">Harga Terendah</option>
             <option value="price-desc">Harga Tertinggi</option>
           </select>
-          <ChevronDown size={13} className="pointer-events-none absolute right-3 top-3 text-neutral-400" />
+          <ChevronDown size={14} className="pointer-events-none absolute right-3 top-3 text-neutral-400" />
         </div>
       </div>
     </div>

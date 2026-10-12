@@ -147,11 +147,11 @@ export default async function ArticleDetailPage({
               <Link href="/" className="hover:text-white transition-colors">
                 Beranda
               </Link>
-              <ChevronRight size={13} className="shrink-0 text-white/40" />
+              <ChevronRight size={14} className="shrink-0 text-white/40" />
               <Link href="/articles" className="hover:text-white transition-colors">
                 Artikel
               </Link>
-              <ChevronRight size={13} className="shrink-0 text-white/40" />
+              <ChevronRight size={14} className="shrink-0 text-white/40" />
               <span className="text-white font-semibold truncate max-w-xs">
                 {article.title}
               </span>
@@ -163,7 +163,7 @@ export default async function ArticleDetailPage({
               <div className="p-6 sm:p-10 pb-0 sm:pb-0">
                 <div className="flex flex-wrap items-center gap-3 mb-4 text-xs">
                   <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-accent-50 text-accent-700 font-bold uppercase tracking-wider border border-accent-100">
-                    <Tag size={11} />
+                    <Tag size={12} />
                     {article.category}
                   </span>
                   <span className="text-neutral-500 flex items-center gap-1 font-medium">

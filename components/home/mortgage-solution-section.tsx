@@ -88,7 +88,7 @@ export function MortgageSolutionSection({ locale }: MortgageSolutionSectionProps
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 w-full mb-8">
                 <div className="p-4 rounded-xl bg-white/[0.04] hover:bg-white/[0.07] border border-white/10 hover:border-gold-400/30 transition-all duration-300 flex items-start gap-3.5 group">
                   <div className="w-9 h-9 rounded-lg bg-gold-400/10 text-gold-400 flex items-center justify-center shrink-0 border border-gold-400/20 group-hover:scale-105 transition-transform">
-                    <Percent size={17} strokeWidth={2.2} />
+                    <Percent size={16} strokeWidth={2.2} />
                   </div>
                   <div>
                     <span className="block text-xs sm:text-sm font-bold text-white">
@@ -102,7 +102,7 @@ export function MortgageSolutionSection({ locale }: MortgageSolutionSectionProps
 
                 <div className="p-4 rounded-xl bg-white/[0.04] hover:bg-white/[0.07] border border-white/10 hover:border-gold-400/30 transition-all duration-300 flex items-start gap-3.5 group">
                   <div className="w-9 h-9 rounded-lg bg-gold-400/10 text-gold-400 flex items-center justify-center shrink-0 border border-gold-400/20 group-hover:scale-105 transition-transform">
-                    <Zap size={17} strokeWidth={2.2} />
+                    <Zap size={16} strokeWidth={2.2} />
                   </div>
                   <div>
                     <span className="block text-xs sm:text-sm font-bold text-white">
@@ -116,7 +116,7 @@ export function MortgageSolutionSection({ locale }: MortgageSolutionSectionProps
 
                 <div className="p-4 rounded-xl bg-white/[0.04] hover:bg-white/[0.07] border border-white/10 hover:border-gold-400/30 transition-all duration-300 flex items-start gap-3.5 group">
                   <div className="w-9 h-9 rounded-lg bg-gold-400/10 text-gold-400 flex items-center justify-center shrink-0 border border-gold-400/20 group-hover:scale-105 transition-transform">
-                    <ShieldCheck size={17} strokeWidth={2.2} />
+                    <ShieldCheck size={16} strokeWidth={2.2} />
                   </div>
                   <div>
                     <span className="block text-xs sm:text-sm font-bold text-white">
@@ -173,7 +173,7 @@ export function MortgageSolutionSection({ locale }: MortgageSolutionSectionProps
                   className="w-full py-3.5 px-6 rounded-xl bg-gold-500 hover:bg-gold-400 text-navy-950 font-bold text-xs sm:text-sm tracking-wide transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-98 flex items-center justify-center gap-2 cursor-pointer mb-3 group"
                 >
                   <span>{locale === "en" ? "Go to Mortgage Calculator" : "Buka Kalkulator KPR"}</span>
-                  <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
 
                 {/* Secondary WhatsApp Link */}
@@ -183,13 +183,13 @@ export function MortgageSolutionSection({ locale }: MortgageSolutionSectionProps
                   rel="noreferrer"
                   className="w-full py-2.5 px-4 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-xs text-neutral-200 hover:text-white font-medium transition-all flex items-center justify-center gap-2 group"
                 >
-                  <PhoneCall size={13} className="text-gold-400 group-hover:scale-110 transition-transform" />
+                  <PhoneCall size={14} className="text-gold-400 group-hover:scale-110 transition-transform" />
                   <span>{locale === "en" ? "Chat with Mortgage Specialist" : "Tanya Spesialis KPR via WhatsApp"}</span>
                 </a>
 
                 {/* Trust guarantee micro note */}
                 <div className="mt-4 pt-3 border-t border-white/10 w-full flex items-center justify-center gap-1.5 text-[11px] text-neutral-400">
-                  <CheckCircle2 size={13} className="text-gold-400 shrink-0" />
+                  <CheckCircle2 size={14} className="text-gold-400 shrink-0" />
                   <span>
                     {locale === "en"
                       ? "100% Free Consultation & Guidance"

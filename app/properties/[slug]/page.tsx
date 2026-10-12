@@ -155,18 +155,18 @@ export default async function PropertyDetailPage({
             <Link href="/" className="hover:text-brand-700 transition-colors">
               Beranda
             </Link>
-            <ChevronRight size={13} className="shrink-0 text-neutral-400" />
+            <ChevronRight size={14} className="shrink-0 text-neutral-400" />
             <Link href="/properties" className="hover:text-brand-700 transition-colors">
               Properti
             </Link>
-            <ChevronRight size={13} className="shrink-0 text-neutral-400" />
+            <ChevronRight size={14} className="shrink-0 text-neutral-400" />
             <Link
               href={property.status === "For rent" ? "/for-rent" : "/for-sale"}
               className="hover:text-brand-700 transition-colors"
             >
               {property.status === "For rent" ? "Disewa" : "Dijual"}
             </Link>
-            <ChevronRight size={13} className="shrink-0 text-neutral-400" />
+            <ChevronRight size={14} className="shrink-0 text-neutral-400" />
             <span className="text-neutral-900 font-medium truncate max-w-xs">
               {property.title}
             </span>
@@ -348,7 +348,7 @@ export default async function PropertyDetailPage({
                         key={fac}
                         className="flex items-center gap-2 p-2.5 rounded-lg bg-neutral-50 text-xs text-neutral-800"
                       >
-                        <Check size={13} className="text-brand-900 shrink-0" />
+                        <Check size={14} className="text-brand-900 shrink-0" />
                         <span>{fac}</span>
                       </div>
                     ))}

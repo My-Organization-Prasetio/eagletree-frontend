@@ -347,7 +347,7 @@ export function MortgageCalculatorView({ initialPrice }: MortgageCalculatorViewP
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-accent-500 hover:bg-accent-400 text-brand-950 text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors text-center cursor-pointer mt-1"
             >
-              <MessageCircle size={15} />
+              <MessageCircle size={16} />
               <span>Konsultasi Bank Rekanan via WhatsApp</span>
             </a>
           </div>

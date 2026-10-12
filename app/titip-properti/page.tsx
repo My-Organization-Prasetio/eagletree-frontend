@@ -51,7 +51,7 @@ export default function TitipPropertiPage() {
           <Link href="/" className="hover:text-brand-700 transition-colors">
             Beranda
           </Link>
-          <ChevronRight size={13} className="text-neutral-400" />
+          <ChevronRight size={14} className="text-neutral-400" />
           <span className="text-neutral-800 font-medium">Titip Properti</span>
         </nav>
 
@@ -421,7 +421,7 @@ export default function TitipPropertiPage() {
                 rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-lg bg-accent-500 hover:bg-accent-400 text-brand-950 font-medium text-xs transition-colors"
               >
-                <Phone size={13} />
+                <Phone size={14} />
                 <span>WhatsApp Listing Specialist</span>
               </a>
             </div>

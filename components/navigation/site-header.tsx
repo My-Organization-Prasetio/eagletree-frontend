@@ -131,7 +131,7 @@ export function SiteHeader() {
             aria-label={isMenuOpen ? content.closeMenu : content.openMenu}
             onClick={() => setIsMenuOpen((open) => !open)}
           >
-            {isMenuOpen ? <X size={21} /> : <Menu size={21} />}
+            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
@@ -188,7 +188,7 @@ export function SiteHeader() {
             tabIndex={isMenuOpen ? 0 : -1}
             onClick={() => setIsMenuOpen(false)}
           >
-            <Search size={17} aria-hidden="true" />
+            <Search size={16} aria-hidden="true" />
             {content.cta}
           </Link>
         </nav>

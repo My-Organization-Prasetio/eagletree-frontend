@@ -1,6 +1,6 @@
 "use client";
 
-import { Bath, BedDouble, Heart, MapPin, MessageCircle, Phone, Ruler } from "lucide-react";
+import { ArrowRight, Bath, BedDouble, Heart, MapPin, MessageCircle, Phone, Ruler } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -123,7 +123,7 @@ export function PropertyCard({
           aria-pressed={isFavorite}
           onClick={handleFavoriteToggle}
         >
-          <Heart size={15} fill={isFavorite ? "currentColor" : "none"} />
+          <Heart size={16} fill={isFavorite ? "currentColor" : "none"} />
         </button>
       </div>
 
@@ -193,11 +193,11 @@ export function PropertyCard({
           </div>
 
           <Link
-            className="inline-flex items-center gap-1 text-xs font-semibold text-navy-950 hover:text-gold-600 transition-colors py-1"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-navy-950 hover:text-gold-600 transition-colors py-1 group/link"
             href={propertyHref}
           >
             <span>{content.view}</span>
-            <span aria-hidden="true">→</span>
+            <ArrowRight size={14} className="group-hover/link:translate-x-0.5 transition-transform" aria-hidden="true" />
           </Link>
         </div>
 
@@ -227,7 +227,7 @@ export function PropertyCard({
                   className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-700 hover:bg-emerald-100 hover:text-emerald-800 flex items-center justify-center transition-colors border border-emerald-200/80"
                   title="WhatsApp Agen"
                 >
-                  <MessageCircle size={15} aria-hidden="true" />
+                  <MessageCircle size={16} aria-hidden="true" />
                 </a>
               )}
               {agent.phone && (

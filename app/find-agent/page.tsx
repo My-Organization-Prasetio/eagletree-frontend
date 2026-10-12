@@ -39,7 +39,7 @@ export default function FindAgentPage() {
         {/* Filter Bar */}
         <div className="bg-white border border-neutral-200/80 rounded-xl p-3.5 sm:p-4 shadow-2xs mb-8 flex flex-col sm:flex-row gap-3">
           <div className="relative flex-1">
-            <Search size={15} className="absolute left-3.5 top-3 text-neutral-400 pointer-events-none" />
+            <Search size={16} className="absolute left-3.5 top-3 text-neutral-400 pointer-events-none" />
             <input
               type="text"
               placeholder="Cari nama penasihat atau kawasan spesialisasi..."
@@ -60,7 +60,7 @@ export default function FindAgentPage() {
                 <option key={office} value={office}>{office}</option>
               ))}
             </select>
-            <ChevronDown size={13} className="pointer-events-none absolute right-3 top-3 text-neutral-400" />
+            <ChevronDown size={14} className="pointer-events-none absolute right-3 top-3 text-neutral-400" />
           </div>
         </div>
 

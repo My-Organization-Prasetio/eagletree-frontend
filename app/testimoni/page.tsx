@@ -152,7 +152,7 @@ export default function TestimoniPage() {
           <Link href="/" className="hover:text-brand-700 transition-colors">
             Beranda
           </Link>
-          <ChevronRight size={13} className="text-neutral-400" />
+          <ChevronRight size={14} className="text-neutral-400" />
           <span className="text-neutral-800 font-medium">Testimoni Klien</span>
         </nav>
 
@@ -253,7 +253,7 @@ export default function TestimoniPage() {
                 </div>
 
                 <div className="flex items-center gap-1 text-brand-900 text-[11px] font-medium shrink-0" title="Transaksi Terverifikasi">
-                  <ShieldCheck size={13} />
+                  <ShieldCheck size={14} />
                   <span className="hidden sm:inline">Terverifikasi</span>
                 </div>
               </div>

@@ -90,7 +90,7 @@ export default function LoginPage() {
               setSsoMessage("");
             }}
           >
-            <ShieldCheck size={15} aria-hidden="true" />
+            <ShieldCheck size={16} aria-hidden="true" />
             <span>Agent</span>
           </button>
           <button
@@ -108,7 +108,7 @@ export default function LoginPage() {
               setSsoMessage("");
             }}
           >
-            <UserRound size={15} aria-hidden="true" />
+            <UserRound size={16} aria-hidden="true" />
             <span>Member</span>
           </button>
         </div>
@@ -224,7 +224,7 @@ export default function LoginPage() {
 
         {/* Security badge & Register links (centered) */}
         <div className="flex items-center justify-center gap-1.5 text-xs text-neutral-500 pt-4 mt-2 border-t border-border-subtle w-full">
-          <ShieldCheck size={15} className="text-accent-700 shrink-0" aria-hidden="true" />
+          <ShieldCheck size={16} className="text-accent-700 shrink-0" aria-hidden="true" />
           <span>Keamanan akun terenkripsi SSL 256-bit</span>
         </div>
 

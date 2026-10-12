@@ -54,11 +54,11 @@ export default async function AgentProfilePage({ params }: Props) {
           <Link href="/" className="hover:text-brand-700 transition-colors">
             Beranda
           </Link>
-          <ChevronRight size={13} className="text-neutral-400" />
+          <ChevronRight size={14} className="text-neutral-400" />
           <Link href="/find-agent" className="hover:text-brand-700 transition-colors">
             Direktori Konsultan
           </Link>
-          <ChevronRight size={13} className="text-neutral-400" />
+          <ChevronRight size={14} className="text-neutral-400" />
           <span className="text-neutral-900 font-medium" aria-current="page">
             {agent.name}
           </span>
@@ -85,7 +85,7 @@ export default async function AgentProfilePage({ params }: Props) {
                 <div className="flex items-center gap-1.5 mb-0.5">
                   <h1 className="font-serif text-xl font-medium text-brand-950">{agent.name}</h1>
                   <span title="Konsultan Terverifikasi">
-                    <ShieldCheck size={15} className="text-brand-900" />
+                    <ShieldCheck size={16} className="text-brand-900" />
                   </span>
                 </div>
                 <p className="text-xs text-neutral-500 mb-2">{agent.role}</p>
@@ -117,7 +117,7 @@ export default async function AgentProfilePage({ params }: Props) {
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center gap-2 bg-accent-500 hover:bg-accent-400 text-brand-950 px-4 py-2.5 rounded-lg text-xs font-medium uppercase tracking-wider transition-colors"
               >
-                <MessageCircle size={15} />
+                <MessageCircle size={16} />
                 <span>Konsultasi WhatsApp</span>
               </a>
             </div>

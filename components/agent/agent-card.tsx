@@ -51,7 +51,17 @@ export function AgentCard({ agent }: AgentCardProps) {
           </div>
           <div className="flex items-center justify-between">
             <span className="text-neutral-500">Rating Klien</span>
-            <span className="font-semibold text-brand-950">{agent.rating ? `${agent.rating} ★ (Terverifikasi)` : "Konsultan Baru"}</span>
+            <span className="font-semibold text-brand-950">
+              {agent.rating ? (
+                <span className="inline-flex items-center gap-1">
+                  <span>{agent.rating}</span>
+                  <Star size={14} className="fill-amber-400 text-amber-400" aria-hidden="true" />
+                  <span className="text-neutral-500 font-normal">(Terverifikasi)</span>
+                </span>
+              ) : (
+                "Konsultan Baru"
+              )}
+            </span>
           </div>
         </div>
 
@@ -63,7 +73,7 @@ export function AgentCard({ agent }: AgentCardProps) {
             rel="noopener noreferrer"
             className="w-full flex items-center justify-center gap-2 bg-brand-950 hover:bg-brand-900 text-white px-4 py-2.5 rounded-lg text-xs font-bold transition-colors shadow-2xs"
           >
-            <MessageCircle size={15} />
+            <MessageCircle size={16} />
             <span>Hubungi WhatsApp</span>
           </a>
           <Link

@@ -87,7 +87,7 @@ export function CertificateGallery() {
               />
               <div className="absolute inset-0 bg-brand-950/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 <span className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/90 backdrop-blur-md text-brand-950 text-xs font-bold shadow-lg">
-                  <ZoomIn size={15} />
+                  <ZoomIn size={16} />
                   Perbesar Sertifikat
                 </span>
               </div>
@@ -123,7 +123,7 @@ export function CertificateGallery() {
                   onClick={() => setSelectedCert(cert)}
                   className="text-xs font-bold text-accent-700 hover:text-accent-600 inline-flex items-center gap-1 cursor-pointer"
                 >
-                  <Eye size={13} />
+                  <Eye size={14} />
                   <span>Lihat Detail</span>
                 </button>
               </div>

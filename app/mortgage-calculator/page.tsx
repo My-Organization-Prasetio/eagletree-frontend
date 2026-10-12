@@ -66,7 +66,7 @@ export default async function MortgageCalculatorPage({
             <Link href="/" className="hover:text-[#102d26] transition-colors">
               Beranda
             </Link>
-            <ChevronRight size={13} className="shrink-0 text-[#87938d]" />
+            <ChevronRight size={14} className="shrink-0 text-[#87938d]" />
             <span className="text-[#102d26] font-semibold">Kalkulator KPR</span>
           </nav>
 

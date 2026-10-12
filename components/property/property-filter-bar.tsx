@@ -65,7 +65,7 @@ export function PropertyFilterBar({
       <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-2.5">
         {/* Search input */}
         <div className="flex-1 relative flex items-center min-w-[220px]">
-          <Search size={15} className="absolute left-3.5 text-neutral-400 pointer-events-none" />
+          <Search size={16} className="absolute left-3.5 text-neutral-400 pointer-events-none" />
           <input
             type="text"
             placeholder="Cari lokasi, kawasan, atau nama proyek..."
@@ -113,7 +113,7 @@ export function PropertyFilterBar({
               </option>
             ))}
           </select>
-          <ChevronDown size={13} className="pointer-events-none absolute right-3 top-3 text-neutral-400" />
+          <ChevronDown size={14} className="pointer-events-none absolute right-3 top-3 text-neutral-400" />
         </div>
 
         {/* Price Range Dropdown / Popover Toggle */}
@@ -135,7 +135,7 @@ export function PropertyFilterBar({
                 ? `Rp ${(filters.minPrice || 0) / 1e9}M - ${filters.maxPrice ? (filters.maxPrice / 1e9) + "M" : "Max"}`
                 : "Kisaran Harga"}
             </span>
-            <ChevronDown size={13} className="text-neutral-400" />
+            <ChevronDown size={14} className="text-neutral-400" />
           </button>
 
           {isPriceOpen && (
@@ -147,7 +147,7 @@ export function PropertyFilterBar({
                   onClick={() => setIsPriceOpen(false)}
                   className="text-neutral-400 hover:text-neutral-700 cursor-pointer"
                 >
-                  <X size={13} />
+                  <X size={14} />
                 </button>
               </div>
               <div className="grid grid-cols-2 gap-2">
@@ -227,7 +227,7 @@ export function PropertyFilterBar({
                 : "bg-white border-neutral-200 text-neutral-700 hover:bg-neutral-50"
             }`}
           >
-            <Filter size={13} />
+            <Filter size={14} />
             <span>Filter Lain</span>
             {filters.minBathrooms && (
               <span className="w-4 h-4 rounded-full bg-brand-950 text-white text-[10px] flex items-center justify-center font-bold">
@@ -245,7 +245,7 @@ export function PropertyFilterBar({
                   onClick={() => setIsMoreOpen(false)}
                   className="text-neutral-400 hover:text-neutral-700 cursor-pointer"
                 >
-                  <X size={13} />
+                  <X size={14} />
                 </button>
               </div>
               <div className="grid grid-cols-4 gap-1">
@@ -300,7 +300,7 @@ export function PropertyFilterBar({
                 onClick={() => onFilterChange({ query: "" })}
                 className="hover:text-red-500 cursor-pointer"
               >
-                <X size={11} />
+                <X size={12} />
               </button>
             </span>
           )}
@@ -312,7 +312,7 @@ export function PropertyFilterBar({
                 onClick={() => onFilterChange({ type: "all" })}
                 className="hover:text-red-500 cursor-pointer"
               >
-                <X size={11} />
+                <X size={12} />
               </button>
             </span>
           )}
@@ -324,7 +324,7 @@ export function PropertyFilterBar({
                 onClick={() => onFilterChange({ listingType: initialListingType })}
                 className="hover:text-red-500 cursor-pointer"
               >
-                <X size={11} />
+                <X size={12} />
               </button>
             </span>
           )}
@@ -336,7 +336,7 @@ export function PropertyFilterBar({
                 onClick={() => onFilterChange({ minPrice: null })}
                 className="hover:text-red-500 cursor-pointer"
               >
-                <X size={11} />
+                <X size={12} />
               </button>
             </span>
           )}
@@ -348,7 +348,7 @@ export function PropertyFilterBar({
                 onClick={() => onFilterChange({ maxPrice: null })}
                 className="hover:text-red-500 cursor-pointer"
               >
-                <X size={11} />
+                <X size={12} />
               </button>
             </span>
           )}
@@ -360,7 +360,7 @@ export function PropertyFilterBar({
                 onClick={() => onFilterChange({ minBedrooms: null })}
                 className="hover:text-red-500 cursor-pointer"
               >
-                <X size={11} />
+                <X size={12} />
               </button>
             </span>
           )}
@@ -372,7 +372,7 @@ export function PropertyFilterBar({
                 onClick={() => onFilterChange({ minBathrooms: null })}
                 className="hover:text-red-500 cursor-pointer"
               >
-                <X size={11} />
+                <X size={12} />
               </button>
             </span>
           )}

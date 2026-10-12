@@ -142,7 +142,7 @@ export function AboutSpotlightSection({ locale }: AboutSpotlightSectionProps) {
               className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-lg bg-navy-950 hover:bg-navy-900 text-white font-bold text-xs sm:text-sm tracking-wide transition-all shadow-md hover:shadow-lg active:scale-95 cursor-pointer"
             >
               <span>{locale === "en" ? "Learn More About Us" : "Pelajari Tentang Kami"}</span>
-              <ArrowRight size={15} />
+              <ArrowRight size={16} />
             </Link>
           </div>
 

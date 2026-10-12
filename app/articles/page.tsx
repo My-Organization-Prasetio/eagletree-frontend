@@ -123,7 +123,7 @@ export default async function ArticlesPage({ searchParams }: ArticlesPageProps) 
                 </p>
                 <div className="pt-2 flex items-center gap-1.5 text-xs font-medium text-brand-950 group-hover:text-accent-700 transition-colors">
                   <span>Baca Selengkapnya</span>
-                  <ArrowUpRight size={13} />
+                  <ArrowUpRight size={14} />
                 </div>
               </div>
             </Link>
@@ -202,7 +202,7 @@ export default async function ArticlesPage({ searchParams }: ArticlesPageProps) 
                           {article.author.name}
                         </span>
                         <span className="text-[11px] text-neutral-400 flex items-center gap-1 font-mono">
-                          <Clock size={11} />
+                          <Clock size={12} />
                           {article.readingTimeMinutes} min
                         </span>
                       </div>

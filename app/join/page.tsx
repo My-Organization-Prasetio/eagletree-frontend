@@ -89,7 +89,7 @@ export default function JoinEagletreePage() {
           <Link href="/" className="hover:text-brand-700 transition-colors">
             Beranda
           </Link>
-          <ChevronRight size={13} className="text-neutral-400" />
+          <ChevronRight size={14} className="text-neutral-400" />
           <span className="text-neutral-800 font-medium">Karir & Kemitraan</span>
         </nav>
 

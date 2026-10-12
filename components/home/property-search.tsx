@@ -139,7 +139,7 @@ export function PropertySearch({ locale }: PropertySearchProps) {
                 <option value="land">{locale === "en" ? "Land" : "Tanah"}</option>
               </select>
               <ChevronDown
-                size={13}
+                size={14}
                 className="pointer-events-none absolute right-0 text-neutral-400"
                 aria-hidden="true"
               />
@@ -176,7 +176,7 @@ export function PropertySearch({ locale }: PropertySearchProps) {
                 ))}
               </select>
               <ChevronDown
-                size={13}
+                size={14}
                 className="pointer-events-none absolute right-0 text-neutral-400"
                 aria-hidden="true"
               />
@@ -213,7 +213,7 @@ export function PropertySearch({ locale }: PropertySearchProps) {
                 <option value="4">4+ KT</option>
               </select>
               <ChevronDown
-                size={13}
+                size={14}
                 className="pointer-events-none absolute right-0 text-neutral-400"
                 aria-hidden="true"
               />
@@ -227,7 +227,7 @@ export function PropertySearch({ locale }: PropertySearchProps) {
             type="submit"
             className="w-full py-3.5 px-4 rounded-xl bg-navy-950 hover:bg-navy-900 text-white font-bold text-xs sm:text-sm tracking-wide transition-all shadow-md hover:shadow-lg active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
           >
-            <Search size={15} />
+            <Search size={16} />
             <span>{locale === "en" ? "Search Property" : "Cari Properti"}</span>
           </button>
         </div>

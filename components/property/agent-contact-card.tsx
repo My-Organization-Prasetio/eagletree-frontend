@@ -94,7 +94,7 @@ export function AgentContactCard({
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-accent-500 hover:bg-accent-400 text-brand-950 font-medium text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer text-center"
         >
-          <MessageCircle size={15} className="shrink-0" />
+          <MessageCircle size={16} className="shrink-0" />
           <span>Hubungi via WhatsApp</span>
         </a>
 
@@ -103,7 +103,7 @@ export function AgentContactCard({
             href={`tel:${currentAgent.phone}`}
             className="flex items-center justify-center gap-1.5 w-full py-2 px-4 bg-neutral-50 hover:bg-neutral-100 text-neutral-700 font-medium text-xs rounded-lg transition-colors border border-neutral-200/80 cursor-pointer text-center"
           >
-            <Phone size={13} className="text-neutral-500" />
+            <Phone size={14} className="text-neutral-500" />
             <span>Telepon: {currentAgent.phone}</span>
           </a>
         )}

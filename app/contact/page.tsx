@@ -35,7 +35,7 @@ export default function ContactPage() {
               </h2>
               <ul className="flex flex-col gap-4 text-xs">
                 <li className="flex gap-3 items-start">
-                  <Phone size={15} className="text-brand-900 shrink-0 mt-0.5" />
+                  <Phone size={16} className="text-brand-900 shrink-0 mt-0.5" />
                   <div>
                     <p className="text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-0.5">
                       Telepon / WhatsApp
@@ -46,7 +46,7 @@ export default function ContactPage() {
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
-                  <Mail size={15} className="text-brand-900 shrink-0 mt-0.5" />
+                  <Mail size={16} className="text-brand-900 shrink-0 mt-0.5" />
                   <div>
                     <p className="text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-0.5">
                       Email Representasi
@@ -64,7 +64,7 @@ export default function ContactPage() {
                 Kantor Pusat Eagletree
               </h2>
               <div className="flex gap-3 items-start text-xs">
-                <MapPin size={15} className="text-brand-900 shrink-0 mt-0.5" />
+                <MapPin size={16} className="text-brand-900 shrink-0 mt-0.5" />
                 <div>
                   <p className="font-medium text-brand-950 mb-1">
                     Eagletree Hub Jakarta
@@ -82,7 +82,7 @@ export default function ContactPage() {
               <h3 className="font-medium text-sm text-brand-950 mb-1">Perlu Penasihat Spesifik?</h3>
               <p className="text-xs text-neutral-500 mb-4">Temukan konsultan berlisensi yang terspesialisasi di area domisili properti target Anda.</p>
               <Link href="/find-agent" className="inline-flex items-center gap-1.5 text-xs font-semibold text-accent-700 hover:text-accent-600 transition-colors">
-                Direktori Konsultan <ArrowUpRight size={13} />
+                Direktori Konsultan <ArrowUpRight size={14} />
               </Link>
             </div>
           </div>

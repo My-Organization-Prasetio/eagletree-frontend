@@ -112,7 +112,7 @@ export function HeroSection({ locale }: HeroSectionProps) {
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold text-xs sm:text-sm tracking-wide transition-all shadow-md hover:shadow-lg active:scale-95 cursor-pointer"
                 >
                   <span>{locale === "en" ? "Explore Properties" : "Jelajahi Properti"}</span>
-                  <ArrowRight size={15} />
+                  <ArrowRight size={16} />
                 </Link>
 
                 <Link
