@@ -20,7 +20,7 @@ export default function PrivacyPage() {
 
         <div className="prose prose-sm sm:prose-base max-w-none text-neutral-700">
           <p>
-            Di Eagletree, kami menghargai privasi Anda dan berkomitmen untuk melindungi informasi pribadi Anda. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, mengungkapkan, dan mengamankan data Anda saat Anda menggunakan platform eagletree.id.
+            Di Eagle Tree Property (&quot;Eagletree&quot;, dioperasikan oleh PT. Denadi Mitra Propertindo, unit bisnis Unity Group), kami menghargai privasi Anda dan berkomitmen untuk melindungi informasi pribadi Anda. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, mengungkapkan, dan mengamankan data Anda saat Anda menggunakan layanan dan platform kami.
           </p>
 
           <h2>1. Informasi yang Kami Kumpulkan</h2>

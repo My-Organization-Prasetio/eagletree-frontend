@@ -38,10 +38,13 @@ export default function ContactPage() {
                   <Phone size={16} className="text-brand-900 shrink-0 mt-0.5" />
                   <div>
                     <p className="text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-0.5">
-                      Telepon / WhatsApp
+                      Telepon Kantor / Hotline WhatsApp
                     </p>
-                    <a href="tel:+628111222333" className="font-medium text-brand-950 hover:text-accent-700 transition-colors">
-                      +62 811 1222 333
+                    <a href="tel:+622174866920" className="font-medium text-brand-950 hover:text-accent-700 transition-colors block">
+                      (021) 7486 6920 / (021) 2951 1779
+                    </a>
+                    <a href="https://wa.me/6281290088902" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-accent-700 transition-colors text-[11px] block mt-0.5">
+                      WhatsApp: +62 812-9008-8902 / +62 857-1941-1181
                     </a>
                   </div>
                 </li>
@@ -49,10 +52,10 @@ export default function ContactPage() {
                   <Mail size={16} className="text-brand-900 shrink-0 mt-0.5" />
                   <div>
                     <p className="text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-0.5">
-                      Email Representasi
+                      Email Resmi Administrasi
                     </p>
-                    <a href="mailto:hello@eagletree.id" className="font-medium text-brand-950 hover:text-accent-700 transition-colors">
-                      hello@eagletree.id
+                    <a href="mailto:admbintaro.eagletree@gmail.com" className="font-medium text-brand-950 hover:text-accent-700 transition-colors">
+                      admbintaro.eagletree@gmail.com
                     </a>
                   </div>
                 </li>
@@ -60,27 +63,58 @@ export default function ContactPage() {
             </div>
 
             <div className="bg-white p-6 rounded-xl border border-neutral-200/80">
-              <h2 className="font-medium text-sm text-brand-950 mb-4 pb-3 border-b border-neutral-100">
-                Kantor Pusat Eagletree
+              <h2 className="font-medium text-sm text-brand-950 mb-3 pb-3 border-b border-neutral-100">
+                Kantor Pusat & Badan Hukum
               </h2>
               <div className="flex gap-3 items-start text-xs">
                 <MapPin size={16} className="text-brand-900 shrink-0 mt-0.5" />
                 <div>
                   <p className="font-medium text-brand-950 mb-1">
-                    Eagletree Hub Jakarta
+                    PT. Denadi Mitra Propertindo (Eagle Tree Property)
                   </p>
-                  <p className="text-neutral-600 leading-relaxed">
-                    Menara Eagletree Lantai 12<br />
-                    Jl. Jend. Sudirman Kav. 45<br />
-                    Jakarta Selatan 12930, Indonesia
+                  <p className="text-[11px] text-accent-700 font-medium mb-1">
+                    Unit Bisnis Unity Group • Anggota Resmi AREBI
+                  </p>
+                  <p className="text-neutral-600 leading-relaxed text-[11px]">
+                    Ruko Kebayoran Arcade 2 Blok B3 No. 39<br />
+                    Bintaro Sektor 7, Pondok Aren<br />
+                    Tangerang Selatan 15224, Banten
                   </p>
                 </div>
               </div>
             </div>
+
+            <div className="bg-white p-6 rounded-xl border border-neutral-200/80">
+              <h2 className="font-medium text-sm text-brand-950 mb-3 pb-3 border-b border-neutral-100">
+                Jejaring Kantor Cabang
+              </h2>
+              <ul className="space-y-3 text-[11px] text-neutral-600">
+                <li>
+                  <span className="font-semibold text-brand-950 block">1. Central Office (Head Office)</span>
+                  Ruko Kebayoran Arcade 2 Blok B3 No. 39, Bintaro Sektor 7 (021-7486 6920)
+                </li>
+                <li>
+                  <span className="font-semibold text-brand-950 block">2. Beryl Office</span>
+                  Ruko Beryl 3 No. 35, Gading Serpong, Tangerang (021-5421 2188)
+                </li>
+                <li>
+                  <span className="font-semibold text-brand-950 block">3. Althia Office</span>
+                  Ruko Kebayoran Arcade 3 Blok E1 No. 6, Bintaro Sektor 7
+                </li>
+                <li>
+                  <span className="font-semibold text-brand-950 block">4. Fortune 8 Office</span>
+                  Ruko Fortune 8 Blok FB/B No. 25, Graha Raya Bintaro
+                </li>
+                <li>
+                  <span className="font-semibold text-brand-950 block">5. Victory 8 Office</span>
+                  Ruko Kebayoran Symphony Blok FS2 No. 01, Bintaro Sektor 7
+                </li>
+              </ul>
+            </div>
             
             <div className="p-6 bg-white rounded-xl border border-neutral-200/80">
               <h3 className="font-medium text-sm text-brand-950 mb-1">Perlu Penasihat Spesifik?</h3>
-              <p className="text-xs text-neutral-500 mb-4">Temukan konsultan berlisensi yang terspesialisasi di area domisili properti target Anda.</p>
+              <p className="text-xs text-neutral-500 mb-4">Temukan konsultan berlisensi yang terspesialisasi di area Bintaro, Serpong, dan sekitarnya.</p>
               <Link href="/find-agent" className="inline-flex items-center gap-1.5 text-xs font-semibold text-accent-700 hover:text-accent-600 transition-colors">
                 Direktori Konsultan <ArrowUpRight size={14} />
               </Link>

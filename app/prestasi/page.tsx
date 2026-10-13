@@ -15,40 +15,21 @@ export const metadata: Metadata = {
 
 const awardsTimeline = [
   {
-    year: "2025",
-    items: [
-      {
-        title: "Most Outstanding Property Agency 2025",
-        organization: "Indonesia Property Excellence Awards",
-        category: "Nasional",
-        description:
-          "Dianugerahi sebagai agensi properti dengan pertumbuhan tercepat dan kepatuhan standar transaksi tertinggi.",
-      },
-      {
-        title: "Top 1 Sales Champion - Jade Pavilion",
-        organization: "Ciputra Group",
-        category: "Developer Partner",
-        description:
-          "Peringkat pertama penjualan unit residensial dan ruko komersial sepanjang kuartal 1-3 2025.",
-      },
-    ],
-  },
-  {
     year: "2024",
     items: [
       {
-        title: "Platinum Brokerage Partner 2024",
+        title: "Top Performing Broker Partner",
         organization: "Sinar Mas Land",
-        category: "Developer Partner",
+        category: "Kemitraan Pengembang",
         description:
-          "Apresiasi atas kontribusi penjualan konsisten melebihi target tahunan di kawasan BSD City dan sekitarnya.",
+          "Apresiasi kontribusi pemasaran konsisten untuk portofolio residensial primer di koridor BSD City dan sekitarnya.",
       },
       {
-        title: "Best Luxury Estate Consultant",
+        title: "Kepatuhan Kode Etik & Standar Broker",
         organization: "AREBI (Asosiasi Real Estate Broker Indonesia)",
-        category: "Asosiasi Industri",
+        category: "Asosiasi Profesi",
         description:
-          "Pengakuan keunggulan dalam penanganan transaksi hunian mewah dan portofolio komersial bernilai tinggi.",
+          "Pengakuan konsistensi implementasi kode etik broker berlisensi dan perlindungan konsumen dalam setiap transaksi.",
       },
     ],
   },
@@ -56,30 +37,30 @@ const awardsTimeline = [
     year: "2023",
     items: [
       {
-        title: "Top Digital Innovation in Real Estate",
-        organization: "PropTech Indonesia Summit",
-        category: "Inovasi Teknologi",
+        title: "Mitra Pemasaran Terbaik Kategori Residensial",
+        organization: "Mitra Pengembang Terkemuka",
+        category: "Kemitraan Strategis",
         description:
-          "Pelopor pemanfaatan virtual staging dan platform digital terintegrasi untuk kenyamanan pencarian properti.",
+          "Penghargaan atas pencapaian volume penjualan unit hunian tapak dan ruko komersial di kawasan Tangerang Selatan.",
       },
       {
-        title: "Best Agency Partner of The Year",
-        organization: "Pakuwon Jati",
-        category: "Developer Partner",
+        title: "Top Associate Sales Producer",
+        organization: "Eagle Tree Internal Excellence",
+        category: "Pencapaian Internal",
         description:
-          "Mitra pemasaran terbaik untuk kategori kondominium dan residensial high-rise di Surabaya dan Jakarta.",
+          "Apresiasi tahunan untuk jajaran agen terbaik cabang Central, Beryl, dan Althia atas integritas dan kepuasan nasabah.",
       },
     ],
   },
   {
-    year: "2022",
+    year: "2021",
     items: [
       {
-        title: "Highest Customer Satisfaction Index",
-        organization: "Property Excellence Forum",
-        category: "Layanan Pelanggan",
+        title: "Apresiasi Loyalitas Kemitraan KPR",
+        organization: "Jejaring Bank Rekanan",
+        category: "Layanan Pembiayaan",
         description:
-          "Raihan skor kepuasan pelanggan 98% berdasarkan survei independen terhadap lebih dari 500 pembeli.",
+          "Pengakuan atas kelancaran administrasi dan pendampingan berkas pengajuan fasilitas KPR nasabah secara transparan.",
       },
     ],
   },
@@ -128,27 +109,27 @@ export default function PrestasiPage() {
         <div className="border-y border-neutral-200/80 py-8 mb-14 bg-white/70 rounded-xl px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-neutral-200/80">
             <div className="py-4 md:py-0 md:px-6 text-center">
-              <span className="text-xs font-mono uppercase text-neutral-500 tracking-wider block mb-1">REKOGNISI</span>
-              <p className="font-serif text-3xl sm:text-4xl font-normal text-brand-950">50+</p>
-              <p className="text-xs text-neutral-500 mt-1">Penghargaan Industri</p>
+              <span className="text-xs font-mono uppercase text-neutral-500 tracking-wider block mb-1">LEGALITAS</span>
+              <p className="font-serif text-3xl sm:text-4xl font-normal text-brand-950">AREBI</p>
+              <p className="text-xs text-neutral-500 mt-1">Anggota Resmi Terdaftar</p>
             </div>
 
             <div className="py-4 md:py-0 md:px-6 text-center">
-              <span className="text-xs font-mono uppercase text-neutral-500 tracking-wider block mb-1">VOLUME TRANSAKSI</span>
-              <p className="font-serif text-3xl sm:text-4xl font-normal text-brand-950">Rp 5T+</p>
-              <p className="text-xs text-neutral-500 mt-1">Nilai Realisasi Transaksi</p>
+              <span className="text-xs font-mono uppercase text-neutral-500 tracking-wider block mb-1">JEJARING</span>
+              <p className="font-serif text-3xl sm:text-4xl font-normal text-brand-950">5 Cabang</p>
+              <p className="text-xs text-neutral-500 mt-1">Bintaro & Serpong</p>
             </div>
 
             <div className="py-4 md:py-0 md:px-6 text-center">
               <span className="text-xs font-mono uppercase text-neutral-500 tracking-wider block mb-1">PORTOFOLIO</span>
               <p className="font-serif text-3xl sm:text-4xl font-normal text-brand-950">1,200+</p>
-              <p className="text-xs text-neutral-500 mt-1">Unit Properti Ditutup</p>
+              <p className="text-xs text-neutral-500 mt-1">Unit Properti Terfasilitasi</p>
             </div>
 
             <div className="py-4 md:py-0 md:px-6 text-center">
               <span className="text-xs font-mono uppercase text-neutral-500 tracking-wider block mb-1">PENGALAMAN</span>
               <p className="font-serif text-3xl sm:text-4xl font-normal text-brand-950">10+ Thn</p>
-              <p className="text-xs text-neutral-500 mt-1">Rekam Jejak Konsisten</p>
+              <p className="text-xs text-neutral-500 mt-1">Beroperasi Sejak 2012</p>
             </div>
           </div>
         </div>

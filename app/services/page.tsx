@@ -13,39 +13,39 @@ export const metadata: Metadata = {
 const services = [
   {
     icon: Search,
-    title: "Pendampingan Pencarian Properti",
+    title: "Jual & Beli Aset Properti",
     description:
-      "Kami membantu Anda menemukan rumah, apartemen, atau properti komersial yang sesuai dengan kebutuhan, anggaran, dan visi masa depan Anda. Dari penyaringan awal hingga jadwal survei, kami mendampingi setiap langkah.",
-  },
-  {
-    icon: Building2,
-    title: "Pemasaran & Penjualan",
-    description:
-      "Memasarkan properti Anda ke audiens yang tepat. Kami menyusun strategi harga, menyiapkan materi visual berkualitas, dan mengelola seluruh proses negosiasi hingga penandatanganan akta.",
-  },
-  {
-    icon: Calculator,
-    title: "Konsultasi Pembiayaan & KPR",
-    description:
-      "Membantu Anda memahami opsi pembiayaan, mensimulasikan cicilan, dan mengurus administrasi pengajuan KPR ke bank-bank rekanan Eagletree untuk mendapatkan suku bunga terbaik.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Verifikasi Legalitas",
-    description:
-      "Memastikan keamanan transaksi Anda. Tim kami bekerja sama dengan notaris terpercaya untuk memeriksa kelengkapan dokumen, sertifikat, dan legalitas properti sebelum transaksi dilakukan.",
-  },
-  {
-    icon: LineChart,
-    title: "Saran Investasi Properti",
-    description:
-      "Analisis mendalam mengenai potensi kawasan, tren harga, dan estimasi imbal hasil (yield) sewa untuk membantu Anda mengambil keputusan investasi yang terukur.",
+      "Layanan komprehensif pendampingan pencarian, pemasaran, hingga negosiasi aset properti hunian maupun komersial dengan kepastian legalitas sertifikat dan harga pasar yang wajar.",
   },
   {
     icon: MessageSquare,
     title: "Manajemen Sewa Menyewa",
     description:
-      "Layanan end-to-end untuk pemilik properti sewa. Dari pencarian penyewa berkualitas, penyusunan kontrak sewa, hingga penanganan keluhan teknis selama masa sewa berjalan.",
+      "Solusi menyeluruh bagi pemilik dan penyewa properti. Mencakup kurasi penyewa terpercaya, penyusunan kontrak sewa berkepastian hukum, hingga pendampingan serah terima unit.",
+  },
+  {
+    icon: Building2,
+    title: "Pengembangan Aset Properti (Asset Development)",
+    description:
+      "Bersinergi erat dengan Unity Group (Konsultan Arsitektur, Kontraktor, dan Pengembang) untuk mengelola tanah kavling atau aset tidak produktif menjadi kawasan hunian bernilai tinggi.",
+  },
+  {
+    icon: Calculator,
+    title: "Konsultasi Pembiayaan & KPR",
+    description:
+      "Membantu Anda memahami opsi pembiayaan, mensimulasikan cicilan transparan, dan mendampingi pengurusan berkas pengajuan KPR ke bank-bank rekanan resmi tanpa biaya komisi nasabah.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Verifikasi Legalitas & Notariat",
+    description:
+      "Memastikan keamanan setiap transaksi. Tim penasihat kami berkolaborasi dengan kantor notaris/PPAT terpercaya untuk pemeriksaan keabsahan SHM/HGB, IMB/PBG, dan riwayat tanah.",
+  },
+  {
+    icon: LineChart,
+    title: "Saran Investasi & Analisis Kawasan",
+    description:
+      "Analisis mendalam mengenai potensi pertumbuhan kawasan, tren apresiasi modal (capital gain), dan proyeksi hasil sewa (rental yield) di koridor Bintaro, Serpong, dan sekitarnya.",
   },
 ];
 

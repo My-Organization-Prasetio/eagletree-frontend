@@ -80,8 +80,8 @@ export function MortgageSolutionSection({ locale }: MortgageSolutionSectionProps
               {/* Subtitle / Description */}
               <p className="text-sm sm:text-base text-neutral-300 font-light leading-relaxed max-w-2xl mb-8">
                 {locale === "en"
-                  ? "Calculate transparent monthly installments, compare special promo interest rates from 8+ tier-1 banking partners, and receive end-to-end guidance from licensed Eagletree mortgage specialists at zero consultation fee."
-                  : "Hitung estimasi cicilan transparan, bandingkan suku bunga promo mulai 2.75% fixed dari 8+ bank rekanan tier-1 terpercaya, dan nikmati pendampingan pengajuan KPR hingga akad kredit tanpa biaya tambahan."}
+                  ? "Calculate transparent monthly installment estimates, explore indicative promo rates from tier-1 partner banks, and receive end-to-end guidance from licensed Eagletree advisors at zero client consultation fee."
+                  : "Hitung estimasi cicilan transparan, pelajari indikasi suku bunga promo mulai 2.75%* fixed dari bank rekanan terpercaya, dan nikmati pendampingan pengajuan berkas KPR ke perbankan tanpa biaya tambahan."}
               </p>
 
               {/* 3 Premium Value Proposition Cards */}
@@ -92,10 +92,10 @@ export function MortgageSolutionSection({ locale }: MortgageSolutionSectionProps
                   </div>
                   <div>
                     <span className="block text-xs sm:text-sm font-bold text-white">
-                      {locale === "en" ? "Fixed Rate 2.75%" : "Bunga 2.75% Fixed"}
+                      {locale === "en" ? "From 2.75%* Fixed" : "Mulai 2.75%* Fixed"}
                     </span>
                     <span className="block text-[11px] sm:text-xs text-neutral-300 font-light mt-0.5">
-                      {locale === "en" ? "Tier-1 bank promo" : "Promo bank tier-1"}
+                      {locale === "en" ? "Bank promo simulation*" : "Simulasi promo bank*"}
                     </span>
                   </div>
                 </div>
@@ -106,10 +106,10 @@ export function MortgageSolutionSection({ locale }: MortgageSolutionSectionProps
                   </div>
                   <div>
                     <span className="block text-xs sm:text-sm font-bold text-white">
-                      {locale === "en" ? "Fast Approval" : "Fast Approval"}
+                      {locale === "en" ? "Document Support" : "Bantuan Berkas KPR"}
                     </span>
                     <span className="block text-[11px] sm:text-xs text-neutral-300 font-light mt-0.5">
-                      {locale === "en" ? "1-3 business days" : "Proses 1-3 hari kerja"}
+                      {locale === "en" ? "1-3 days prep" : "Pendampingan berkas"}
                     </span>
                   </div>
                 </div>
@@ -123,27 +123,32 @@ export function MortgageSolutionSection({ locale }: MortgageSolutionSectionProps
                       {locale === "en" ? "100% Free Advice" : "100% Bebas Biaya"}
                     </span>
                     <span className="block text-[11px] sm:text-xs text-neutral-300 font-light mt-0.5">
-                      {locale === "en" ? "Zero client commission" : "Tanpa komisi klien"}
+                      {locale === "en" ? "Zero client commission" : "Tanpa komisi nasabah"}
                     </span>
                   </div>
                 </div>
               </div>
 
               {/* Official Bank Partners Strip */}
-              <div className="w-full pt-5 border-t border-white/10 flex flex-col sm:flex-row sm:items-center gap-3">
-                <span className="text-xs font-semibold uppercase tracking-wider text-neutral-300 shrink-0">
-                  {locale === "en" ? "Official Banking Partners:" : "Mitra Bank Rekanan Resmi:"}
-                </span>
-                <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-                  {bankPartners.map((bank) => (
-                    <span
-                      key={bank}
-                      className="px-2.5 py-1 rounded-md bg-white/[0.06] hover:bg-white/[0.1] border border-white/10 text-white text-[11px] sm:text-xs font-medium tracking-wide transition-colors"
-                    >
-                      {bank}
-                    </span>
-                  ))}
+              <div className="w-full pt-5 border-t border-white/10 flex flex-col gap-2.5">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-neutral-300 shrink-0">
+                    {locale === "en" ? "Official Banking Partners:" : "Mitra Bank Rekanan Resmi:"}
+                  </span>
+                  <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+                    {bankPartners.map((bank) => (
+                      <span
+                        key={bank}
+                        className="px-2.5 py-1 rounded-md bg-white/[0.06] hover:bg-white/[0.1] border border-white/10 text-white text-[11px] sm:text-xs font-medium tracking-wide transition-colors"
+                      >
+                        {bank}
+                      </span>
+                    ))}
+                  </div>
                 </div>
+                <p className="text-[11px] text-neutral-400 font-light leading-relaxed">
+                  *Suku bunga promo merupakan simulasi indikatif program perbankan. Persetujuan kredit dan ketentuan akhir sepenuhnya menjadi hak prerogatif bank penyedia KPR.
+                </p>
               </div>
             </div>
 
@@ -178,7 +183,7 @@ export function MortgageSolutionSection({ locale }: MortgageSolutionSectionProps
 
                 {/* Secondary WhatsApp Link */}
                 <a
-                  href="https://wa.me/628111222333?text=Halo%20Eagletree%2C%20saya%20ingin%20berkonsultasi%20mengenai%20simulasi%20dan%20pengajuan%20KPR."
+                  href="https://wa.me/6281290088902?text=Halo%20EagleTree%2C%20saya%20ingin%20berkonsultasi%20mengenai%20simulasi%20dan%20pengajuan%20KPR."
                   target="_blank"
                   rel="noreferrer"
                   className="w-full py-2.5 px-4 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-xs text-neutral-200 hover:text-white font-medium transition-all flex items-center justify-center gap-2 group"

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Building2, Calendar, CheckCircle2, ChevronRight, MapPin, Sparkles } from "lucide-react";
+import { Building2, ChevronRight, MapPin } from "lucide-react";
 import { PageContainer } from "@/components/layout/page-container";
 import type { Locale } from "@/lib/i18n";
 
@@ -22,89 +22,89 @@ type Milestone = {
 
 const milestones: Milestone[] = [
   {
-    id: "2020-hq",
-    year: "2020",
-    titleId: "Pendirian Kantor Pusat di Jakarta",
-    titleEn: "Founding of Jakarta Headquarters",
-    locationId: "Menara Eagletree, Jl. Jend. Sudirman, Jakarta Selatan",
-    locationEn: "Menara Eagletree, Jl. Jend. Sudirman, South Jakarta",
+    id: "2012-hq",
+    year: "2012",
+    titleId: "Pendirian Eagle Tree Property di Jakarta & Bintaro",
+    titleEn: "Establishment of Eagle Tree Property",
+    locationId: "PT. Denadi Mitra Propertindo • Bintaro Sektor 7",
+    locationEn: "PT. Denadi Mitra Propertindo • Bintaro Sector 7",
     descId:
-      "EagleTree resmi didirikan dengan akreditasi AREBI, memfokuskan layanan awal pada portofolio hunian premium di kawasan Sudirman CBD dan Jakarta Selatan dengan komitmen transparansi legalitas.",
+      "Didirikan resmi pada tahun 2012 di bawah naungan PT. Denadi Mitra Propertindo sebagai unit bisnis dari Unity Group, dipimpin oleh dewan direksi berpengalaman ex-manajemen PT Jaya Real Property Tbk dengan keanggotaan resmi AREBI.",
     descEn:
-      "EagleTree officially commenced operations with AREBI licensing, providing transparent residential advisory in the Sudirman CBD and South Jakarta corridors.",
-    tagId: "Kantor Pusat & Lisensi AREBI",
-    tagEn: "Headquarters & AREBI License",
+      "Officially founded in 2012 under PT. Denadi Mitra Propertindo as a business unit of Unity Group, led by seasoned directors formerly of PT Jaya Real Property Tbk with full AREBI accreditation.",
+    tagId: "Kantor Pusat Bintaro & Lisensi AREBI",
+    tagEn: "Bintaro Headquarters & AREBI Accreditation",
     isHq: true,
   },
   {
-    id: "2021-bsd",
+    id: "2015-branch",
+    year: "2015",
+    titleId: "Ekspansi Jaringan Kantor Bintaro & Gading Serpong",
+    titleEn: "Expansion to Bintaro & Gading Serpong Branches",
+    locationId: "Kebayoran Arcade, Althia, & Beryl Serpong",
+    locationEn: "Kebayoran Arcade, Althia, & Beryl Serpong",
+    descId:
+      "Memperluas jangkauan layanan dengan mendirikan kantor cabang strategis Central di Kebayoran Arcade, Beryl di Gading Serpong, dan Althia di Bintaro Sektor 9 untuk melayani pasar residensial dan komersial yang berkembang pesat.",
+    descEn:
+      "Broadened strategic reach by opening Central Branch at Kebayoran Arcade, Beryl Branch in Gading Serpong, and Althia Branch in Sector 9 to serve high-growth residential and commercial markets.",
+    tagId: "Jejaring Kantor Cabang Strategis",
+    tagEn: "Strategic Branch Network",
+  },
+  {
+    id: "2018-unity",
+    year: "2018",
+    titleId: "Sinergi Unity Group & Pengembangan Aset Properti",
+    titleEn: "Unity Group Synergy & Asset Development",
+    locationId: "Kebayoran Symphony & Graha Raya Bintaro",
+    locationEn: "Kebayoran Symphony & Graha Raya Bintaro",
+    descId:
+      "Mengintegrasikan layanan perantara dengan keahlian arsitektur dan kontraktor dari Unity Group, serta membuka kantor cabang Fortune 8 Graha Raya dan Victory 8 Bintaro untuk mengelola pengembangan aset properti produktif.",
+    descEn:
+      "Integrated brokerage services with Unity Group's architecture and contracting capabilities, establishing Fortune 8 Graha Raya and Victory 8 Bintaro branches to manage productive property asset development.",
+    tagId: "Sinergi Arsitektur & Kontraktor",
+    tagEn: "Architectural & Construction Synergy",
+  },
+  {
+    id: "2021-kpr",
     year: "2021",
-    titleId: "Ekspansi Kawasan Residensial BSD & Serpong",
-    titleEn: "Expansion to BSD City & Serpong",
-    locationId: "BSD City, Tangerang Selatan",
-    locationEn: "BSD City, South Tangerang",
+    titleId: "Konsolidasi Layanan KPR & Kemitraan Perbankan",
+    titleEn: "Comprehensive Mortgage & Banking Partnerships",
+    locationId: "Jejaring Perbankan Nasional",
+    locationEn: "National Banking Network",
     descId:
-      "Merespons tingginya kebutuhan keluarga muda akan hunian terpadu, Eagletree memperluas jangkauan penasihat ke kawasan kota mandiri BSD City dan Alam Sutera.",
+      "Memperkuat pendampingan nasabah melalui kemitraan dengan bank-bank nasional terkemuka untuk memfasilitasi pengajuan KPR, perbandingan bunga promo, dan konsultasi legalitas kredit secara transparan.",
     descEn:
-      "Expanded specialized advisory into master-planned townships in BSD City and Alam Sutera, catering to modern family residences.",
-    tagId: "Pusat Konsultasi Kota Mandiri",
-    tagEn: "Township Advisory Hub",
+      "Strengthened buyer advisory through direct facilitation with leading national banks, assisting mortgage applications, rate comparisons, and credit documentation.",
+    tagId: "Pendampingan KPR Transparan",
+    tagEn: "Transparent Mortgage Advisory",
   },
   {
-    id: "2022-bdg",
-    year: "2022",
-    titleId: "Jangkauan Representasi Bandung & Jawa Barat",
-    titleEn: "Bandung & West Java Representation",
-    locationId: "Dago & Bandung Pusat, Jawa Barat",
-    locationEn: "Dago & Central Bandung, West Java",
-    descId:
-      "Memperluas layanan penasihat untuk kavling komersial strategis serta portofolio vila dan hunian peristirahatan di kawasan perbukitan Jawa Barat.",
-    descEn:
-      "Established representation in Bandung covering scenic hill villas and prime commercial parcels in the Greater Bandung corridor.",
-    tagId: "Aset Residensial & Komersial",
-    tagEn: "Residential & Commercial Assets",
-  },
-  {
-    id: "2023-sby",
-    year: "2023",
-    titleId: "Kemitraan Bank Rekanan KPR Nasional",
-    titleEn: "National Mortgage Banking Partnerships",
-    locationId: "Surabaya & Jejaring Perbankan Nasional",
-    locationEn: "Surabaya & National Banking Network",
-    descId:
-      "Memperkuat kerja sama resmi bersama 8+ bank nasional tier-1 untuk memfasilitasi simulasi suku bunga promo dan pendampingan pengajuan KPR nasabah tanpa komisi klien.",
-    descEn:
-      "Formed direct partnerships with 8+ tier-1 national banks, enabling transparent rate comparisons and mortgage support at zero fee.",
-    tagId: "Kemitraan 8+ Bank Rekanan",
-    tagEn: "8+ Bank Partner Program",
-  },
-  {
-    id: "2024-bali",
+    id: "2024-standards",
     year: "2024",
-    titleId: "Layanan Villa & Aset Wisata Bali",
-    titleEn: "Luxury Villa & Resort Hub in Bali",
-    locationId: "Seminyak & Badung, Bali",
-    locationEn: "Seminyak & Badung, Bali",
+    titleId: "Penguatan Standar Layanan & Kepatuhan Transaksi",
+    titleEn: "Service Standardization & Transaction Compliance",
+    locationId: "Koridor Tangerang Selatan & Jabodetabek",
+    locationEn: "South Tangerang & Greater Jakarta Corridor",
     descId:
-      "Menghadirkan kurasi khusus villa privat dan properti liburan di Bali dengan kepatuhan penuh terhadap regulasi kepemilikan dan uji tuntas sertifikat.",
+      "Peningkatan standar kepatuhan broker profesional, verifikasi sertifikat kepemilikan yang lebih ketat, dan pendampingan transaksi bernilai tinggi di seluruh portofolio hunian primer dan sekunder.",
     descEn:
-      "Established advisory presence in Bali, specializing in private luxury villas and vacation retreats with verified legal standing.",
-    tagId: "Spesialisasi Villa Eksklusif",
-    tagEn: "Luxury Villa Portfolio",
+      "Elevated professional broker standards, stricter certificate due diligence, and dedicated advisory for high-value transactions across primary and secondary portfolios.",
+    tagId: "Integritas & Kepatuhan Transaksi",
+    tagEn: "Integrity & Transaction Compliance",
   },
   {
     id: "2026-v2",
     year: "2026",
-    titleId: "Peluncuran Platform Terintegrasi V2",
-    titleEn: "Launch of Integrated V2 Platform",
-    locationId: "Ekosistem Digital Nasional (Jakarta HQ)",
-    locationEn: "National Digital Ecosystem (Jakarta HQ)",
+    titleId: "Peluncuran Platform Terintegrasi Eagletree V2",
+    titleEn: "Launch of Integrated Eagletree V2 Platform",
+    locationId: "Ekosistem Digital Eagletree",
+    locationEn: "Eagletree Digital Ecosystem",
     descId:
-      "Merilis platform generasi kedua yang menyatukan kurasi listing terverifikasi, kalkulator simulasi KPR transparan, dan direktori konsultan berlisensi dalam satu akses mudah.",
+      "Merilis platform digital generasi kedua yang menyatukan kurasi listing terverifikasi, kalkulator simulasi KPR transparan, dan direktori konsultan berlisensi resmi dalam satu akses mudah.",
     descEn:
-      "Rolled out the V2 platform seamlessly combining verified property listings, transparent mortgage calculations, and certified advisors.",
+      "Launched the second-generation platform unifying verified listings, transparent mortgage calculation simulations, and certified advisor directories in one seamless experience.",
     tagId: "Kalkulator KPR & Platform V2",
-    tagEn: "Mortgage Engine & V2 Platform",
+    tagEn: "Mortgage Simulator & V2 Platform",
   },
 ];
 
@@ -113,7 +113,7 @@ type AboutJourneyProps = {
 };
 
 export function AboutJourney({ locale }: AboutJourneyProps) {
-  const [activeId, setActiveId] = useState<string>("2020-hq");
+  const [activeId, setActiveId] = useState<string>("2012-hq");
 
   const activeMilestone =
     milestones.find((m) => m.id === activeId) ?? milestones[0];
@@ -156,8 +156,8 @@ export function AboutJourney({ locale }: AboutJourneyProps) {
 
           <p className="text-sm sm:text-base text-neutral-300 font-light leading-relaxed">
             {locale === "en"
-              ? "From our verified headquarters in Sudirman CBD, Jakarta, we have steadily grown our advisory presence across strategic residential and commercial hubs in Indonesia."
-              : "Berawal dari kantor pusat di Sudirman CBD Jakarta, kami tumbuh secara konsisten mendampingi pencari hunian dan investor di berbagai koridor strategis Indonesia."}
+              ? "From our verified headquarters in Kebayoran Arcade, Bintaro Sector 7, we have steadily grown our advisory presence across strategic residential and commercial hubs in Greater Jakarta and Tangerang."
+              : "Berawal dari kantor pusat di Kebayoran Arcade Bintaro Sektor 7, kami tumbuh secara konsisten mendampingi pencari hunian dan investor di koridor strategis Tangerang Selatan dan Jabodetabek."}
           </p>
         </div>
 
@@ -169,7 +169,7 @@ export function AboutJourney({ locale }: AboutJourneyProps) {
             <div className="relative aspect-[16/11] sm:aspect-[16/10] w-full rounded-2xl overflow-hidden border border-white/15 shadow-xl group">
               <Image
                 src="/closing-penthouse-banner.jpg"
-                alt="Kantor Pusat Eagletree Sudirman CBD Panorama"
+                alt="Kantor Pusat Eagle Tree Property Kebayoran Arcade Bintaro"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-102"
@@ -184,7 +184,7 @@ export function AboutJourney({ locale }: AboutJourneyProps) {
               {/* Subtle Top Badge */}
               <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-navy-950/85 backdrop-blur-md border border-white/15 text-gold-400 text-xs font-semibold">
                 <Building2 size={14} />
-                <span>Kantor Pusat Resmi Eagletree</span>
+                <span>PT. Denadi Mitra Propertindo • Unity Group</span>
               </div>
 
               {/* Verified Headquarters Location Callout at Bottom of Image */}
@@ -194,13 +194,13 @@ export function AboutJourney({ locale }: AboutJourneyProps) {
                 </div>
                 <div className="text-xs">
                   <span className="font-bold block text-white text-sm leading-tight">
-                    Menara Eagletree Lantai 12
+                    Central Office (Headquarters)
                   </span>
                   <span className="text-neutral-300 font-light block mt-0.5">
-                    Jl. Jend. Sudirman Kav. 45, Jakarta Selatan 12930
+                    Ruko Kebayoran Arcade 2 Blok B3 No. 39, Bintaro Sektor 7, Tangerang Selatan
                   </span>
                   <span className="text-gold-300 font-medium block text-[11px] mt-1.5">
-                    Jangkauan Layanan: Jabodetabek • Jawa Barat • Jawa Timur • Bali
+                    Jejaring Kantor: Central • Beryl Gading Serpong • Althia • Fortune 8 • Victory 8
                   </span>
                 </div>
               </div>

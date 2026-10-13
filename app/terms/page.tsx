@@ -20,7 +20,7 @@ export default function TermsPage() {
 
         <div className="prose prose-sm sm:prose-base max-w-none text-neutral-700">
           <p>
-            Selamat datang di Eagletree. Syarat dan Ketentuan berikut mengatur penggunaan Anda atas situs web eagletree.id dan layanan terkait yang ditawarkan oleh PT Eagletree Properti Indonesia ("Eagletree", "kami", atau "milik kami").
+            Selamat datang di Eagletree. Syarat dan Ketentuan berikut mengatur penggunaan Anda atas situs web dan layanan terkait yang ditawarkan oleh PT. Denadi Mitra Propertindo (dikenal sebagai Eagle Tree Property, unit bisnis dari Unity Group, selanjutnya disebut &quot;Eagletree&quot;, &quot;kami&quot;, atau &quot;milik kami&quot;).
           </p>
 
           <h2>1. Penerimaan Syarat</h2>

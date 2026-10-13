@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MapPin, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { MapPin, CheckCircle2 } from "lucide-react";
 import { PageContainer } from "@/components/layout/page-container";
 import type { Locale } from "@/lib/i18n";
 
@@ -21,14 +21,14 @@ export function AboutStory({ locale }: AboutStoryProps) {
       desc:
         locale === "en"
           ? "Our property advisors adhere to professional ethical standards, prioritizing your needs over sales pressure."
-          : "Didampingi oleh penasihat properti berlisensi resmi yang mengedepankan objektivitas dan kenyamanan keputusan Anda.",
+          : "Didampingi oleh penasihat properti berlisensi resmi yang mengedepankan objektivitas dan kepatuhan kode etik AREBI.",
     },
     {
-      title: locale === "en" ? "Integrated Mortgage Support" : "Dukungan KPR Resmi Tanpa Biaya",
+      title: locale === "en" ? "Unity Group Ecosystem & Support" : "Sinergi Unity Group & Konsultasi KPR",
       desc:
         locale === "en"
-          ? "Direct partnerships with tier-1 national banks allow transparent rate comparisons at zero client commission."
-          : "Bermitra dengan 8+ bank rekanan tier-1 untuk simulasi cicilan transparan dan pendampingan pengajuan tanpa komisi klien.",
+          ? "Supported by Unity Group's architecture and development arm, plus comprehensive mortgage assistance with tier-1 banks."
+          : "Didukung ekosistem arsitektur dan pengembangan Unity Group, serta pendampingan pengajuan KPR ke bank rekanan terpercaya.",
     },
   ];
 
@@ -53,10 +53,10 @@ export function AboutStory({ locale }: AboutStoryProps) {
                 <MapPin size={16} className="text-gold-400 shrink-0 mt-0.5" />
                 <div className="text-xs">
                   <span className="font-bold block text-white leading-tight">
-                    Kantor Pusat Eagletree Hub Jakarta
+                    Kantor Pusat Eagle Tree Property
                   </span>
                   <span className="text-neutral-300 font-light block text-[11px] mt-0.5">
-                    Menara Eagletree Lt. 12, Jl. Jend. Sudirman Kav. 45, Jakarta Selatan
+                    PT. Denadi Mitra Propertindo • Kebayoran Arcade 2 B3/39, Bintaro Sektor 7
                   </span>
                 </div>
               </div>
@@ -96,14 +96,14 @@ export function AboutStory({ locale }: AboutStoryProps) {
             {/* Natural, Non-Generic Paragraphs */}
             <p className="text-sm sm:text-base text-neutral-600 font-light leading-relaxed mb-4">
               {locale === "en"
-                ? "EagleTree was founded with a clear intention: to simplify the home-buying journey in Indonesia. We noticed that property seekers frequently encounter confusing market information, aggressive sales pitches, and complicated legal procedures."
-                : "EagleTree didirikan dengan komitmen sederhana: membuat proses pencarian hunian di Indonesia menjadi lebih tenang dan meyakinkan. Kami melihat bahwa mencari tempat tinggal sering kali diwarnai oleh informasi harga yang tidak transparan, penawaran yang terburu-buru, serta prosedur legalitas yang membingungkan."}
+                ? "Founded in 2012 under PT. Denadi Mitra Propertindo as part of Unity Group, EagleTree was built on a solid foundation of senior real-estate expertise and architectural synergy. Over more than a decade, our mission remains clear: to provide honest, legally verified, and tranquil property journeys for families and investors across Greater Jakarta and Tangerang."
+                : "Didirikan pada tahun 2012 di bawah naungan PT. Denadi Mitra Propertindo sebagai unit bisnis Unity Group, EagleTree hadir dengan fondasi keahlian manajemen properti yang matang serta sinergi erat dengan konsultan arsitektur dan kontraktor. Selama lebih dari satu dekade, komitmen kami tetap teguh: menghadirkan pendampingan transaksi properti yang transparan, aman secara legal, dan berorientasi pada ketenangan jangka panjang klien."}
             </p>
 
             <p className="text-sm sm:text-base text-neutral-600 font-light leading-relaxed mb-8">
               {locale === "en"
-                ? "We position ourselves as your personal advisor, not just an intermediary. From initial consultations to notarized deed signings, our certified advisors prioritize your peace of mind and family lifestyle goals."
-                : "Oleh karena itu, kami memposisikan diri sebagai rekan penasihat Anda. Kami mendengarkan apa yang sebenarnya Anda butuhkan, memeriksa keabsahan surat tanah secara teliti, dan mendampingi proses pengajuan pembiayaan agar Anda dapat mengambil keputusan dengan rasa aman."}
+                ? "Operating through our strategic branch network in Bintaro and Serpong, we position ourselves as your trusted advisor, not merely a sales broker. From comprehensive certificate due diligence to mortgage advisory, our certified advisors safeguard every step of your transaction."
+                : "Melalui jaringan kantor cabang strategis kami di kawasan Bintaro dan Serpong, kami memposisikan diri sebagai rekan penasihat terpercaya. Kami mendengarkan kebutuhan riil Anda, memeriksa keabsahan surat tanah secara teliti, serta mengawal proses pembiayaan hingga penandatanganan akta resmi."}
             </p>
 
             {/* 3 Editorial Value Points (Clean list, avoiding repetitive card boxes) */}

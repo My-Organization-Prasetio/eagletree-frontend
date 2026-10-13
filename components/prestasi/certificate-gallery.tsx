@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Award, CheckCircle2, Eye, ShieldCheck, X, ZoomIn } from "lucide-react";
+import { CheckCircle2, Eye, ShieldCheck, X, ZoomIn } from "lucide-react";
 
 export type CertificateItem = {
   id: string;
@@ -17,30 +17,30 @@ export type CertificateItem = {
 export const dummyCertificates: CertificateItem[] = [
   {
     id: "cert-1",
-    title: "Certificate of Excellence in Real Estate Brokerage",
-    organization: "Global Real Estate Network & Property Council",
-    year: "2025 - 2026",
-    imageSrc: "/certificate-excellence.jpg",
-    badge: "Keunggulan Layanan",
-    description: "Sertifikat penghargaan atas standar integritas, kepuasan transaksi pembeli, dan pencapaian broker elit.",
-  },
-  {
-    id: "cert-2",
-    title: "Official Real Estate Association Accreditation",
-    organization: "AREBI & Global Premier Real Estate Association",
-    year: "Berlaku s.d 2026",
+    title: "Sertifikat Keanggotaan Resmi AREBI",
+    organization: "AREBI (Asosiasi Real Estate Broker Indonesia)",
+    year: "Terdaftar Resmi",
     imageSrc: "/certificate-accreditation.jpg",
-    badge: "Akreditasi Resmi",
+    badge: "Anggota AREBI",
     description: "Sertifikasi kepatuhan kode etik broker profesional, legalitas transaksi, dan standar perlindungan konsumen.",
   },
   {
-    id: "cert-3",
-    title: "Developer Partnership Award & Trophy of Honor",
-    organization: "The Property Developer Group / Top Developer Partners",
-    year: "Penghargaan Tahunan 2024",
+    id: "cert-2",
+    title: "Apresiasi Kemitraan Pemasaran Pengembang",
+    organization: "Mitra Pengembang Terkemuka (Jabodetabek)",
+    year: "Penghargaan Tahunan",
     imageSrc: "/certificate-partnership.jpg",
-    badge: "Kemitraan Strategis",
-    description: "Plakat apresiasi penghargaan atas rekor kontribusi pemasaran dan penjualan proyek primer pengembang terkemuka.",
+    badge: "Kemitraan Pengembang",
+    description: "Plakat apresiasi penghargaan atas kontribusi pemasaran dan penjualan proyek residensial primer.",
+  },
+  {
+    id: "cert-3",
+    title: "Sertifikat Rekognisi Integritas Layanan Transaksi",
+    organization: "PT. Denadi Mitra Propertindo (Unity Group)",
+    year: "Standar Mutu",
+    imageSrc: "/certificate-excellence.jpg",
+    badge: "Keunggulan Layanan",
+    description: "Standar operasional kehati-hatian dalam uji tuntas legalitas dokumen tanah dan kepuasan nasabah.",
   },
 ];
 

@@ -416,7 +416,7 @@ export default function TitipPropertiPage() {
                 Perlu panduan terkait perpajakan, estimasi nilai pasar, atau skema eksklusif? Hubungi tim representasi kami.
               </p>
               <a
-                href="https://wa.me/628111222333?text=Halo%20Eagletree,%20saya%20ingin%20berkonsultasi%20mengenai%20titip%20jual%20properti%20saya."
+                href="https://wa.me/6281290088902?text=Halo%20EagleTree,%20saya%20ingin%20berkonsultasi%20mengenai%20titip%20jual%20properti%20saya."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-lg bg-accent-500 hover:bg-accent-400 text-brand-950 font-medium text-xs transition-colors"

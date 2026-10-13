@@ -71,7 +71,7 @@ export function AboutVisionMission({ locale }: AboutVisionMissionProps) {
           <p className="text-xl sm:text-2xl font-serif text-navy-950 leading-relaxed font-medium">
             {locale === "en" ? (
               <>
-                “To be Indonesia's most trusted property advisory firm,{" "}
+                “To be Indonesia&apos;s most trusted property advisory firm,{" "}
                 <span className="text-gold-600 italic font-normal">
                   bringing clarity, legal security, and empathetic service to every real estate journey.”
                 </span>
