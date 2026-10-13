@@ -1,12 +1,13 @@
 "use client";
 
-import { ArrowRight, Bath, BedDouble, Heart, MapPin, MessageCircle, Phone, Ruler } from "lucide-react";
+import { ArrowRight, Bath, BedDouble, Heart, MapPin, Ruler } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import type { Locale } from "@/lib/i18n";
 import { copy } from "@/lib/i18n";
 import type { PropertyCardData } from "@/types/property";
+import { WhatsAppIcon, StrongPhoneIcon } from "@/components/icons/contact-icons";
 
 type PropertyCardProps = {
   property: PropertyCardData;
@@ -234,20 +235,20 @@ export function PropertyCard({
                   target="_blank"
                   rel="noreferrer"
                   aria-label={content.contactWhatsapp}
-                  className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-700 hover:bg-emerald-100 hover:text-emerald-800 flex items-center justify-center transition-colors border border-emerald-200/80"
+                  className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-700 hover:bg-emerald-600 hover:text-white flex items-center justify-center transition-colors border border-emerald-200/80 shadow-2xs"
                   title="WhatsApp Agen"
                 >
-                  <MessageCircle size={16} aria-hidden="true" />
+                  <WhatsAppIcon size={16} />
                 </a>
               )}
               {agent.phone && (
                 <a
                   href={`tel:${agent.phone}`}
                   aria-label={content.contactPhone}
-                  className="w-8 h-8 rounded-lg bg-neutral-100 text-neutral-700 hover:bg-neutral-200 flex items-center justify-center transition-colors border border-border-subtle"
+                  className="w-8 h-8 rounded-lg bg-neutral-100 text-neutral-800 hover:bg-navy-950 hover:text-white flex items-center justify-center transition-colors border border-neutral-200/90 shadow-2xs"
                   title="Telepon Agen"
                 >
-                  <Phone size={14} aria-hidden="true" />
+                  <StrongPhoneIcon size={14} />
                 </a>
               )}
             </div>

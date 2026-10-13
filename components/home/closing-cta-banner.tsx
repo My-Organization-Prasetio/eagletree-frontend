@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, PhoneCall } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { StrongPhoneCallIcon } from "@/components/icons/contact-icons";
 import { PageContainer } from "@/components/layout/page-container";
 import type { Locale } from "@/lib/i18n";
 
@@ -68,7 +69,7 @@ export function ClosingCtaBanner({ locale }: ClosingCtaBannerProps) {
               href="/contact"
               className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-lg bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold text-xs sm:text-sm tracking-wide transition-all shadow-lg hover:shadow-xl active:scale-95 cursor-pointer"
             >
-              <PhoneCall size={16} />
+              <StrongPhoneCallIcon size={16} />
               <span>{locale === "en" ? "Book a Consultation" : "Jadwalkan Konsultasi"}</span>
             </Link>
 

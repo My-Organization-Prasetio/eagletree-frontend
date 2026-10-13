@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MessageCircle, Star, Building2, ChevronRight, Award } from "lucide-react";
+import { Star, Building2, ChevronRight, Award } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/contact-icons";
 import type { AgentProfile } from "@/types/agent";
 
 type AgentCardProps = {
@@ -72,9 +73,9 @@ export function AgentCard({ agent }: AgentCardProps) {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full flex items-center justify-center gap-2 bg-brand-950 hover:bg-brand-900 text-white px-4 py-2.5 rounded-lg text-xs font-bold transition-colors shadow-2xs"
+            className="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-lg text-xs font-bold transition-colors shadow-2xs"
           >
-            <MessageCircle size={16} />
+            <WhatsAppIcon size={16} />
             <span>Hubungi WhatsApp</span>
           </a>
           <Link

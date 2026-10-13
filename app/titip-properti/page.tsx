@@ -5,9 +5,9 @@ import Link from "next/link";
 import {
   ChevronRight,
   CheckCircle2,
-  Phone,
   Send,
 } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/contact-icons";
 import { PageContainer } from "@/components/layout/page-container";
 
 const propertyTypes = ["Rumah Tapak", "Apartemen", "Ruko / Komersial", "Tanah / Kavling", "Vila"];
@@ -419,9 +419,9 @@ export default function TitipPropertiPage() {
                 href="https://wa.me/6281290088902?text=Halo%20EagleTree,%20saya%20ingin%20berkonsultasi%20mengenai%20titip%20jual%20properti%20saya."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-lg bg-accent-500 hover:bg-accent-400 text-brand-950 font-medium text-xs transition-colors"
+                className="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition-colors shadow-2xs"
               >
-                <Phone size={14} />
+                <WhatsAppIcon size={16} />
                 <span>WhatsApp Listing Specialist</span>
               </a>
             </div>

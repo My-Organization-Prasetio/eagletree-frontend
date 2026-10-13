@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle2, MessageCircle, Phone, Send, ShieldCheck, ArrowRight } from "lucide-react";
+import { CheckCircle2, Send, ShieldCheck, ArrowRight } from "lucide-react";
+import { WhatsAppIcon, StrongPhoneIcon } from "@/components/icons/contact-icons";
 import type { AgentProfile } from "@/types/agent";
 import type { PropertyPrice } from "@/types/property";
 
@@ -93,18 +94,18 @@ export function AgentContactCard({
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-accent-500 hover:bg-accent-400 text-brand-950 font-medium text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer text-center"
+          className="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer text-center shadow-2xs"
         >
-          <MessageCircle size={16} className="shrink-0" />
+          <WhatsAppIcon size={16} className="shrink-0" />
           <span>Hubungi via WhatsApp</span>
         </a>
 
         {currentAgent.phone && (
           <a
             href={`tel:${currentAgent.phone}`}
-            className="flex items-center justify-center gap-1.5 w-full py-2 px-4 bg-neutral-50 hover:bg-neutral-100 text-neutral-700 font-medium text-xs rounded-lg transition-colors border border-neutral-200/80 cursor-pointer text-center"
+            className="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-neutral-100 hover:bg-navy-950 hover:text-white text-neutral-800 font-semibold text-xs rounded-lg transition-colors border border-neutral-200/90 cursor-pointer text-center shadow-2xs"
           >
-            <Phone size={14} className="text-neutral-500" />
+            <StrongPhoneIcon size={14} className="shrink-0" />
             <span>Telepon: {currentAgent.phone}</span>
           </a>
         )}

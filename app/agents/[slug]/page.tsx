@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight, MessageCircle, ShieldCheck } from "lucide-react";
+import { ChevronRight, ShieldCheck } from "lucide-react";
+import { WhatsAppIcon, StrongPhoneIcon } from "@/components/icons/contact-icons";
 import { Metadata } from "next";
 
 import { PageContainer } from "@/components/layout/page-container";
@@ -112,15 +113,26 @@ export default async function AgentProfilePage({ params }: Props) {
                 </div>
               </div>
 
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 bg-accent-500 hover:bg-accent-400 text-brand-950 px-4 py-2.5 rounded-lg text-xs font-medium uppercase tracking-wider transition-colors"
-              >
-                <MessageCircle size={16} />
-                <span>Konsultasi WhatsApp</span>
-              </a>
+              <div className="flex flex-col gap-2">
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors shadow-2xs"
+                >
+                  <WhatsAppIcon size={16} />
+                  <span>Konsultasi WhatsApp</span>
+                </a>
+                {agent.phone && (
+                  <a
+                    href={`tel:${agent.phone}`}
+                    className="w-full flex items-center justify-center gap-2 bg-neutral-100 hover:bg-navy-950 hover:text-white text-neutral-800 px-4 py-2.5 rounded-lg text-xs font-semibold transition-colors border border-neutral-200/90 shadow-2xs"
+                  >
+                    <StrongPhoneIcon size={14} />
+                    <span>Hubungi Telepon: {agent.phone}</span>
+                  </a>
+                )}
+              </div>
             </div>
           </div>
 

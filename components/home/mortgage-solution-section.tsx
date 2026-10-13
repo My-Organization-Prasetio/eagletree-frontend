@@ -5,10 +5,10 @@ import {
   CheckCircle2,
   Landmark,
   Percent,
-  PhoneCall,
   ShieldCheck,
   Zap,
 } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/contact-icons";
 import { PageContainer } from "@/components/layout/page-container";
 import type { Locale } from "@/lib/i18n";
 
@@ -188,7 +188,7 @@ export function MortgageSolutionSection({ locale }: MortgageSolutionSectionProps
                   rel="noreferrer"
                   className="w-full py-2.5 px-4 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-xs text-neutral-200 hover:text-white font-medium transition-all flex items-center justify-center gap-2 group"
                 >
-                  <PhoneCall size={14} className="text-gold-400 group-hover:scale-110 transition-transform" />
+                  <WhatsAppIcon size={16} className="text-emerald-400 group-hover:scale-110 transition-transform" />
                   <span>{locale === "en" ? "Chat with Mortgage Specialist" : "Tanya Spesialis KPR via WhatsApp"}</span>
                 </a>
 

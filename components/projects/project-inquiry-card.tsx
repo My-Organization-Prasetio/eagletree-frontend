@@ -1,6 +1,7 @@
 "use client";
 
-import { Building2, MessageCircle, Mail } from "lucide-react";
+import { Building2, Mail } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/contact-icons";
 import type { ProjectItem } from "@/types/project";
 import { formatCurrency } from "@/lib/utils";
 
@@ -41,7 +42,7 @@ export function ProjectInquiryCard({ project }: ProjectInquiryCardProps) {
           rel="noopener noreferrer"
           className="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white px-4 py-3 rounded-xl font-medium transition-colors shadow-sm"
         >
-          <MessageCircle size={20} />
+          <WhatsAppIcon size={20} />
           Hubungi via WhatsApp
         </a>
         <button

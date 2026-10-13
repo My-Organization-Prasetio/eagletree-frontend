@@ -4,8 +4,8 @@ import { useState, useMemo } from "react";
 import {
   ChevronDown,
   ChevronUp,
-  MessageCircle,
 } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/contact-icons";
 
 type MortgageCalculatorViewProps = {
   initialPrice?: number;
@@ -345,9 +345,9 @@ export function MortgageCalculatorView({ initialPrice }: MortgageCalculatorViewP
               href={whatsappInquiryUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-accent-500 hover:bg-accent-400 text-brand-950 text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors text-center cursor-pointer mt-1"
+              className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-colors text-center cursor-pointer mt-1 shadow-2xs"
             >
-              <MessageCircle size={16} />
+              <WhatsAppIcon size={16} />
               <span>Konsultasi Bank Rekanan via WhatsApp</span>
             </a>
           </div>

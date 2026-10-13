@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin } from "lucide-react";
+import { StrongPhoneIcon, WhatsAppIcon } from "@/components/icons/contact-icons";
 import { PageContainer } from "@/components/layout/page-container";
 
 export const metadata: Metadata = {
@@ -35,7 +36,7 @@ export default function ContactPage() {
               </h2>
               <ul className="flex flex-col gap-4 text-xs">
                 <li className="flex gap-3 items-start">
-                  <Phone size={16} className="text-brand-900 shrink-0 mt-0.5" />
+                  <StrongPhoneIcon size={16} className="text-brand-900 shrink-0 mt-0.5" />
                   <div>
                     <p className="text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-0.5">
                       Telepon Kantor / Hotline WhatsApp
@@ -43,8 +44,9 @@ export default function ContactPage() {
                     <a href="tel:+622174866920" className="font-medium text-brand-950 hover:text-accent-700 transition-colors block">
                       (021) 7486 6920 / (021) 2951 1779
                     </a>
-                    <a href="https://wa.me/6281290088902" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-accent-700 transition-colors text-[11px] block mt-0.5">
-                      WhatsApp: +62 812-9008-8902 / +62 857-1941-1181
+                    <a href="https://wa.me/6281290088902" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-accent-700 transition-colors text-[11px] inline-flex items-center gap-1 mt-1">
+                      <WhatsAppIcon size={13} className="text-emerald-600 shrink-0" />
+                      <span>WhatsApp: +62 812-9008-8902 / +62 857-1941-1181</span>
                     </a>
                   </div>
                 </li>
