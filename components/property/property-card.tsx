@@ -206,10 +206,20 @@ export function PropertyCard({
           <div className="flex items-center justify-between gap-3 pt-3.5 border-t border-border-subtle/80">
             <div className="flex items-center gap-2.5 min-w-0">
               <div
-                className="w-8 h-8 rounded-full bg-brand-100 text-brand-900 font-bold flex items-center justify-center text-xs relative overflow-hidden shrink-0 border border-brand-200"
+                className="w-8 h-8 rounded-full bg-brand-100 text-brand-900 font-bold flex items-center justify-center text-xs relative overflow-hidden shrink-0 border border-neutral-200/90 shadow-2xs"
                 aria-hidden="true"
               >
-                {agent.photo ? <Image src={agent.photo} alt="" fill sizes="32px" /> : agent.initials}
+                {agent.photo ? (
+                  <Image
+                    src={agent.photo}
+                    alt={agent.name}
+                    fill
+                    sizes="32px"
+                    className="object-cover"
+                  />
+                ) : (
+                  agent.initials
+                )}
               </div>
               <div className="min-w-0">
                 <p className="text-xs font-bold text-brand-950 truncate">{agent.name}</p>

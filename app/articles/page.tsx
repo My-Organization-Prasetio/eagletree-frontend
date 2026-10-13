@@ -198,9 +198,24 @@ export default async function ArticlesPage({ searchParams }: ArticlesPageProps) 
                         {article.description}
                       </p>
                       <div className="flex items-center justify-between pt-3 border-t border-neutral-100 mt-auto text-xs text-neutral-500">
-                        <span className="font-medium text-neutral-700 truncate max-w-[150px]">
-                          {article.author.name}
-                        </span>
+                        <div className="flex items-center gap-2 truncate max-w-[170px]">
+                          <div className="w-5 h-5 rounded-full bg-brand-100 text-brand-900 text-[9px] font-bold flex items-center justify-center shrink-0 overflow-hidden relative border border-neutral-200/90 shadow-2xs" aria-hidden="true">
+                            {article.author.avatar ? (
+                              <Image
+                                src={article.author.avatar}
+                                alt=""
+                                fill
+                                sizes="20px"
+                                className="object-cover"
+                              />
+                            ) : (
+                              article.author.initials
+                            )}
+                          </div>
+                          <span className="font-medium text-neutral-700 truncate">
+                            {article.author.name}
+                          </span>
+                        </div>
                         <span className="text-[11px] text-neutral-400 flex items-center gap-1 font-mono">
                           <Clock size={12} />
                           {article.readingTimeMinutes} min

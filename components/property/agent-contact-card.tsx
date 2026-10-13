@@ -43,6 +43,7 @@ export function AgentContactCard({
     role: "Property Specialist",
     region: "Indonesia",
     initials: "ET",
+    photo: "/agent-maya-pradana.jpg",
     office: "Eagletree Head Office",
     whatsapp: "6281212345678",
     phone: "+6281212345678",
@@ -65,9 +66,9 @@ export function AgentContactCard({
     <div className="flex flex-col gap-4 p-5 sm:p-6 bg-white rounded-xl border border-neutral-200/80 shadow-2xs sticky top-24">
       {/* Agent Bio Header */}
       <div className="flex items-center gap-3 pb-4 border-b border-neutral-100">
-        <div className="relative w-12 h-12 rounded-full bg-brand-950 text-accent-400 flex items-center justify-center font-medium text-sm overflow-hidden shrink-0">
+        <div className="relative w-12 h-12 rounded-full bg-brand-950 text-accent-400 flex items-center justify-center font-medium text-sm overflow-hidden shrink-0 border border-neutral-200/80 shadow-2xs">
           {currentAgent.photo ? (
-            <Image src={currentAgent.photo} alt={currentAgent.name} fill className="object-cover" />
+            <Image src={currentAgent.photo} alt={currentAgent.name} fill sizes="48px" className="object-cover" />
           ) : (
             currentAgent.initials
           )}

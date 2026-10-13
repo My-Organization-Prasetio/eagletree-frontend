@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ChevronRight,
@@ -49,6 +50,7 @@ const agentStories = [
     experience: "3 Tahun di Eagletree",
     quote: "Di Eagletree, integritas dan pemahaman pasar diletakkan di atas teknik penjualan agresif. Pendekatan ini membuat klien mempercayakan transaksi bernilai besar secara konsisten.",
     initials: "RW",
+    photo: "/agent-raka-wijaya.jpg",
   },
   {
     name: "Maya Pradana",
@@ -56,6 +58,7 @@ const agentStories = [
     experience: "4 Tahun di Eagletree",
     quote: "Kultur kerja yang transparan dan tersedianya inventaris listing eksklusif memungkinkan saya fokus memberikan advis terbaik kepada klien tanpa hambatan operasional.",
     initials: "MP",
+    photo: "/agent-maya-pradana.jpg",
   },
 ];
 
@@ -161,8 +164,18 @@ export default function JoinEagletreePage() {
                 </p>
 
                 <div className="flex items-center gap-3 pt-4 border-t border-neutral-100">
-                  <div className="w-10 h-10 rounded-full bg-brand-950 text-accent-400 font-medium flex items-center justify-center text-xs shrink-0">
-                    {story.initials}
+                  <div className="w-10 h-10 rounded-full bg-brand-950 text-accent-400 font-medium flex items-center justify-center text-xs shrink-0 relative overflow-hidden border border-neutral-200/90 shadow-2xs">
+                    {story.photo ? (
+                      <Image
+                        src={story.photo}
+                        alt={story.name}
+                        fill
+                        sizes="40px"
+                        className="object-cover"
+                      />
+                    ) : (
+                      story.initials
+                    )}
                   </div>
                   <div>
                     <h4 className="font-medium text-sm text-brand-950">{story.name}</h4>

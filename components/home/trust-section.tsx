@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Compass, Handshake, ShieldCheck, UserCheck } from "lucide-react";
 import { mockAgents } from "@/lib/mock-data";
 import { PageContainer } from "@/components/layout/page-container";
@@ -57,19 +58,40 @@ export function TrustSection({ locale }: TrustSectionProps) {
           </div>
 
           <div className="flex flex-wrap items-center gap-6 sm:gap-8 relative z-10">
-            {mockAgents.map((agent) => (
-              <div className="flex items-center gap-3.5 bg-white/5 backdrop-blur-sm px-4 py-2.5 rounded-2xl border border-white/10" key={agent.id}>
-                <span className="w-11 h-11 rounded-xl bg-brand-900 text-accent-400 font-bold flex items-center justify-center text-sm border border-brand-700 shadow-xs" aria-hidden="true">
-                  {agent.initials}
-                </span>
-                <div>
-                  <p className="text-sm font-bold text-white leading-snug">{agent.name}</p>
-                  <p className="text-[11px] text-brand-100/70">
-                    {content.agentRegions[agent.id === "maya-pradana" ? "maya" : agent.id === "raka-wijaya" ? "raka" : "sari"]}
-                  </p>
+            {mockAgents.map((agent) => {
+              const regionName =
+                agent.id === "maya-pradana"
+                  ? content.agentRegions.maya
+                  : agent.id === "raka-wijaya"
+                  ? content.agentRegions.raka
+                  : agent.id === "sari-utama"
+                  ? content.agentRegions.sari
+                  : agent.region;
+
+              return (
+                <div className="flex items-center gap-3.5 bg-white/5 backdrop-blur-sm px-4 py-2.5 rounded-2xl border border-white/10" key={agent.id}>
+                  <div className="w-11 h-11 rounded-xl bg-brand-900 text-accent-400 font-bold flex items-center justify-center text-sm border border-brand-700 shadow-xs relative overflow-hidden shrink-0" aria-hidden="true">
+                    {agent.photo ? (
+                      <Image
+                        src={agent.photo}
+                        alt={agent.name}
+                        fill
+                        sizes="44px"
+                        className="object-cover"
+                      />
+                    ) : (
+                      agent.initials
+                    )}
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-white leading-snug">{agent.name}</p>
+                    <p className="text-[11px] text-brand-100/70">
+                      {regionName}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </PageContainer>

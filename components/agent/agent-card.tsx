@@ -17,12 +17,13 @@ export function AgentCard({ agent }: AgentCardProps) {
       <div className="p-6 flex-grow flex flex-col items-center text-center">
         {/* Avatar */}
         <div className="relative mb-4">
-          <div className="w-20 h-20 rounded-full bg-brand-50 border-2 border-neutral-200 flex items-center justify-center overflow-hidden relative">
+          <div className="w-20 h-20 rounded-full bg-brand-50 border-2 border-neutral-200/90 shadow-2xs flex items-center justify-center overflow-hidden relative">
             {agent.photo ? (
               <Image 
                 src={agent.photo} 
                 alt={agent.name}
                 fill
+                sizes="80px"
                 className="object-cover"
               />
             ) : (

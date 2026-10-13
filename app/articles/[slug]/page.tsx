@@ -187,10 +187,20 @@ export default async function ArticleDetailPage({
                 {/* Author Row */}
                 <div className="flex items-center gap-3 mt-6 py-5 border-b border-border-subtle">
                   <div
-                    className="w-10 h-10 rounded-full bg-brand-100 text-brand-900 font-bold flex items-center justify-center text-xs border border-brand-200"
+                    className="w-10 h-10 rounded-full bg-brand-100 text-brand-900 font-bold flex items-center justify-center text-xs border border-neutral-200/90 shadow-2xs relative overflow-hidden shrink-0"
                     aria-hidden="true"
                   >
-                    {article.author.initials}
+                    {article.author.avatar ? (
+                      <Image
+                        src={article.author.avatar}
+                        alt={article.author.name}
+                        fill
+                        sizes="40px"
+                        className="object-cover"
+                      />
+                    ) : (
+                      article.author.initials
+                    )}
                   </div>
                   <div>
                     <p className="text-sm font-bold text-brand-950">

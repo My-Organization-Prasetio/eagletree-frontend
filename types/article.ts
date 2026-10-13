@@ -20,6 +20,7 @@ export type ArticleItem = {
     name: string;
     role: string;
     initials: string;
+    avatar?: string;
   };
   publishedAt: string;
   readingTimeMinutes: number;

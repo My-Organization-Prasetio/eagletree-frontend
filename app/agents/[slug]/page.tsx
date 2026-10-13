@@ -69,12 +69,13 @@ export default async function AgentProfilePage({ params }: Props) {
           <div className="lg:col-span-4">
             <div className="bg-white rounded-xl border border-neutral-200/80 shadow-2xs p-6 sticky top-24">
               <div className="flex flex-col items-center text-center mb-6 pb-6 border-b border-neutral-100">
-                <div className="w-24 h-24 rounded-full bg-brand-950 text-accent-400 flex items-center justify-center font-medium text-2xl overflow-hidden relative mb-4">
+                <div className="w-24 h-24 rounded-full bg-brand-950 text-accent-400 flex items-center justify-center font-medium text-2xl overflow-hidden relative mb-4 border-2 border-neutral-200/90 shadow-2xs">
                   {agent.photo ? (
                     <Image 
                       src={agent.photo} 
                       alt={agent.name}
                       fill
+                      sizes="96px"
                       className="object-cover"
                     />
                   ) : (
