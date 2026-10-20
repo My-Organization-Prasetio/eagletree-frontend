@@ -1,0 +1,12 @@
+Pada user user tertentu, bisa juga pada tenant tertentu bisa diizinkan untuk posting tanpa approval administrator.
+Pada pengguna dan klien, harusnya ada tab untuk menampilkan menu configuration, roles map etc, kemudian disini juga dibatasi dengan level berbeda, tertinggi adalah super administrator (pemilik tertinggi), administrator (biasanya user otoritas tertinggi dari perusahaan induk dari beberapa cabangnya), administrator juga ada yang dari cabang masing masing, admin (biasanya user otoritas tertinggi dari perusahaan cabang/anak perusahaan) dibawah administrator, user biasa / agen (user yang bertugas untuk listing).
+Perlu ada auditable & log, siapa yang login, kapan, dan aktifitasnya
+Sistem ini harus bisa mengakomodir jika ingin digunakan oleh sebagai saas ataupun untuk sebuah pt dengan hanya 1 pt ataupun punya anak perusahaan atau kantor, dan ini harus bisa scalable
+Di website ini harus ada default jika login sebagai kantor tertentu maka otomatis akan masuk ke kantor tersebut, jadi data yang muncul terbatas di kantor tersebut, agen tersebut hanya melihat listingan dari kantornya sendiri saja, kecuali user tersebut super administrator atau administrator maka bisa melihat data dari semua kantor cabang
+improve ux Inventaris & Manajemen Properti (Listing) - pada detail properti, jika property sedang disewakan maka akan muncul status available / occupied - pada tampilan listing properti, ada button untuk mengedit foto, 
+Halaman titip properti harus bisa mengakomodir beberapa status, seperti : - baru dibuat dan menunggu persetujuan - sedang diproses dan disetujui - sedang diiklankan - terjual / disewakan - diarsipkan - di tolak . tampilan juga secara detail termasuk foto yang diupload oleh user.
+Proyek baru harus mengakomodir semua informasi yang di butuhkan di front end
+pada halaman master data, wilayah dan kota harus bisa terintegrasi dengan master provinsi etc 
+Ganti pimpinan di kantor cabang otomatis user yang ada di kantor tersebut dan harus merupakan dropdown list dari user yang ada di kantor tersebut. otomatis juga agent yang ada di kantor tersebut akan masuk ke kantor yang baru tersebut.
+Berita dan artikel bisa banyak jadi gunakan list dengan preview detail. untuk editor berita dan artikel gunakan rich text editor.
+Pastikan responsive dengan perangkat mobile
